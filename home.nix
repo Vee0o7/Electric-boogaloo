@@ -57,7 +57,7 @@
   #  /etc/profiles/per-user/viv/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
   
   programs.bash = {
