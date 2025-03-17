@@ -24,11 +24,6 @@ let
 in
 {
   imports = [./custom-keybinds.nix ./gnome-extensions.nix];
-  home.packages = with pkgs; [
-    gnomeExtensions.dash-to-panel
-    gnomeExtensions.vertical-workspaces
-    gnomeExtensions.forge
-  ];
 
   dconf.settings = {
 
