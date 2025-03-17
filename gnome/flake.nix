@@ -15,7 +15,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       customNeovim = nvf.lib.neovimConfiguration {
         inherit pkgs;
-        modules = [ ./nvf.nix ];
+        modules = [ ./../conf/nvf.nix ];
       };
 
     in {
