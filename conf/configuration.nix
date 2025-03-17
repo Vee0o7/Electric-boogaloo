@@ -75,6 +75,7 @@
     description = "viv";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      discord
     ];
   };
 
