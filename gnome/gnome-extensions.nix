@@ -1,5 +1,11 @@
 {pkgs, lib, ...}:
 {
+    home.packages = with pkgs; [
+      gnomeExtensions.dash-to-panel
+      gnomeExtensions.vertical-workspaces
+      gnomeExtensions.forge
+    ];
+
   dconf.settings = {
     "org/gnome/shell" = {
       disable-user-extensions = false;
