@@ -20,10 +20,20 @@
 
     in {
     nixosConfigurations = {
-      Electric-boogaloo = lib.nixosSystem {
+      Big-boogaloo = lib.nixosSystem {
         inherit system;
         modules = [ 
           ./configuration.nix
+          {networking.hostName = "Big-boogaloo";}
+          ./../hostHardware/home-hardware-configuration.nix
+        ];
+      };
+      Smol-boogaloo = lib.nixosSystem {
+        inherit system;
+        modules = [ 
+          ./configuration.nix
+          {networking.hostName = "Smol-boogaloo";}
+          ./../hostHardware/laptop-hardware-configuration.nix
         ];
       };
     };
