@@ -4,7 +4,8 @@
       gnomeExtensions.dash-to-panel
       gnomeExtensions.vertical-workspaces
       gnomeExtensions.forge
-      gnomeExtensions.rounded-corners
+      gnomeExtensions.rounded-window-corners-reborn
+      gnomeExtensions.just-perfection
     ];
 
   dconf.settings = {
@@ -17,10 +18,15 @@
         "forge@jmmaranan.com"
         "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
-        "Rounded_Corners@lennart-k"
+        "rounded-window-corners@fxgn"
+        "just-perfection-desktop@just-perfection"
       ];
     };
-    #"org/gnome/shell/extensions/lennart-k/rounded_corners/corner-radius" = 4;
+    "org/gnome/shell/extensions/just-perfection".window-picker-icon = false;
+    "org/gnome/shell/extensions/rounded-window-corners-reborn" = {
+      skip-libadwaita-app = false;
+      global-rounded-corner-settings = ''{'padding': <{'left': uint32 1, 'right': 1, 'top': 1, 'bottom': 1}>, 'keepRoundedCorners': <{'maximized': false, 'fullscreen': false}>, 'borderRadius': <uint32 4>, 'smoothing': <0.0>, 'borderColor': <(0.5, 0.5, 0.5, 1.0)>, 'enabled': <true>}'';
+    };
     "org/gnome/shell/extensions/dash-to-panel" = {
         panel-positions = ''{"0":"TOP"}'';
         panel-sizes = ''{"0":32}'';
@@ -40,6 +46,7 @@
       overview-bg-blur-sigma = 10;
       panel-overview-style = 0;
       show-ws-preview-bg = false;
+      search-fuzzy = true;
     };
     "org/gnome/shell/extensions/forge" = {
       stacked-tiling-mode-enabled = false;
