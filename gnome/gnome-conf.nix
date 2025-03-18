@@ -25,10 +25,27 @@ in
 {
   imports = [./custom-keybinds.nix ./gnome-extensions.nix];
 
+  gtk =
+  let 
+    nightfox-icons = import ./nightfox-icons.nix { inherit pkgs; };
+  in
+  {
+    enable = true;
+    iconTheme.package = nightfox-icons;
+    iconTheme.name = "Duskfox";
+    theme.package = pkgs.nordic;
+    theme.name = "Nordic-darker";
+  };
+
   dconf.settings = {
 
+    "org/gnome/desktop/wm/preferences" = {
+      theme = "Nordic-darker";
+      focus-mode = "sloppy";
+      raise-on-click = false;
+      auto-raise = false;
+    };
     "org/gnome/shell/keybindings" = keybinds;
-
     "org/gnome/desktop/wm/keybindings" = keybinds;
 
     "org/gnome/desktop/interface" = {
@@ -43,8 +60,7 @@ in
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };
-    # blank screen delay
-    "org/gnome/desktop/session".idle-delay = 900;
-    "org/gnome/desktop/screensaver".lock-delay = 300;
+
+    "org/gnome/desktop/peripherals/touchpad".natural-scroll = false;
   };
 }

@@ -98,6 +98,9 @@
     git
     curl
     home-manager
+    ghostty
+    dolphin
+    ntfs3g
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
