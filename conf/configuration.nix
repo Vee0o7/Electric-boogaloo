@@ -12,6 +12,14 @@
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.viv = {
+    isNormalUser = true;
+    description = "viv";
+    extraGroups = [ "networkmanager" "wheel" ];
+  };
+
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -68,21 +76,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.viv = {
-    isNormalUser = true;
-    description = "viv";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      discord
-      steam
-      lutris
-      cockatrice
-      fastfetch
-      tree
-    ];
-  };
-
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -100,7 +93,6 @@
     git
     curl
     home-manager
-    ghostty
     ntfs3g
   ];
 

@@ -9,15 +9,15 @@ rebuild="false"
 usage() {
 	cat <<EOF
 
-Syncs home-manager with working flakes
 Usage: $0 [OPTION]...
+Syncs home-manager with working flakes
 
 OPTIONS:
-  -p, --pull              Pull from github (Default: false)
-  --gnome                 install gnome (Default option)
-  --hypr                  install hyprland
+  --gnome                 Install gnome (Default option)
+  --hypr                  Install hyprland
+  -p, --pull              Pull from github
   -h, --help              Show help
-  -r, --rebuild           rebuild
+  -r, --rebuild           Rebuild nixos
 EOF
 }
 

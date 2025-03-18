@@ -20,6 +20,14 @@
 
     in {
     nixosConfigurations = {
+      Cutie-boogaloo = lib.nixosSystem {
+        inherit system;
+        modules = [ 
+          ./configuration.nix
+          {networking.hostName = "Cutie-boogaloo";}
+          ./../hostHardware/Cutie-boogaloo-hardware-configuration.nix
+        ];
+      };
       Big-boogaloo = lib.nixosSystem {
         inherit system;
         modules = [ 
