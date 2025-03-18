@@ -12,7 +12,7 @@
     "org/gnome/shell/extensions/forge/keybindings".prefs-tiling-toggle = [];
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>w";
-      command = "kgx";
+      command = "ghostty";
       name = "Terminal";
     };
   };

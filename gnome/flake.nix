@@ -25,7 +25,7 @@
         modules = [ 
           ./configuration.nix
           {networking.hostName = "Big-boogaloo";}
-          ./../hostHardware/home-hardware-configuration.nix
+          ./../hostHardware/Big-boogaloo-hardware-configuration.nix
         ];
       };
       Smol-boogaloo = lib.nixosSystem {
@@ -33,7 +33,7 @@
         modules = [ 
           ./configuration.nix
           {networking.hostName = "Smol-boogaloo";}
-          ./../hostHardware/laptop-hardware-configuration.nix
+          ./../hostHardware/Smol-boogaloo-hardware-configuration.nix
         ];
       };
     };
