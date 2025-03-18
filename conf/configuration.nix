@@ -101,7 +101,6 @@
     curl
     home-manager
     ghostty
-    dolphin
     ntfs3g
   ];
 
