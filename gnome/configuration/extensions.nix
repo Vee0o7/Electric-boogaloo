@@ -17,8 +17,10 @@
         "forge@jmmaranan.com"
         "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
+        "Rounded_Corners@lennart-k"
       ];
     };
+    #"org/gnome/shell/extensions/lennart-k/rounded_corners/corner-radius" = 4;
     "org/gnome/shell/extensions/dash-to-panel" = {
         panel-positions = ''{"0":"TOP"}'';
         panel-sizes = ''{"0":32}'';
@@ -44,7 +46,7 @@
       tabbed-tiling-mode-enabled = false;
       focus-border-toggle = false;
       dnd-center-layout = "swap";
-      window-gap-size =  lib.hm.gvariant.mkUint32 0;
+      window-gap-size =  lib.hm.gvariant.mkUint32 2;
       window-gap-hidden-on-single = true;
     };
   };

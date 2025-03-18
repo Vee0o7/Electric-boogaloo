@@ -78,6 +78,8 @@
       steam
       lutris
       cockatrice
+      fastfetch
+      tree
     ];
   };
 
