@@ -4,7 +4,10 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 wm="gnome"
 pull="false"
+<<<<<<< HEAD
 rebuild="false"
+=======
+>>>>>>> 19a04dd2178172db138049ee0e72426ff01b540a
 
 usage() {
 	cat <<EOF
@@ -35,10 +38,13 @@ while [[ $# -gt 0 ]]; do
                 pull="true"
                 shift
                 ;;
+<<<<<<< HEAD
         -r | --rebuild)
                 rebuild="true"
                 shift
                 ;;
+=======
+>>>>>>> 19a04dd2178172db138049ee0e72426ff01b540a
         -h | --help)
                 usage
                 exit 0
@@ -62,6 +68,7 @@ case "$wm" in
 esac
 
 if [[ "$pull" = "true" ]]; then
+<<<<<<< HEAD
         echo && git pull
 fi
 
@@ -70,6 +77,16 @@ if [[ "$rebuild" = "true" ]]; then
 fi
 
 echo && home-manager switch --flake $flake_dir
+=======
+        git pull
+fi
+
+if [[ "$rebuild" = "true" ]]; then
+        sudo nixos-rebuild switch --flake $flake_dir
+fi
+
+home-manager switch --flake $flake_dir
+>>>>>>> 19a04dd2178172db138049ee0e72426ff01b540a
 
 echo
 echo Done.
