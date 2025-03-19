@@ -24,6 +24,10 @@ let
 in
 
 {
+  home.packages = with pkgs; [
+    xclip
+    xsel
+  ];
   dconf.settings = {
 
     "org/gnome/shell/keybindings" = keybinds;
