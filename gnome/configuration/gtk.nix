@@ -1,8 +1,8 @@
 {pkgs, lib, ...}: 
 
-let
-  nordic-firefox = import ./nordic-firefox.nix {inherit pkgs;};
-in
+# let
+#   nordic-firefox = import ./nordic-firefox.nix {inherit pkgs;};
+# in
 {
 # home.file = {
 #   ".nordic-firefox".source = nordic-firefox;
