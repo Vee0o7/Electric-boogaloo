@@ -20,20 +20,6 @@
 
     in {
     nixosConfigurations = {
-      yourhostname = lib.nixosSystem {
-        inherit system;
-        modules = [ 
-          ./configuration.nix
-          { networking.hostName = "yourhostname";}
-          { users.users.usr = {
-              isNormalUser = true;
-              description = "usr";
-              extraGroups = [ "networkmanager" "wheel" ];
-            };
-          }
-          ./../hostHardware/yourhostname-hardware-configuration.nix
-        ];
-      };
       Big-boogaloo = lib.nixosSystem {
         inherit system;
         modules = [ 
@@ -71,7 +57,6 @@
         inherit pkgs;
         modules = [ 
           ./home.nix
-          ./../config/home-viv.nix
           {home.packages = [customNeovim.neovim];}
         ];
       };
