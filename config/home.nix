@@ -32,6 +32,7 @@
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
   home.file = {
     ".config/ghostty".source = ./ghostty;
+    ".config/yazi".source = ./yazi;
   };
 
   programs.bash = {
