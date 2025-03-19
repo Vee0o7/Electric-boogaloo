@@ -1,3 +1,9 @@
+TODO:
+
+  https://github.com/EliverLara/firefox-nordic-theme
+
+----------------------------------------------------------
+ 
 To setup on a fresh install:
 
   edit /etc/nixos/configuration to add git and flakes
