@@ -1,10 +1,22 @@
 { pkgs, lib, ... }:
 
 {
-  vim.theme.enable = true;
-  vim.theme.transparent = true;
-  vim.theme.name = "nord";
-  vim.useSystemClipboard = true;
+  vim = {
+    theme = {
+      enable = true;
+      transparent = true;
+      name = "nord";
+    };
+    useSystemClipboard = true;
+    autocomplete.enableSharedCmpSources = true;
+    statusline.lualine.enable = true;
+    telescope.enable = true;
 
-  vim.languages.nix.enable = true;
+    languages = {
+      enableLSP = true;
+      enableTreesitter = true;
+
+      nix.enable = true;
+    };
+  };
 }

@@ -8,7 +8,7 @@
     nvf.url = "github:notashelf/nvf";
   };
   
-  outputs = {self, nixpkgs, home-manager, nvf, ...}@inputs:
+  outputs = {self, nixpkgs, home-manager, nvf, ...}:
     let 
       lib = nixpkgs.lib;
       system = "x86_64-linux";
