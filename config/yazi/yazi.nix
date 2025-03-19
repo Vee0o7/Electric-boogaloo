@@ -1,0 +1,16 @@
+{...}:
+
+{
+  settings = {
+    open = {
+      prepend-rules = [
+        {mime="inode/directory"; use="ghostty";}
+      ];
+    };
+    opener = {
+      ghostty = [
+        {run = ''ghostty "$0"''; orphan = true; for = "unix";}
+      ];
+    };
+  };
+}

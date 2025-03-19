@@ -38,9 +38,10 @@ in
     "org/gnome/settings-daemon/plugins/media-keys"= {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
       ];
       www = ["<Super>f"];
-      home = ["<Super>e"];
+      home = [];
     };
     "org/gnome/shell/extensions/forge/keybindings".prefs-tiling-toggle = [];
 
@@ -49,6 +50,11 @@ in
       binding = "<Super>w";
       command = "ghostty";
       name = "Terminal";
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      binding = "<Super>e";
+      command = "ghostty -e yazi";
+      name = "Yazi";
     };
   };
 }
