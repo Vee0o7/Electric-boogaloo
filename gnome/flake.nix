@@ -5,19 +5,15 @@
     nixpkgs.url = "nixpkgs/nixos-24.11";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nvf.url = "github:notashelf/nvf";
+    nixvim.url = "github:nix-community/nixvim/nixos-24.11";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
   
-  outputs = {self, nixpkgs, home-manager, nvf, ...}:
+  outputs = {self, nixpkgs, home-manager, nixvim, ...}:
     let 
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      customNeovim = nvf.lib.neovimConfiguration {
-        inherit pkgs;
-        modules = [ ./../config/nvf/nvf.nix ];
-      };
-
     in {
     nixosConfigurations = {
       Big-boogaloo = lib.nixosSystem {
@@ -50,14 +46,12 @@
       };
     };
 
-    packages.${system}.my-neovim = customNeovim.neovim;
-
     homeConfigurations = {
       viv = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ 
           ./home.nix
-          {home.packages = [customNeovim.neovim];}
+          nixvim.homeManagerModules.nixvim
         ];
       };
     };

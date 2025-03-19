@@ -19,6 +19,8 @@
     fastfetch
     tree
     ghostty
+    nix-prefetch-git
+    yazi
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
@@ -27,18 +29,16 @@
     # '')
   ];
 
+  programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
   home.file = {
     ".config/ghostty".source = ./ghostty;
   };
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
-  
   programs.bash = {
     enable = true;
     shellAliases  = {
       ".." = "cd ..";
+      "y" = "yazi";
     };
   };
 
