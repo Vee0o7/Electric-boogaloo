@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "viv";
-  home.homeDirectory = "/home/viv";
+  home.username = "usr";
+  home.homeDirectory = "/home/usr";
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
@@ -31,22 +31,6 @@
     ".config/ghostty".source = ./ghostty;
   };
 
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. These will be explicitly sourced when using a
-  # shell provided by Home Manager. If you don't want to manage your shell
-  # through Home Manager then you have to manually source 'hm-session-vars.sh'
-  # located at either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/viv/etc/profile.d/hm-session-vars.sh
-  #
   home.sessionVariables = {
     EDITOR = "nvim";
   };
@@ -60,8 +44,8 @@
 
   programs.git = {
     enable = true;
-    userName = "Vee0o7";
-    userEmail = "vee314159@gmail.com";
+    userName = "";
+    userEmail = "";
   };
 
   programs.home-manager.enable = true;

@@ -4,7 +4,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./../conf/configuration.nix
+      ./../config/configuration.nix
       ./gnome.nix
     ];
 }

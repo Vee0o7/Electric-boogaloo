@@ -13,11 +13,6 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.viv = {
-    isNormalUser = true;
-    description = "viv";
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
 
 
   # Configure network proxy if necessary

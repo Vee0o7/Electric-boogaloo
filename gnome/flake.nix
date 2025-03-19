@@ -15,17 +15,23 @@
       pkgs = nixpkgs.legacyPackages.${system};
       customNeovim = nvf.lib.neovimConfiguration {
         inherit pkgs;
-        modules = [ ./../conf/nvf/nvf.nix ];
+        modules = [ ./../config/nvf/nvf.nix ];
       };
 
     in {
     nixosConfigurations = {
-      Cutie-boogaloo = lib.nixosSystem {
+      yourhostname = lib.nixosSystem {
         inherit system;
         modules = [ 
           ./configuration.nix
-          {networking.hostName = "Cutie-boogaloo";}
-          ./../hostHardware/Cutie-boogaloo-hardware-configuration.nix
+          { networking.hostName = "yourhostname";}
+          { users.users.usr = {
+              isNormalUser = true;
+              description = "usr";
+              extraGroups = [ "networkmanager" "wheel" ];
+            };
+          }
+          ./../hostHardware/yourhostname-hardware-configuration.nix
         ];
       };
       Big-boogaloo = lib.nixosSystem {
@@ -33,6 +39,12 @@
         modules = [ 
           ./configuration.nix
           {networking.hostName = "Big-boogaloo";}
+          { users.users.viv = {
+              isNormalUser = true;
+              description = "viv";
+              extraGroups = [ "networkmanager" "wheel" ];
+            };
+          }
           ./../hostHardware/Big-boogaloo-hardware-configuration.nix
         ];
       };
@@ -41,6 +53,12 @@
         modules = [ 
           ./configuration.nix
           {networking.hostName = "Smol-boogaloo";}
+          { users.users.viv = {
+              isNormalUser = true;
+              description = "viv";
+              extraGroups = [ "networkmanager" "wheel" ];
+            };
+          }
           ./../hostHardware/Smol-boogaloo-hardware-configuration.nix
         ];
       };
@@ -53,6 +71,7 @@
         inherit pkgs;
         modules = [ 
           ./home.nix
+          ./../config/home-viv.nix
           {home.packages = [customNeovim.neovim];}
         ];
       };
