@@ -1,0 +1,1 @@
+ghostty -e "fastfetch && $SHELL"
