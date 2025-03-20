@@ -3,19 +3,17 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 wm="gnome"
-pull="false"
 rebuild="false"
 
 usage() {
 	cat <<EOF
 
 Usage: $0 [OPTION]...
-Syncs home-manager with working flakes
+Syncs home-manager with working flakes and commits to git
 
 OPTIONS:
   --gnome                 Install gnome (Default option)
   --hypr                  Install hyprland
-  -p, --pull              Pull from github
   -h, --help              Show help
   -r, --rebuild           Rebuild nixos
 EOF
@@ -29,10 +27,6 @@ while [[ $# -gt 0 ]]; do
                 ;;
         --gnome)
                 wm="gnome"
-                shift
-                ;;
-        -p | --pull)
-                pull="true"
                 shift
                 ;;
         -r | --rebuild)
@@ -61,15 +55,20 @@ case "$wm" in
                 ;;
 esac
 
-if [[ "$pull" = "true" ]]; then
-        echo && git pull
-fi
-
+command="home-manager switch --flake $flake_dir"
+gencmd="home-manager generations"
+gengrep="head -n 1"
 if [[ "$rebuild" = "true" ]]; then
-        echo && sudo nixos-rebuild switch --flake $flake_dir
-
-else echo && home-manager switch --flake $flake_dir
-
+        command="sudo nixos-rebuild switch --flake $flake_dir"
+        gencmd="nixos-rebuild list-generations"
+        gengrep="grep current"
 fi
-echo
+
+pushd "$SCRIPT_DIR"
+git diff -U0 | $EDITOR
+echo "working..."
+$command &>switch.log || (cat switch.log | grep --color error && false)
+gen=$($gencmd | $gengrep)
+git commit -am "$gen"
 echo Done.
+popd
