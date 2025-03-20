@@ -34,15 +34,15 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  # environment.gnome.excludePackages = (with pkgs; [
-  #   cheese # webcam tool
-  #   evince # document viewer
-  #   geary # email reader
-  #   gnome-characters
-  #   gnome-music
-  #   gnome-photos
-  #   gnome-terminal
-  #   gnome-tour
-  # ]);
+  environment.gnome.excludePackages = (with pkgs; [
+    cheese # webcam tool
+    evince # document viewer
+    geary # email reader
+    gnome-characters
+    gnome-music
+    gnome-photos
+    gnome-terminal
+    gnome-tour
+  ]);
 
 }
