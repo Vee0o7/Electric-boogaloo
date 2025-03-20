@@ -16,6 +16,7 @@ let
       switch-to-application-3 = [];
       switch-to-application-4 = [];
       switch-to-application-5 = [];
+      minimize = [];
       screenshot = ["<Super>s"];
       show-screenshot-ui = ["<Shift><Super>s"];
       screenshot-window = ["<Alt>s"];
@@ -43,7 +44,13 @@ in
       www = ["<Super>f"];
       home = [];
     };
-    "org/gnome/shell/extensions/forge/keybindings".prefs-tiling-toggle = [];
+    "org/gnome/shell/extensions/forge/keybindings"= {
+      prefs-tiling-toggle = [];
+      window-focus-down = ["<Super>j"];
+      window-focus-left = ["<Super>h"];
+      window-focus-right = ["<Super>l"];
+      window-focus-up = ["<Super>k"];
+    };
 
     # custom bindings #
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
