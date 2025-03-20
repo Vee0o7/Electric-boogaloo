@@ -67,7 +67,7 @@ fi
 pushd "$SCRIPT_DIR"
 gdiff=$(git diff -U0)
 if [[ "$gdiff" != "" ]]; then
-        echo "$gdiff" | EDITOR
+        echo "$gdiff" | $EDITOR
 else
         echo "no changes to commit"
 fi
