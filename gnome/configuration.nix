@@ -72,7 +72,7 @@
     gnome-music
     gnome-system-monitor
     gnome-weather
-    gnome-disks
+    gnome-disk-utility
     seahorse
     evince
     pkgs.loupe

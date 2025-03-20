@@ -64,6 +64,7 @@ if [[ "$rebuild" = "true" ]]; then
         gengrep="grep current"
 fi
 
+set -e
 pushd "$SCRIPT_DIR"
 gdiff=$(git diff -U0)
 if [[ "$gdiff" != "" ]]; then
@@ -72,7 +73,7 @@ else
         echo "no changes to commit"
 fi
 echo "working..."
-$command &>switch.log || (cat switch.log | grep --color error && exit)
+$command &>switch.log || (cat switch.log | grep --color error && false)
 gen=$($gencmd | $gengrep)
 git commit -am "$gen"
 echo Done.
