@@ -10,11 +10,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -89,38 +84,8 @@
     git
     curl
     home-manager
-    ntfs3g
-
   ];
-  nixpkgs.overlays = [
-    (final: prev: {
-      mutter = prev.mutter.overrideAttrs (oldAttrs: {
-        # GNOME dynamic triple buffering (huge performance improvement)
-        # See https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/1441
-        src = final.fetchFromGitLab {
-          domain = "gitlab.gnome.org";
-          owner = "vanvugt";
-          repo = "mutter";
-          rev = "triple-buffering-v4-47";
-          hash = "sha256-6n5HSbocU8QDwuhBvhRuvkUE4NflUiUKE0QQ5DJEzwI=";
-        };
 
-        preConfigure =
-          let
-            gvdb = final.fetchFromGitLab {
-              domain = "gitlab.gnome.org";
-              owner = "GNOME";
-              repo = "gvdb";
-              rev = "2b42fc75f09dbe1cd1057580b5782b08f2dcb400";
-              hash = "sha256-CIdEwRbtxWCwgTb5HYHrixXi+G+qeE1APRaUeka3NWk=";
-            };
-          in
-          ''
-            cp -a "${gvdb}" ./subprojects/gvdb
-          '';
-      });
-    })
-  ];
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -131,14 +96,6 @@
     automatic = true;
     dates = ["weekly"];
   };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   # List services that you want to enable:
 

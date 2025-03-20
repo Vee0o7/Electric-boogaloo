@@ -8,7 +8,4 @@
     ./configuration/gtk.nix  
     ./configuration/inputs.nix  
   ];
-  home.file = {
-    ".gnomerc".source = ./../config/startup;
-  };
 }
