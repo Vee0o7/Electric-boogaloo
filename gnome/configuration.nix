@@ -48,5 +48,20 @@
     gnome-photos
     gnome-terminal
     gnome-tour
+    baobab # disk usage analyzer
+    epiphany # web browser
+    simple-scan # document scanner
+    totem # video player
+    yelp # help viewer
+    evince # document viewer
+    gnome-calculator
+    gnome-contacts
+    gnome-logs
+    gnome-maps
+    gnome-music
+    #gnome-screenshot
+    #gnome-system-monitor
+    pkgs.gnome-connections
+    pkgs.gnome-console
   ]);
 }

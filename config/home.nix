@@ -48,6 +48,11 @@
     enable = true;
     userName = "Vee0o7";
     userEmail = "vee314159@gmail.com";
+    aliases = {
+      co = "checkout";
+      ci = "commit";
+      cm = "commit --allow-empty";
+    };
   };
 
   programs.home-manager.enable = true;
