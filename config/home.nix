@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  imports = [./yazi/yazi.nix];
+  imports = [
+    ./yazi/yazi.nix
+  ];
   home.username = "viv";
   home.homeDirectory = "/home/viv";
 
