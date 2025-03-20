@@ -47,7 +47,6 @@
   programs.git = {
     enable = true;
     userName = "Vee0o7";
-    userEmail = "vee314159@gmail.com";
   };
 
   programs.home-manager.enable = true;
