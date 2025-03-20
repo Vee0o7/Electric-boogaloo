@@ -65,7 +65,12 @@ if [[ "$rebuild" = "true" ]]; then
 fi
 
 pushd "$SCRIPT_DIR"
-git diff -U0 | $EDITOR
+gdiff=$(git diff -U0)
+if gdiff != ""; then
+        echo "$gdiff" | EDITOR
+else
+        echo "no changes to commit"
+fi
 echo "working..."
 $command &>switch.log || (cat switch.log | grep --color error && false)
 gen=$($gencmd | $gengrep)
