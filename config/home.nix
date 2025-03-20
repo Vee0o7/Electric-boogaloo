@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  imports = [./yazi/yazi.nix];
   home.username = "viv";
   home.homeDirectory = "/home/viv";
 
@@ -20,7 +21,6 @@
     tree
     ghostty
     nix-prefetch-git
-    yazi
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
