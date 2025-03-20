@@ -72,6 +72,9 @@
     gnome-music
     gnome-system-monitor
     gnome-weather
+    gnome-disks
+    seahorse
+    evince
     pkgs.loupe
     # nautilus
     pkgs.gnome-connections
@@ -79,6 +82,7 @@
     pkgs.snapshot
     totem
     yelp
+    xterm
   ];
 
 }
