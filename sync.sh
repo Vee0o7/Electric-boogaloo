@@ -67,9 +67,9 @@ fi
 
 if [[ "$rebuild" = "true" ]]; then
         echo && sudo nixos-rebuild switch --flake $flake_dir
+
+else echo && home-manager switch --flake $flake_dir
+
 fi
-
-echo && home-manager switch --flake $flake_dir
-
 echo
 echo Done.
