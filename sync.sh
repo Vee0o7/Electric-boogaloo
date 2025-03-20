@@ -72,7 +72,7 @@ else
         echo "no changes to commit"
 fi
 echo "working..."
-$command &>switch.log || (cat switch.log | grep --color error && return)
+$command &>switch.log || (cat switch.log | grep --color error && exit)
 gen=$($gencmd | $gengrep)
 git commit -am "$gen"
 echo Done.
