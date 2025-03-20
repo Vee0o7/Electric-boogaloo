@@ -4,6 +4,7 @@
 
     "org/gnome/desktop/wm/preferences" = {
       theme = "Nordic-darker";
+      # click focus or sloppy enables hover focus
       focus-mode = "sloppy";
       raise-on-click = false;
       auto-raise = false;

@@ -5,6 +5,7 @@
 { config, pkgs, ... }:
 
 {
+  imports = [./users.nix];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

@@ -21,12 +21,6 @@
         modules = [ 
           ./configuration.nix
           {networking.hostName = "Big-boogaloo";}
-          { users.users.viv = {
-              isNormalUser = true;
-              description = "viv";
-              extraGroups = [ "networkmanager" "wheel" ];
-            };
-          }
           ./../hostHardware/Big-boogaloo-hardware-configuration.nix
         ];
       };
@@ -35,12 +29,6 @@
         modules = [ 
           ./configuration.nix
           {networking.hostName = "Smol-boogaloo";}
-          { users.users.viv = {
-              isNormalUser = true;
-              description = "viv";
-              extraGroups = [ "networkmanager" "wheel" ];
-            };
-          }
           ./../hostHardware/Smol-boogaloo-hardware-configuration.nix
         ];
       };
