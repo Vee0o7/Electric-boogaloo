@@ -47,7 +47,8 @@
   programs.git = {
     enable = true;
     userName = "Vee0o7";
-    userEmail = "vee314159@gmail.com";
+    userEmail = "114813444+Vee0o7@users.noreply.github.com";
+
     aliases = {
       co = "checkout";
       ci = "commit";
