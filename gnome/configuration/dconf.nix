@@ -8,6 +8,7 @@
       focus-mode = "sloppy";
       raise-on-click = false;
       auto-raise = false;
+      button-layout = ":";
     };
 
     "org/gnome/desktop/interface" = {
