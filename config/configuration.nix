@@ -86,6 +86,7 @@
     curl
     home-manager
   ];
+  programs.npm.enable = true;
 
   nix.gc = {
     automatic = true;
