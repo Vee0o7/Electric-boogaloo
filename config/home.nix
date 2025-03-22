@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./stylix/stylix.nix
     ./yazi/yazi.nix
   ];
   home.username = "viv";
@@ -15,13 +16,11 @@
 
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
-    discord
     steam
     lutris
     cockatrice
     fastfetch
     tree
-    ghostty
     nix-prefetch-git
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -31,9 +30,9 @@
     # '')
   ];
 
+  programs.ghostty.enable = true;
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
   home.file = {
-    ".config/ghostty".source = ./ghostty;
   };
 
   programs.bash = {
@@ -54,7 +53,7 @@
     aliases = {
       co = "checkout";
       ci = "commit";
-      cm = "commit --allow-empty";
+      ca = "commit --amend";
     };
   };
 

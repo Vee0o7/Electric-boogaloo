@@ -17,7 +17,6 @@
         "vertical-workspaces@G-dH.github.com"
         "forge@jmmaranan.com"
         "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
-        "user-theme@gnome-shell-extensions.gcampax.github.com"
         "rounded-window-corners@fxgn"
         "just-perfection-desktop@just-perfection"
       ];
