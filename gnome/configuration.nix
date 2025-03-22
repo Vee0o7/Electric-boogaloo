@@ -49,8 +49,8 @@
     gnome-bluetooth
     gnome-color-manager
     # gnome-control-center
-    gnome-shell-extensions
-    gnome-themes-extra
+    # gnome-shell-extensions
+    # gnome-themes-extra
     pkgs.gnome-tour # GNOME Shell detects the .desktop file on first log-in.
     pkgs.gnome-user-docs
     pkgs.orca
