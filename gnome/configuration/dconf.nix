@@ -3,7 +3,6 @@
   dconf.settings = {
 
     "org/gnome/desktop/wm/preferences" = {
-      theme = "Nordic-darker";
       # click focus or sloppy enables hover focus
       focus-mode = "click";
       raise-on-click = false;

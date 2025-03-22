@@ -15,7 +15,5 @@
     enable = true;
     iconTheme.package = nightfox-icons;
     iconTheme.name = "Duskfox";
-    # theme.package = pkgs.nordic;
-    # theme.name = "Nordic-darker";
   };
 }
