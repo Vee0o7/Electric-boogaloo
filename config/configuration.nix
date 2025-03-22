@@ -5,7 +5,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [./users.nix ./steam.nix];
+  imports = [./users.nix];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
