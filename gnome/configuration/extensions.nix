@@ -6,6 +6,7 @@
       gnomeExtensions.forge
       gnomeExtensions.rounded-window-corners-reborn
       gnomeExtensions.just-perfection
+      gnomeExtensions.user-themes
     ];
 
   dconf.settings = {
@@ -19,6 +20,7 @@
         "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
         "rounded-window-corners@fxgn"
         "just-perfection-desktop@just-perfection"
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
       ];
     };
     "org/gnome/shell/extensions/just-perfection".window-picker-icon = false;
