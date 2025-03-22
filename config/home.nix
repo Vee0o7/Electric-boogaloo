@@ -31,7 +31,7 @@
     # '')
   ];
 
-  programs.ghostty.enable = true;
+  # programs.ghostty.enable = true;
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
   home.file = {
   };
