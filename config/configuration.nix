@@ -87,7 +87,6 @@
     home-manager
   ];
   programs.npm.enable = true;
-  programs.ghostty.enable = true;
 
   nix.gc = {
     automatic = true;
