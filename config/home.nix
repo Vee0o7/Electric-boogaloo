@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./stylix/stylix.nix
     ./yazi/yazi.nix
   ];
   home.username = "viv";

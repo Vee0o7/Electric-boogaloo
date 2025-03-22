@@ -2,6 +2,7 @@
 {
   programs.yazi.enable = true;
   home.file = {
-    ".config/yazi".source = ./config;
+    ".config/yazi/keymap.toml".source = ./config/keymap.toml;
+    ".config/yazi/yazi.toml".source = ./config/yazi.toml;
   };
 }

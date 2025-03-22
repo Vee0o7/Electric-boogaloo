@@ -22,20 +22,6 @@
   viAlias = true;
   vimAlias = true;
 
-  # You can easily change to a different colorscheme.
-  # Add your colorscheme here and enable it.
-  # Don't forget to disable the colorschemes you arent using
-  #
-  # If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-  colorschemes = {
-    # https://nix-community.github.io/nixvim/colorschemes/tokyonight/index.html
-    nord = {
-      enable = true;
-      settings = {
-        disable_background = true;
-      };
-    };
-  };
 
   # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=globals#globals
   globals = {
