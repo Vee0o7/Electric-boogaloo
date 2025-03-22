@@ -22,7 +22,6 @@
     cockatrice
     fastfetch
     tree
-    ghostty
     nix-prefetch-git
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -32,6 +31,7 @@
     # '')
   ];
 
+  programs.ghostty.enable = true;
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
   home.file = {
   };
