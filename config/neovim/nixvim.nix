@@ -62,9 +62,6 @@
     # Don't show the mode, since it's already in the statusline
     showmode = false;
 
-    # Enable transparent background
-    transparent = true;
-
     # Enable break indent
     breakindent = true;
 
