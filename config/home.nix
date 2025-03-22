@@ -34,7 +34,6 @@
 
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
   home.file = {
-    ".config/ghostty".source = ./ghostty;
   };
 
   programs.bash = {
