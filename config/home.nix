@@ -16,7 +16,6 @@
 
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
-    discord
     steam
     lutris
     cockatrice
@@ -31,7 +30,6 @@
     # '')
   ];
 
-  programs.kitty.enable = true;
   programs.ghostty.enable = true;
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
   home.file = {
@@ -55,7 +53,7 @@
     aliases = {
       co = "checkout";
       ci = "commit";
-      cm = "commit --allow-empty";
+      ca = "commit --amend";
     };
   };
 
