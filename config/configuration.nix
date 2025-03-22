@@ -5,7 +5,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [./users.nix];
+  imports = [./users.nix ./steam.nix];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -86,6 +86,15 @@
     curl
     home-manager
   ];
+
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
+      "\${HOME}/.steam/root/compatibilitytools.d";
+  };
+  programs.steam.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+
+  programs.gamemode.enable = true;
 
   nix.gc = {
     automatic = true;

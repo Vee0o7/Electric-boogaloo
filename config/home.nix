@@ -23,6 +23,7 @@
     tree
     ghostty
     nix-prefetch-git
+    protonup
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
@@ -30,6 +31,11 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+  
+  home.sessionVariables = {
+      STEAM_EXTRA_COMPAT_TOOLS_PATHS =
+        "\\\${HOME}/.steam/root/compatibilitytools.d";
+    };
 
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
   home.file = {
