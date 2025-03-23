@@ -11,5 +11,7 @@
       terminal = 0.95;
       applications = 0.95;
     };
+    targets.floorp.profileNames = [ "viv" ];
+    targets.floorp.firefoxGnomeTheme.enable = true;
   };
 }
