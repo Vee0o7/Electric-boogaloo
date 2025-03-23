@@ -23,8 +23,8 @@
     tree
     nix-prefetch-git
     protonup
-    vencord
-    discord
+    vesktop
+    floorp
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
