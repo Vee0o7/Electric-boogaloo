@@ -24,7 +24,6 @@
     nix-prefetch-git
     protonup
     vesktop
-    floorp
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
@@ -37,6 +36,8 @@
       STEAM_EXTRA_COMPAT_TOOLS_PATHS =
         "\\\${HOME}/.steam/root/compatibilitytools.d";
     };
+
+  programs.floorp.enable = true;
 
   programs.ghostty.enable = true;
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
