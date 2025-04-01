@@ -20,8 +20,7 @@
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/uwunicorn.yaml";
     image = ../../background-2.jpg;
     cursor = {
-      package = import ./rose-pine-cursors.nix { inherit pkgs; };
-      name = "Bibata-Original-Rose-Pine-Moon";
+      package = pkgs.rose-pine-cursor;
     };
     polarity = "dark";
     opacity = {
