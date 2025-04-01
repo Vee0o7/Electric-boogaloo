@@ -12,6 +12,6 @@ pkgs.stdenv.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share
-    cp -R ./* $out/share/
+    cp -R . $out/share/
     '';
 }
