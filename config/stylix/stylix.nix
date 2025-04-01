@@ -21,6 +21,7 @@
     image = ../../background-2.jpg;
     cursor = {
       package = pkgs.rose-pine-cursor;
+      name = "BreezeX-RosePine";
     };
     polarity = "dark";
     opacity = {
