@@ -19,10 +19,11 @@
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/tarot.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/uwunicorn.yaml";
     image = ../../background-2.jpg;
-    # cursor = {
-    #   package = pkgs.rose-pine-cursor;
-    #   name = "BreezeX-RosePine";
-    # };
+    cursor = {
+      package = pkgs.rose-pine-cursor;
+      name = "BreezeX-RosePine-Linux";
+      size = 28;
+    };
     polarity = "dark";
     opacity = {
       terminal = 0.95;

@@ -11,7 +11,7 @@ pkgs.stdenv.mkDerivation {
   };
 
   installPhase = ''
-    mkdir -p $out/share
-    cp -R . $out/share/
+    mkdir -p $out/share/icons/
+    cp -R ./* $out/share/icons/
     '';
 }
