@@ -4,7 +4,7 @@
   stylix = {
     autoEnable = true;
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rebecca.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
     image = ../../background.jpg;
     polarity = "dark";
     opacity = {
