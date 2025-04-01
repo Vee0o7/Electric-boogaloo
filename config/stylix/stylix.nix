@@ -18,7 +18,7 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/tarot.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/uwunicorn.yaml";
-    image = ../../background.jpg;
+    image = ../../background.png;
     polarity = "dark";
     opacity = {
       terminal = 0.95;
