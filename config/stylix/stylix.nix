@@ -4,7 +4,7 @@
   stylix = {
     autoEnable = true;
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/windows-nt-light.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rebecca.yaml";
     image = ../../background.jpg;
     polarity = "dark";
     opacity = {
