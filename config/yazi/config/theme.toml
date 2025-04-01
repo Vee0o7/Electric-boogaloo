@@ -1,6 +1,6 @@
-[status]
-# options: 8e95a4, 81a1c1, 3b4252
-separator_style = {fg = "#81a1c1", bg = "#3b4252"}
-mode_normal = { fg = "#3b4252", bg = "#81a1c1", bold = true }  # Dark gray on Blue
-mode_select = { fg = "#3b4252", bg = "#81a1c1", bold = true }  # Dark gray on Blue
-mode_unset = { fg = "#3b4252", bg = "#81a1c1", bold = true }  # Dark gray on Blue
+# [status]
+# # options: 8e95a4, 81a1c1, 3b4252
+# separator_style = {fg = "#81a1c1", bg = "#3b4252"}
+# mode_normal = { fg = "#3b4252", bg = "#81a1c1", bold = true }  # Dark gray on Blue
+# mode_select = { fg = "#3b4252", bg = "#81a1c1", bold = true }  # Dark gray on Blue
+# mode_unset = { fg = "#3b4252", bg = "#81a1c1", bold = true }  # Dark gray on Blue

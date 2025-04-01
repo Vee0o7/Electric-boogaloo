@@ -12,6 +12,6 @@
       applications = 0.95;
     };
     targets.floorp.profileNames = [ "viv" ];
-    #targets.floorp.colorTheme.enable = true;
+    targets.floorp.firefoxGnomeTheme.enable = true;
   };
 }
