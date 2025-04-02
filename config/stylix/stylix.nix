@@ -20,7 +20,7 @@ in
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/purpledream.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/tarot.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/uwunicorn.yaml";
-    image = ../../ascii.png;
+    image = ../../such-sweet-poetry_rosepine-nt.png;
     base16Scheme = theme;
 
     cursor = {
@@ -32,6 +32,8 @@ in
     opacity = {
       terminal = 0.95;
       applications = 0.95;
+      desktop = 0.95;
+      popups = 0.95;
     };
     targets.floorp.profileNames = [ "viv" ];
     targets.floorp.firefoxGnomeTheme.enable = true;
