@@ -15,7 +15,7 @@
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/pandora.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/purpledream.yaml";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/tarot.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/uwunicorn.yaml";
     image = ../../background-2.jpg;
