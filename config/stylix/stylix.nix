@@ -20,9 +20,8 @@ in
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/purpledream.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/tarot.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/uwunicorn.yaml";
-    # image = ../../background-2.jpg;
+    image = ../../background.jpg;
     base16Scheme = theme;
-    image = config.lib.stylix.pixel "base0A";
 
     cursor = {
       package = pkgs.rose-pine-cursor;
