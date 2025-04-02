@@ -1,5 +1,8 @@
-{pkgs, ...}:
+{pkgs, config, ...}:
 
+let 
+  theme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
+in
 {
   stylix = {
     autoEnable = true;
@@ -15,10 +18,12 @@
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/pandora.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/purpledream.yaml";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/tarot.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/uwunicorn.yaml";
-    image = ../../background-2.jpg;
+    # image = ../../background-2.jpg;
+    base16Scheme = theme;
+    image = config.lib.stylix.pixel "base0A";
+
     cursor = {
       package = pkgs.rose-pine-cursor;
       name = "BreezeX-RosePine-Linux";
