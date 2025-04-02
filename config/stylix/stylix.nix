@@ -20,7 +20,7 @@ in
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/purpledream.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/tarot.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/uwunicorn.yaml";
-    image = ../../background.jpg;
+    image = ../../ascii.png;
     base16Scheme = theme;
 
     cursor = {
