@@ -24,6 +24,11 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  fileSystems."/run/media/viv/steamDrive" = {
+    device = "/dev/disk/by-uuid/8b05993b-b61f-4273-8cc1-5571d2e9e8ad";
+    fsType = "ext4";
+  };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/66cb004d-6e40-46dd-a9c5-5f6aa7bc4aa7"; }
     ];
