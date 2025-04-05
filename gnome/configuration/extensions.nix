@@ -31,8 +31,8 @@
     "org/gnome/shell/extensions/dash-to-panel" = {
         panel-positions = ''{"0":"TOP"}'';
         panel-sizes = ''{"0":32}'';
-        trans-use-custom-opacity = false;
-        trans-panel-opacity = 0.1;
+        trans-use-custom-opacity = true;
+        trans-panel-opacity = 0.0;
         trans-use-custom-gradient = false;
         trans-gradient-top-opacity = 0.25;
         trans-gradient-bottom-opacity = 0.0;
