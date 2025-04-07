@@ -52,6 +52,9 @@
       ".." = "cd ..";
       "y" = "yazi";
     };
+    bashrcExtra = ''
+      eval "$(direnv hook bash)"
+    '';
   };
 
   programs.git = {
