@@ -33,7 +33,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-  
   home.sessionVariables = {
       STEAM_EXTRA_COMPAT_TOOLS_PATHS =
         "\\\${HOME}/.steam/root/compatibilitytools.d";
@@ -42,6 +41,7 @@
   programs.floorp.enable = true;
 
   programs.ghostty.enable = true;
+  programs.direnv.enable = true;
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
   home.file = {
   };
