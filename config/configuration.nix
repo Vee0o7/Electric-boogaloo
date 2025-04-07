@@ -73,6 +73,9 @@
   
   # Enable Flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.extraOptions = ''
+      trusted-users = root viv
+  '';
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
