@@ -74,7 +74,7 @@ else
 fi
 
 echo "working..."
-script -qfa -c "$command"  -O >(ansifilter >> switch.log)
+script -qfa -c "$command"  -O >(ansifilter >> "$SCRIPT_DIR/switch.log")
 gen=$($gencmd | $gengrep)
 if [[ "$gen" != "$(git log -1 --pretty=%B)" ]]; then
         git commit -am "$gen"
