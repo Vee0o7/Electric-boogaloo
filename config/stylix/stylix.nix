@@ -4,6 +4,8 @@ let
   theme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
 in
 {
+  fonts.fontconfig.enable = true;
+
   stylix = {
     autoEnable = true;
     enable = true;
@@ -44,7 +46,7 @@ in
       };
       monospace = {
         package = pkgs.fira-code-nerdfont;
-        name = "FiraCode";
+        name = "FiraCode Nerd Font";
       };
     };
     targets.floorp.profileNames = [ "viv" ];
