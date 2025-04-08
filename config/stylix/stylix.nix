@@ -9,21 +9,8 @@ in
   stylix = {
     autoEnable = true;
     enable = true;
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-plateau.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-lakeside.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-cave.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-heath.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/darkviolet.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/pandora.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/purpledream.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/tarot.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/uwunicorn.yaml";
-    image = ../../background.jpg;
     base16Scheme = theme;
+    image = ./backgrounds/background.png;
 
     cursor = {
       package = pkgs.rose-pine-cursor;
@@ -48,3 +35,18 @@ in
     targets.floorp.firefoxGnomeTheme.enable = true;
   };
 }
+
+#################### potential themes ####################
+# "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
+# "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
+# "${pkgs.base16-schemes}/share/themes/atelier-plateau.yaml";
+# "${pkgs.base16-schemes}/share/themes/atelier-lakeside.yaml";
+# "${pkgs.base16-schemes}/share/themes/atelier-cave.yaml";
+# "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+# "${pkgs.base16-schemes}/share/themes/atelier-heath.yaml";
+# "${pkgs.base16-schemes}/share/themes/darkviolet.yaml";
+# "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+# "${pkgs.base16-schemes}/share/themes/pandora.yaml";
+# "${pkgs.base16-schemes}/share/themes/purpledream.yaml";
+# "${pkgs.base16-schemes}/share/themes/tarot.yaml";
+# "${pkgs.base16-schemes}/share/themes/uwunicorn.yaml";
