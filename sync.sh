@@ -73,7 +73,7 @@ else
         echo "no changes to commit"
 fi
 echo "working..."
-script -qf -c "$command"  -O >(ansifilter >> switch.log) || false
+script -qfa -c "$command"  -O >(ansifilter >> switch.log) || false
 gen=$($gencmd | $gengrep)
 git commit -am "$gen"
 echo Done.
