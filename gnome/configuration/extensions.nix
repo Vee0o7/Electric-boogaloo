@@ -59,15 +59,17 @@
       window-gap-size =  lib.hm.gvariant.mkUint32 0;
       window-gap-hidden-on-single = true;
     };
-    # "org/gnome/shell/extensions/blur-my-shell" = {
-    #   panel = {blur = false;};
-    #   overview = {blur = false;};
-    #   applications = {
-    #     blur-on-overview = false;
-    #     opacity = 244;
-    #     enable-all = true;
-    #     sigma = lib.hm.gvariant.mkUint32 0;
-    #   };
-    # };
+    "org/gnome/shell/extensions/blur-my-shell/panel" = {
+      blur = false;
+    };
+    "org/gnome/shell/extensions/blur-my-shell/overview" = {
+      blur = false;
+    };
+    "org/gnome/shell/extensions/blur-my-shell/panel/applications" = {
+      blur-on-overview = false;
+      opacity = 244;
+      enable-all = true;
+      sigma = 0;
+    };
   };
 }
