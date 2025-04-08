@@ -50,6 +50,7 @@ in
       window-focus-left = ["<Super>h"];
       window-focus-right = ["<Super>l"];
       window-focus-up = ["<Super>k"];
+      con-stacked-layout-toggle = [];
     };
 
     # custom bindings #
