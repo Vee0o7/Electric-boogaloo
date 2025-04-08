@@ -36,14 +36,14 @@ in
       applications = 0.95;
     };
     fonts = {
-      serif = {
-        package = pkgs.fira-sans;
-        name = "Fira Sans";
-      };
-      sansSerif = {
-        package = pkgs.fira-sans;
-        name = "Fira Sans";
-      };
+      # serif = {
+      #   package = pkgs.fira-sans;
+      #   name = "Fira Sans";
+      # };
+      # sansSerif = {
+      #   package = pkgs.fira-sans;
+      #   name = "Fira Sans";
+      # };
       monospace = {
         package = pkgs.fira-code-nerdfont;
         name = "FiraCode Nerd Font";
