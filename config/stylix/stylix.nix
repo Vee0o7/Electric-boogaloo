@@ -38,12 +38,9 @@ in
     fonts = {
       serif = {
         package = pkgs.fira-sans;
-        name = "Fira Sans";
+        name = "Fira Sans 12";
       };
-      sansSerif = {
-        package = pkgs.fira-sans;
-        name = "Fira Sans";
-      };
+      sansSerif = config.stylix.fonts.serif;
       monospace = {
         package = pkgs.fira-code-nerdfont;
         name = "FiraCode Nerd Font";
