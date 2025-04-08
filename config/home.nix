@@ -36,9 +36,6 @@
       STEAM_EXTRA_COMPAT_TOOLS_PATHS =
         "\\\${HOME}/.steam/root/compatibilitytools.d";
     };
-  home.sessionPath = [
-    "$HOME/.dotfiles/bin"
-  ];
 
   programs.floorp.enable = true;
 

@@ -7,5 +7,6 @@
 clear_str=$'\r'"$(printf "%$((COLUMNS-2))s" ' ')"$'\r'
 
 while IFS= read -r line; do
+  [[ -n "$line" ]] || continue
   printf '%s%s' "$clear_str" "${line:0:$COLUMNS}"
 done
