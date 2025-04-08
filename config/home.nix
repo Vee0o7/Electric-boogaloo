@@ -13,7 +13,6 @@
   fonts.fontconfig.enable = true;
 
   nixpkgs.config.allowUnfree = true;
-  helosjaodj = 2;
 
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
