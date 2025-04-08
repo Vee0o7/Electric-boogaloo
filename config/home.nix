@@ -40,7 +40,13 @@
 
   programs.floorp.enable = true;
 
-  programs.ghostty.enable = true;
+  programs.ghostty = {
+    enable = true;
+    settings = ''
+      window-decoration = true
+      mouse-hide-while-typing = true;
+      '';
+  };
   programs.direnv.enable = true;
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
   home.file = {
