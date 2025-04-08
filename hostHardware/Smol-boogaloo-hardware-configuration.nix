@@ -31,6 +31,10 @@
     [ { device = "/dev/disk/by-uuid/71204be4-3c8d-490f-9ab1-ac70af6f1ccb"; }
     ];
 
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "viv";
+  };
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
