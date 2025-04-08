@@ -28,7 +28,9 @@
     "org/gnome/shell/extensions/just-perfection".window-picker-icon = false;
     "org/gnome/shell/extensions/rounded-window-corners-reborn" = {
       skip-libadwaita-app = false;
-      global-rounded-corner-settings = ''{'padding': <{'left': uint32 1, 'right': 1, 'top': 1, 'bottom': 1}>, 'keepRoundedCorners': <{'maximized': false, 'fullscreen': false}>, 'borderRadius': <uint32 4>, 'smoothing': <0.0>, 'borderColor': <(0.5, 0.5, 0.5, 1.0)>, 'enabled': <true>}'';
+      global-rounded-corner-settings = ''{'padding': <{'left': uint32 0, 'right': 0, 'top': 1, 'bottom': 1}>, 'keepRoundedCorners': <{'maximized': false, 'fullscreen': false}>, 'borderRadius': <uint32 10>, 'smoothing': <0.0>, 'borderColor': <(0.5, 0.5, 0.5, 1.0)>, 'enabled': <true>}'';
+      focused-shadow = ''{'verticalOffset': 4, 'horizontalOffset': 0, 'blurOffset': 0, 'spreadRadius': 0, 'opacity': 0}'';
+      unfocused-shadow = ''{'verticalOffset': 4, 'horizontalOffset': 0, 'blurOffset': 0, 'spreadRadius': 0, 'opacity': 0}'';
     };
     "org/gnome/shell/extensions/dash-to-panel" = {
         panel-positions = ''{"0":"TOP"}'';
