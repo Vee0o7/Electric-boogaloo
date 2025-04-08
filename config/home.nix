@@ -63,6 +63,7 @@
     userEmail = "114813444+Vee0o7@users.noreply.github.com";
     extraConfig = {
       init.defaultBranch = "main";
+      pull.rebase = false;
     };
     aliases = {
       co = "checkout";
