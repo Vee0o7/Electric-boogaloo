@@ -1,13 +1,14 @@
 {pkgs, lib, ...}:
 {
-    home.packages = with pkgs; [
-      gnomeExtensions.dash-to-panel
-      gnomeExtensions.vertical-workspaces
-      gnomeExtensions.forge
-      gnomeExtensions.rounded-window-corners-reborn
-      gnomeExtensions.just-perfection
-      # gnomeExtensions.user-themes
-    ];
+  home.packages = with pkgs; [
+    gnomeExtensions.dash-to-panel
+    gnomeExtensions.vertical-workspaces
+    gnomeExtensions.forge
+    gnomeExtensions.rounded-window-corners-reborn
+    gnomeExtensions.just-perfection
+    gnomeExtensions.user-themes
+    gnomeExtensions.blur-my-shell
+  ];
 
   dconf.settings = {
     "org/gnome/shell" = {
@@ -20,7 +21,8 @@
         "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
         "rounded-window-corners@fxgn"
         "just-perfection-desktop@just-perfection"
-        # "user-theme@gnome-shell-extensions.gcampax.github.com"
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
+        "blur-my-shell@aunetx"
       ];
     };
     "org/gnome/shell/extensions/just-perfection".window-picker-icon = false;
@@ -54,8 +56,18 @@
       tabbed-tiling-mode-enabled = false;
       focus-border-toggle = false;
       dnd-center-layout = "swap";
-      window-gap-size =  lib.hm.gvariant.mkUint32 2;
+      window-gap-size =  lib.hm.gvariant.mkUint32 0;
       window-gap-hidden-on-single = true;
     };
+    # "org/gnome/shell/extensions/blur-my-shell" = {
+    #   panel = {blur = false;};
+    #   overview = {blur = false;};
+    #   applications = {
+    #     blur-on-overview = false;
+    #     opacity = 244;
+    #     enable-all = true;
+    #     sigma = lib.hm.gvariant.mkUint32 0;
+    #   };
+    # };
   };
 }
