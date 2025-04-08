@@ -55,6 +55,9 @@
     # and elegantly composed help section, `:help lsp-vs-treesitter`
     #
     # https://nix-community.github.io/nixvim/plugins/lsp/index.html
+    
+    # a faster implementation of typescript lsp for neovim
+    plugins.typescript-tools.enable = true;
     plugins.lsp = {
       enable = true;
 
@@ -66,12 +69,14 @@
       #  - filetypes: Override the default list of associated filetypes for the server
       #  - capabilities: Override fields in capabilities. Can be used to disable certain LSP features.
       #  - settings: Override the default settings passed when initializing the server.
-      #        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+      #        For example, to see the options for `lua_ls`, you could go to: https://lualsp.github.io/wiki/settings/
       servers = {
         hls.enable = true;
         hls.installGhc = true;
         nixd.enable = true;
         bashls.enable = true;
+        basedpyright.enable = true;
+
         lua_ls = {
           enable = true;
 
