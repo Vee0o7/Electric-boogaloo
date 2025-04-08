@@ -37,7 +37,7 @@
         "\\\${HOME}/.steam/root/compatibilitytools.d";
     };
   home.sessionPath = [
-    "../bin"
+    "$HOME/.dotfiles/bin"
   ];
 
   programs.floorp.enable = true;
