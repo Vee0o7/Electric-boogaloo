@@ -26,7 +26,7 @@
     devenv
     ansifilter
     expect
-    gimp
+    gimp-with-plugins
     python3
     bottles
     # # You can also create simple shell scripts directly inside your
