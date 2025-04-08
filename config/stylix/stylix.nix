@@ -44,10 +44,10 @@ in
       #   package = pkgs.fira-sans;
       #   name = "Fira Sans";
       # };
-      monospace = {
-        package = pkgs.fira-code-nerdfont;
-        name = "FiraCode Nerd Font";
-      };
+      # monospace = {
+      #   package = pkgs.fira-code-nerdfont;
+      #   name = "FiraCode Nerd Font";
+      # };
     };
     targets.floorp.profileNames = [ "viv" ];
     targets.floorp.firefoxGnomeTheme.enable = true;
