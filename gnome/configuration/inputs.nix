@@ -34,6 +34,7 @@ in
 
     "org/gnome/shell/keybindings" = keybinds;
     "org/gnome/desktop/wm/keybindings" = keybinds;
+    "org/gnome/mutter/wayland/keybindings".restore-shortcuts = [];
 
     "org/gnome/desktop/peripherals/touchpad".natural-scroll = false;
 

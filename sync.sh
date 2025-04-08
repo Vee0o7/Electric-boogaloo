@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+cd "$SCRIPT_DIR" || exit
 true > switch.log
 wm="gnome"
 rebuild="false"
@@ -64,8 +65,6 @@ if [[ "$rebuild" = "true" ]]; then
         gengrep="grep current"
 fi
 
-set -e
-pushd "$SCRIPT_DIR"
 gdiff=$(git diff -U0)
 if [[ "$gdiff" != "" ]]; then
         echo "$gdiff" | $EDITOR
@@ -73,11 +72,8 @@ else
         echo "no changes to commit"
 fi
 
-echo "working..."
 script -qfa -c "$command"  -O >(ansifilter >> "$SCRIPT_DIR/switch.log")
 gen=$($gencmd | $gengrep)
 if [[ "$gen" != "$(git log -1 --pretty=%B)" ]]; then
         git commit -am "$gen"
 fi
-echo Done.
-popd
