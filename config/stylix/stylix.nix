@@ -10,7 +10,7 @@ in
     autoEnable = true;
     enable = true;
     base16Scheme = theme;
-    image = ./backgrounds/background.png;
+    image = ./backgrounds/background-purple.png;
 
     cursor = {
       package = pkgs.rose-pine-cursor;
