@@ -13,6 +13,7 @@
   fonts.fontconfig.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+  lets-breaksomething = ../../undefined.bak;
 
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
