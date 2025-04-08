@@ -73,7 +73,7 @@ else
         echo "no changes to commit"
 fi
 echo "working..."
-unbuffer $command >(cat) |& tee switch.log || false
+script -efq -c $command >(cat) |& tee switch.log || false
 gen=$($gencmd | $gengrep)
 git commit -am "$gen"
 echo Done.
