@@ -58,7 +58,7 @@
       tabbed-tiling-mode-enabled = false;
       focus-border-toggle = false;
       dnd-center-layout = "swap";
-      window-gap-size =  lib.hm.gvariant.mkUint32 0;
+      window-gap-size =  lib.hm.gvariant.mkUint32 1;
       window-gap-hidden-on-single = true;
     };
     "org/gnome/shell/extensions/blur-my-shell/panel" = {

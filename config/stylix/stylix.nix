@@ -22,7 +22,7 @@ in
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/purpledream.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/tarot.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/uwunicorn.yaml";
-    image = ../../such-sweet-poetry_rosepine-nt.png;
+    image = ../../background.jpg;
     base16Scheme = theme;
 
     cursor = {
