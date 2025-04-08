@@ -32,8 +32,20 @@ in
     opacity = {
       terminal = 0.95;
       applications = 0.95;
-      desktop = 0.95;
-      popups = 0.95;
+    };
+    fonts = {
+      serif = {
+        package = pkgs.fira-sans;
+        name = "Fira Sans";
+      };
+      sansSerif = {
+        package = pkgs.fira-sans;
+        name = "Fira Sans";
+      };
+      monospace = {
+        package = pkgs.fira-code-nerdfont;
+        name = "FiraCode";
+      };
     };
     targets.floorp.profileNames = [ "viv" ];
     targets.floorp.firefoxGnomeTheme.enable = true;

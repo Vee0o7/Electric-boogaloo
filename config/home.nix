@@ -10,12 +10,9 @@
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  fonts.fontconfig.enable = true;
-
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
     steam
     lutris
     cockatrice

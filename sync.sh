@@ -75,6 +75,8 @@ fi
 echo "working..."
 script -qfa -c "$command"  -O >(ansifilter >> switch.log)
 gen=$($gencmd | $gengrep)
-git commit -am "$gen"
+if [[ "$gen" != "$(git log -1 --pretty=%B)" ]]; then
+        git commit -am "$gen"
+fi
 echo Done.
 popd
