@@ -21,6 +21,7 @@ let
       show-screenshot-ui = ["<Shift><Super>s"];
       screenshot-window = ["<Alt>s"];
       close = ["<Super>q"];
+      screensave = ["<Super>Escape"];
     };
 in
 
