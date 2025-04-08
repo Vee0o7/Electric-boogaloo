@@ -13,6 +13,7 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     steam
     lutris
     cockatrice
