@@ -8,6 +8,7 @@
     gnomeExtensions.just-perfection
     gnomeExtensions.user-themes
     gnomeExtensions.blur-my-shell
+    gnomeExtensions.appindicator
   ];
 
   dconf.settings = {
@@ -23,6 +24,7 @@
         "just-perfection-desktop@just-perfection"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
         "blur-my-shell@aunetx"
+        "appindicatorsupport@rgcjonas.gmail.com"
       ];
     };
     "org/gnome/shell/extensions/just-perfection".window-picker-icon = false;
