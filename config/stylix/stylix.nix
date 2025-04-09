@@ -19,8 +19,6 @@ in
     enable = true;
     base16Scheme = theme;
     override = {
-      base01 = colors.palette.base00;
-      base00 = colors.palette.base01;
     };
     targets.gtk.extraCss = ''
     '';

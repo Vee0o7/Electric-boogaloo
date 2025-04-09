@@ -47,7 +47,6 @@
   services.xserver.desktopManager.gnome.enable = true;
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
-  services.xserver.enableTearFree = true;
 
   services.xserver.excludePackages = [ pkgs.xterm ];
   environment.gnome.excludePackages = with pkgs; [
