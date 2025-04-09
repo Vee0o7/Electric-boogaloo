@@ -20,9 +20,7 @@ in
       name = "BreezeX-RosePine-Linux";
       size = 28;
     };
-    polarity = "dark";
-    opacity = {
-    };
+    # polarity = "dark";
     fonts = {
       serif = {
         package = pkgs.fira-sans;
