@@ -2,6 +2,7 @@
 
 let 
   theme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
+  # accent colors are done separately with a custom gnome-shell (if using gnome)
   fromYAML = yaml:
     builtins.fromJSON (builtins.readFile (pkgs.stdenv.mkDerivation {
       name = "fromYAML";
@@ -18,7 +19,7 @@ in
     enable = true;
     base16Scheme = theme;
     override = {
-      base01 = colors.palette.base00;
+      # base01 = colors.palette.base00;
     };
     targets.gtk.extraCss = ''
     '';
