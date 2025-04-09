@@ -2,6 +2,13 @@
 
 let 
   theme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
+  fromYAML = yaml:
+    builtins.fromJSON (builtins.readFile (pkgs.stdenv.mkDerivation {
+      name = "fromYAML";
+      phases = [ "buildPhase" ];
+      buildPhase = "echo '${yaml}' | ${pkgs.yaml2json}/bin/yaml2json > $out";
+    }));
+    colors = (fromYAML (builtins.readFile theme));
 in
 {
   fonts.fontconfig.enable = true;
@@ -11,8 +18,11 @@ in
     enable = true;
     base16Scheme = theme;
     override = {
-      base01 = "232136";
+      base01 = colors.palette.base00;
     };
+    targets.gtk.extraCss = ''
+      @define-color accent_color = ${colors.palette.base0A};
+    '';
     image = ./backgrounds/floatingIslands.png;
 
     cursor = {
