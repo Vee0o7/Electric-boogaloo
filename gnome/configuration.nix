@@ -50,7 +50,7 @@
     # nixos-background-info This can't be excluded since it's defined locally. So even if we removed all GNOME backgrounds it seems we have to keep the NixOS one.
     gnome-backgrounds
     gnome-bluetooth
-    gnome-color-manager
+    # gnome-color-manager
     # gnome-control-center
     gnome-shell-extensions
     gnome-themes-extra
