@@ -1,7 +1,7 @@
 {pkgs, config, ...}:
 
 let 
-  theme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml";
+  theme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
 in
 {
   fonts.fontconfig.enable = true;
