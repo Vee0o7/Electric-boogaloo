@@ -10,7 +10,7 @@ in
     autoEnable = true;
     enable = true;
     base16Scheme = theme;
-    image = ./backgrounds/themed-wallpaperhaven-floatingislands.png;
+    image = ./backgrounds/background-purple.png;
 
     cursor = {
       package = pkgs.rose-pine-cursor;
