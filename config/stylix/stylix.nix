@@ -21,7 +21,6 @@ in
       base01 = colors.palette.base00;
     };
     targets.gtk.extraCss = ''
-      @define-color accent_color = ${colors.palette.base0A};
     '';
     image = ./backgrounds/floatingIslands.png;
 
