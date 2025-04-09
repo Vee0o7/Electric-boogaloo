@@ -9,10 +9,11 @@
   nixpkgs.overlays = [
     (final: prev: {
       gnome-shell = prev.gnome-shell.overrideAttrs (oldAttrs: {
-          postPatch = prev.postPatch + ''
+          postPatch = oldAttrs.postPatch + ''
             
-            sed 's/#define ACCENT_COLOR_BLUE   "#3584e4"/#define ACCENT_COLOR_BLUE   "#c4a7e7/"
+            sed -i 's/#define ACCENT_COLOR_BLUE   \"#3584e4\"/#define ACCENT_COLOR_BLUE   \"#c4a7e7\"/' src/st/st-theme-context.c
           '';
+        buildInputs = oldAttrs.buildInputs ++ [ pkgs.gnused ];
       });
       mutter = prev.mutter.overrideAttrs (oldAttrs: {
         # GNOME dynamic triple buffering (huge performance improvement)
