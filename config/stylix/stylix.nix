@@ -10,6 +10,9 @@ in
     autoEnable = true;
     enable = true;
     base16Scheme = theme;
+    override = {
+      base01 = "232136";
+    };
     image = ./backgrounds/floatingIslands.png;
 
     cursor = {
