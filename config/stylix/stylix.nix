@@ -41,7 +41,7 @@ in
       base02 = palette.color2;
       base03 = palette.color3;
       base04 = palette.color4;
-      base05 = palette.color5;
+      base05 = palette.color15;
       base06 = palette.color6;
       base07 = palette.color7;
       base08 = palette.color8;
