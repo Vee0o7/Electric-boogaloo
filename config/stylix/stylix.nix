@@ -22,24 +22,24 @@ in
     autoEnable = true;
     enable = true;
     # accent colors are done separately with a custom gnome-shell (if using gnome)
-    # base16Scheme = {
-    #   base00 = palette.color0;
-    #   base01 = palette.color1;
-    #   base02 = palette.color2;
-    #   base03 = palette.color3;
-    #   base04 = palette.color4;
-    #   base05 = palette.color5;
-    #   base06 = palette.color6;
-    #   base07 = palette.color7;
-    #   base08 = palette.color8;
-    #   base09 = palette.color9;
-    #   base0A = palette.color10;
-    #   base0B = palette.color11;
-    #   base0C = palette.color12;
-    #   base0D = palette.color13;
-    #   base0E = palette.color14;
-    #   base0F = palette.color15;
-    # };
+    base16Scheme = {
+      base00 = palette.color0;
+      base01 = palette.color1;
+      base02 = palette.color2;
+      base03 = palette.color3;
+      base04 = palette.color4;
+      base05 = palette.color5;
+      base06 = palette.color6;
+      base07 = palette.color7;
+      base08 = palette.color8;
+      base09 = palette.color9;
+      base0A = palette.color10;
+      base0B = palette.color11;
+      base0C = palette.color12;
+      base0D = palette.color13;
+      base0E = palette.color14;
+      base0F = palette.color15;
+    };
     override = {
     };
     targets.gtk.extraCss = ''
