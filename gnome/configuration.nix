@@ -11,7 +11,7 @@
       gnome-shell = prev.gnome-shell.overrideAttrs (oldAttrs: {
           postPatch = oldAttrs.postPatch + ''
             
-            sed -i 's/#define ACCENT_COLOR_BLUE   \"#3584e4\"/#define ACCENT_COLOR_BLUE   \"#ac5485\"/' src/st/st-theme-context.c
+            sed -i 's/#define ACCENT_COLOR_BLUE   \"#3584e4\"/#define ACCENT_COLOR_BLUE   \"#${config.stylix.generated.palette.base0D}\"/' src/st/st-theme-context.c
           '';
         buildInputs = oldAttrs.buildInputs ++ [ pkgs.gnused ];
       });
