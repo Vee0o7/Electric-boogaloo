@@ -8,11 +8,12 @@ let
       phases = [ "buildPhase" ];
       buildPhase = "echo '${yaml}' | ${pkgs.yaml2json}/bin/yaml2json > $out";
   }));
-  bg2colors = image:
+  pywal16palette = image:
     builtins.fromJSON (builtins.readFile (pkgs.stdenv.mkDerivation {
       name = "bg2colors";
       nativeBuildInputs = [
         pkgs.imagemagick
+        pkgs.colorz
       ];
       phases = [ "preBuild" "buildPhase" ];
       preBuild = ''
@@ -20,9 +21,12 @@ let
         export CONF_DIR=$(mktemp -d)
         export CACHE_DIR=$(mktemp -d)
       '';
-      buildPhase = "${pkgs.pywal16}/bin/wal -i ${background} && cat $HOME/.cache/wal/colors.json | awk 'NR != 2' > $out";
+      buildPhase = ''
+        ${pkgs.pywal16}/bin/wal -i ${background} --backend colorz
+        cat $HOME/.cache/wal/colors.json | awk 'NR != 2' > $out
+      '';
   }));
-  palette = (bg2colors background).colors;
+  palette = (pywal16palette background).colors;
 in
 {
   fonts.fontconfig.enable = true;
