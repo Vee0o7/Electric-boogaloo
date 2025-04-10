@@ -1,15 +1,19 @@
-{pkgs, config, ...}:
+{pkgs, config, pkgs-unstable, ...}:
 
 let 
-  theme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
-  # accent colors are done separately with a custom gnome-shell (if using gnome)
+  background = ./backgrounds/floatingIslands.png;
   fromYAML = yaml:
     builtins.fromJSON (builtins.readFile (pkgs.stdenv.mkDerivation {
       name = "fromYAML";
       phases = [ "buildPhase" ];
       buildPhase = "echo '${yaml}' | ${pkgs.yaml2json}/bin/yaml2json > $out";
     }));
-    colors = (fromYAML (builtins.readFile theme));
+  bg2colors = (pkgs.stdenv.mkDerivation {
+      name = "bg2colors";
+      phases = [ "buildPhase" ];
+      buildPhase = "${pkgs-unstable.hellwal}/bin/hellwal -m -j -i ${builtins.toPath background} > $out";
+    });
+  palette = (builtins.fromJSON bg2colors).colors;
 in
 {
   fonts.fontconfig.enable = true;
@@ -17,19 +21,37 @@ in
   stylix = {
     autoEnable = true;
     enable = true;
-    base16Scheme = theme;
+    # accent colors are done separately with a custom gnome-shell (if using gnome)
+    # base16Scheme = {
+    #   base00 = palette.color0;
+    #   base01 = palette.color1;
+    #   base02 = palette.color2;
+    #   base03 = palette.color3;
+    #   base04 = palette.color4;
+    #   base05 = palette.color5;
+    #   base06 = palette.color6;
+    #   base07 = palette.color7;
+    #   base08 = palette.color8;
+    #   base09 = palette.color9;
+    #   base0A = palette.color10;
+    #   base0B = palette.color11;
+    #   base0C = palette.color12;
+    #   base0D = palette.color13;
+    #   base0E = palette.color14;
+    #   base0F = palette.color15;
+    # };
     override = {
     };
     targets.gtk.extraCss = ''
     '';
-    image = ./backgrounds/floatingIslands.png;
+    image = background;
 
     cursor = {
       package = pkgs.rose-pine-cursor;
       name = "BreezeX-RosePine-Linux";
       size = 28;
     };
-    # polarity = "dark";
+    polarity = "dark";
     fonts = {
       serif = {
         package = pkgs.fira-sans;
