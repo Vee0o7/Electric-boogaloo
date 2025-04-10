@@ -40,7 +40,7 @@
   ]);
   home.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\\\${HOME}/.steam/root/compatibilitytools.d";
-    PATH = "$PATH:${./../bin}";
+    PATH = "$PATH:${builtins.toPath ./../bin}";
   };
 
   xdg.configFile = {
