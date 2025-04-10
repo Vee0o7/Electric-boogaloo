@@ -37,9 +37,17 @@
     # '')
   ];
   home.sessionVariables = {
-      STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-        "\\\${HOME}/.steam/root/compatibilitytools.d";
-    };
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\\\${HOME}/.steam/root/compatibilitytools.d";
+  };
+
+  xdg.configFile = {
+    "autostart/vesktop.desktop".text = ''
+        [Desktop Entry]
+        Type=Application
+        Exec=vesktop --start-minimized
+        Name=Stylix: enable User Themes extension for GNOME Shell
+      '';
+  };
 
   programs.floorp.enable = true;
 
