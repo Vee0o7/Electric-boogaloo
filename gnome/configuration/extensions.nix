@@ -9,6 +9,7 @@
     gnomeExtensions.user-themes
     gnomeExtensions.blur-my-shell
     gnomeExtensions.appindicator
+    gnomeExtensions.color-picker
   ];
 
   dconf.settings = {
