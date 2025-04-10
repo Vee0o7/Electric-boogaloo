@@ -3,7 +3,7 @@
 let 
   # background = ./backgrounds/floatingIslands.png;
   background = pkgs.fetchurl {
-    url = "https://w.wallhaven.cc/full/ne/wallhaven-neyg5r.jpg";
+    url = "https://w.wallhaven.cc/full/2y/wallhaven-2yp6gg.png";
     sha256 = "sha256-FpGdYX/K0nzjLUXhp3TS01lY66JXl+c1iUZc+WxD8kw=";
   };
   fromYAML = yaml:
