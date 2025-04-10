@@ -1,7 +1,11 @@
 {pkgs, config, pkgs-unstable, ...}:
 
 let 
-  background = ./backgrounds/floatingIslands.png;
+  # background = ./backgrounds/floatingIslands.png;
+  background = pkgs.fetchurl {
+    url = "https://w.wallhaven.cc/full/ne/wallhaven-neyg5r.jpg";
+    sha256 = "sha256-FpGdYX/K0nzjLUXhp3TS01lY66JXl+c1iUZc+WxD8kw=";
+  };
   fromYAML = yaml:
     builtins.fromJSON (builtins.readFile (pkgs.stdenv.mkDerivation {
       name = "fromYAML";
