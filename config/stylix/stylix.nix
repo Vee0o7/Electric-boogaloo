@@ -37,7 +37,7 @@ in
     # accent colors are done separately with a custom gnome-shell (if using gnome)
     base16Scheme = {
       base00 = palette.color0;
-      base01 = palette.color1;
+      base01 = palette.color0;
       base02 = palette.color2;
       base03 = palette.color3;
       base04 = palette.color4;
