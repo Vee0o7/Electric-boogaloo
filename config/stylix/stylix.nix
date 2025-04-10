@@ -11,8 +11,16 @@ let
   bg2colors = image:
     builtins.fromJSON (builtins.readFile (pkgs.stdenv.mkDerivation {
       name = "bg2colors";
-      phases = [ "buildPhase" ];
-      buildPhase = "${pkgs-unstable.hellwal}/bin/hellwal -j -i ${background} | awk 'NR != 2' > $out";
+      nativeBuildInputs = [
+        pkgs.imagemagick
+      ];
+      phases = [ "preBuild" "buildPhase" ];
+      preBuild = ''
+        export HOME=$(mktemp -d)
+        export CONF_DIR=$(mktemp -d)
+        export CACHE_DIR=$(mktemp -d)
+      '';
+      buildPhase = "${pkgs.pywal16}/bin/wal -i ${background} && cat $HOME/.cache/wal/colors.json | awk 'NR != 2' > $out";
   }));
   palette = (bg2colors background).colors;
 in
