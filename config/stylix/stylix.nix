@@ -12,7 +12,7 @@ let
     builtins.fromJSON (builtins.readFile (pkgs.stdenv.mkDerivation {
       name = "bg2colors";
       phases = [ "buildPhase" ];
-      buildPhase = "${pkgs-unstable.hellwal}/bin/hellwal -m -j -i ${background} | awk 'NR != 2' > $out";
+      buildPhase = "${pkgs-unstable.hellwal}/bin/hellwal -j -i ${background} | awk 'NR != 2' > $out";
   }));
   palette = (bg2colors background).colors;
 in
