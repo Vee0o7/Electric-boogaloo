@@ -77,6 +77,9 @@
     bashrcExtra = ''
       eval "$(direnv hook bash)"
     '';
+    initExtra = ''
+      . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+    '';
   };
 
   programs.git = {
