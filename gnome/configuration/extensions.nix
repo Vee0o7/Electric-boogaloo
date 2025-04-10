@@ -26,6 +26,7 @@
         "user-theme@gnome-shell-extensions.gcampax.github.com"
         "blur-my-shell@aunetx"
         "appindicatorsupport@rgcjonas.gmail.com"
+        "color-picker@tuberry"
       ];
     };
     "org/gnome/shell/extensions/just-perfection".window-picker-icon = false;
