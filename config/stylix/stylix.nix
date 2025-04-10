@@ -4,7 +4,7 @@ let
   # background = ./backgrounds/floatingIslands.png;
   background = pkgs.fetchurl {
     url = "https://w.wallhaven.cc/full/2y/wallhaven-2yp6gg.png";
-    sha256 = "sha256-FpGdYX/K0nzjLUXhp3TS01lY66JXl+c1iUZc+WxD8kw=";
+    sha256 = "sha256-//uMITUU6Uv8iok5KgWNv3sC/0I1ElVCEraoI66w8Fg=";
   };
   fromYAML = yaml:
     builtins.fromJSON (builtins.readFile (pkgs.stdenv.mkDerivation {
