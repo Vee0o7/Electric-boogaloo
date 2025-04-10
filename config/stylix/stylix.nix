@@ -7,13 +7,14 @@ let
       name = "fromYAML";
       phases = [ "buildPhase" ];
       buildPhase = "echo '${yaml}' | ${pkgs.yaml2json}/bin/yaml2json > $out";
-    }));
-  bg2colors = (pkgs.stdenv.mkDerivation {
+  }));
+  bg2colors = image:
+    builtins.fromJSON (builtins.readFile (pkgs.stdenv.mkDerivation {
       name = "bg2colors";
       phases = [ "buildPhase" ];
-      buildPhase = "${pkgs-unstable.hellwal}/bin/hellwal -m -j -i ${builtins.toPath background} > $out";
-    });
-  palette = (builtins.fromJSON bg2colors).colors;
+      buildPhase = "${pkgs-unstable.hellwal}/bin/hellwal -m -j -i ${background} | awk 'NR != 2' > $out";
+  }));
+  palette = (bg2colors background).colors;
 in
 {
   fonts.fontconfig.enable = true;
