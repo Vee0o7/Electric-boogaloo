@@ -79,6 +79,15 @@ in
     targets.floorp.profileNames = [ "viv" ];
     targets.floorp.firefoxGnomeTheme.enable = true;
   };
+  nixpkgs.overlays = (final: prev: {
+    gnome-shell = prev.gnome-shell.overrideAttrs (oldAttrs: {
+      postPatch = oldAttrs.postPatch + ''
+        
+        sed -i 's/#define ACCENT_COLOR_BLUE   \"#3584e4\"/#define ACCENT_COLOR_BLUE   \"#${palette.color13}\"/' src/st/st-theme-context.c
+      '';
+      buildInputs = oldAttrs.buildInputs ++ [ pkgs.gnused ];
+    });
+  });
 }
 
 #################### potential themes ####################
