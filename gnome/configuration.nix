@@ -8,6 +8,13 @@
     ];
   nixpkgs.overlays = [
     (final: prev: {
+      gnome-shell = prev.gnome-shell.overrideAttrs (oldAttrs: {
+          postPatch = oldAttrs.postPatch + ''
+            
+            sed -i 's/#define ACCENT_COLOR_BLUE   \"#3584e4\"/#define ACCENT_COLOR_BLUE   \"#ab8853\"/' src/st/st-theme-context.c
+          '';
+        buildInputs = oldAttrs.buildInputs ++ [ pkgs.gnused ];
+      });
       mutter = prev.mutter.overrideAttrs (oldAttrs: {
         # GNOME dynamic triple buffering (huge performance improvement)
         # See https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/1441
