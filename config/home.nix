@@ -40,8 +40,10 @@
   ]);
   home.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\\\${HOME}/.steam/root/compatibilitytools.d";
-    PATH = "$PATH:${builtins.toPath ./../bin}";
   };
+  home.sessionPath = [
+    "$HOME/.dotfiles/bin"
+  ];
 
   xdg.configFile = {
     "autostart/vesktop.desktop".text = ''
