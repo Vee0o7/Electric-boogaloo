@@ -1,8 +1,9 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, nixvim, ... }:
 
 {
   imports = [
     ./yazi/yazi.nix
+    nixvim.homeManagerModules.nixvim
     # ./stylix/home-stylix.nix
   ];
   home.username = "viv";
@@ -12,7 +13,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  home.packages = (with pkgs; [
+  home.packages = with pkgs; [
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     steam
     lutris
@@ -35,9 +36,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-  ]) ++ (with pkgs-unstable; [
-    hellwal
-  ]);
+  ];
   home.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\\\${HOME}/.steam/root/compatibilitytools.d";
   };

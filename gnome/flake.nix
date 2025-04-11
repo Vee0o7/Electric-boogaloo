@@ -35,20 +35,16 @@
           {networking.hostName = "Smol-boogaloo";}
           ./../hostHardware/Smol-boogaloo-hardware-configuration.nix
           stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.viv = ./home.nix;
+              home-manager.backupFileExtension = "backup";
+              home-manager.extraSpecialArgs = {
+                inherit nixvim;
+              };
+            }
         ];
-      };
-    };
-
-    homeConfigurations = {
-      viv = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ 
-          ./home.nix
-          nixvim.homeManagerModules.nixvim
-        ];
-        extraSpecialArgs = {
-          inherit pkgs-unstable;
-        };
       };
     };
   };

@@ -1,4 +1,4 @@
-{pkgs, config, pkgs-unstable, ...}:
+{pkgs, config, ...}:
 
 let 
   # background = ./backgrounds/floatingIslands.png;
