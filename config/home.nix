@@ -73,6 +73,7 @@
       eval "$(direnv hook bash)"
     '';
   };
+  services.xsettingsd.enable = true;
 
   programs.git = {
     enable = true;
