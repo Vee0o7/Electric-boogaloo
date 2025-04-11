@@ -5,7 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  imports = [./users.nix];
+  imports = [
+    ./stylix/stylix.nix
+    ./users.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
