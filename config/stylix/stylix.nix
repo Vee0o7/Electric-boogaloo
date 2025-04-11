@@ -3,8 +3,8 @@
 let 
   # background = ./backgrounds/floatingIslands.png;
   background = pkgs.fetchurl {
-    url = "https://w.wallhaven.cc/full/2y/wallhaven-2yp6gg.png";
-    sha256 = "sha256-//uMITUU6Uv8iok5KgWNv3sC/0I1ElVCEraoI66w8Fg=";
+    url = "https://w.wallhaven.cc/full/3l/wallhaven-3l66qd.png";
+    sha256 = "sha256-2wfvfzXDNEVc/3kBHe+r9JmorTmsNQCXvbhXNGKam7E=";
   };
   fromYAML = yaml:
     builtins.fromJSON (builtins.readFile (pkgs.stdenv.mkDerivation {
@@ -40,6 +40,7 @@ in
     autoEnable = true;
 
     base16Scheme = {
+      name = "pywal colorz theme";
       base00 = palette.color0;
       base01 = palette.color0;
       base02 = palette.color2;
