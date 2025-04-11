@@ -9,18 +9,11 @@
   nixpkgs.overlays = [
     (final: prev: {
       gnome-shell = prev.gnome-shell.overrideAttrs (oldAttrs: {
-          postFixup = oldAttrs.postFixup + ''
+          postPatch = oldAttrs.postPatch + ''
             
-            substituteInPlace \
-              data/theme/gnome-shell-sass/**/*.scss \
-                --replace-quiet '-st-accent-color' '${config.stylix.base16Scheme.base0D}' \
-                --replace-quiet '-st-accent-fg-color' '${config.stylix.base16Scheme.base0D}'
-                # --replace-quiet 'st-transparentize' 'transparentize' \
-                # --replace-quiet 'st-mix' 'mix' \
-                # --replace-quiet 'st-darken' 'darken' \
-                # --replace-quiet 'st-lighten' 'lighten'
+            sed -i 's/#define ACCENT_COLOR_BLUE   \"#......\"/#define ACCENT_COLOR_BLUE   \"${config.stylix.base16Scheme.base0D}\"/' src/st/st-theme-context.c
           '';                                                                               #newcol set to base0D
-        # buildInputs = oldAttrs.buildInputs ++ [ pkgs.gnused ];
+        buildInputs = oldAttrs.buildInputs ++ [ pkgs.gnused ];
       });
       mutter = prev.mutter.overrideAttrs (oldAttrs: {
         # GNOME dynamic triple buffering (huge performance improvement)

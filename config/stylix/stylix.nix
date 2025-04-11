@@ -38,7 +38,7 @@ in
   stylix = {
     enable = true;
     autoEnable = true;
-    # accent colors are done separately with a custom gnome-shell (if using gnome)
+
     base16Scheme = {
       base00 = palette.color0;
       base01 = palette.color0;
