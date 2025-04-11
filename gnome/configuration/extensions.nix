@@ -5,7 +5,6 @@
     gnomeExtensions.vertical-workspaces
     gnomeExtensions.forge
     gnomeExtensions.rounded-window-corners-reborn
-    gnomeExtensions.just-perfection
     gnomeExtensions.user-themes
     gnomeExtensions.blur-my-shell
     gnomeExtensions.appindicator
@@ -22,7 +21,6 @@
         "forge@jmmaranan.com"
         "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
         "rounded-window-corners@fxgn"
-        "just-perfection-desktop@just-perfection"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
         "blur-my-shell@aunetx"
         "appindicatorsupport@rgcjonas.gmail.com"
