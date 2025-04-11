@@ -14,6 +14,7 @@
   home.packages = with pkgs; [
     nerd-fonts.fira-code
     steam
+
     lutris
     cockatrice
     fastfetch

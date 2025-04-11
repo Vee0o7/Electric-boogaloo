@@ -8,6 +8,20 @@
     ];
   nixpkgs.overlays = [
     (final: prev: {
+      gnome-shell = prev.gnome-shell.overrideAttrs (oldAttrs: {
+          postFixup = oldAttrs.postFixup + ''
+            
+            substituteInPlace \
+              data/theme/gnome-shell-sass/**/*.scss \
+                --replace-quiet '-st-accent-color' '${config.stylix.base16Scheme.base0D}' \
+                --replace-quiet '-st-accent-fg-color' '${config.stylix.base16Scheme.base0D}'
+                # --replace-quiet 'st-transparentize' 'transparentize' \
+                # --replace-quiet 'st-mix' 'mix' \
+                # --replace-quiet 'st-darken' 'darken' \
+                # --replace-quiet 'st-lighten' 'lighten'
+          '';                                                                               #newcol set to base0D
+        # buildInputs = oldAttrs.buildInputs ++ [ pkgs.gnused ];
+      });
       mutter = prev.mutter.overrideAttrs (oldAttrs: {
         # GNOME dynamic triple buffering (huge performance improvement)
         # See https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/1441
