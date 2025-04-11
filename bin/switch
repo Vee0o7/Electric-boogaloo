@@ -56,14 +56,9 @@ case "$wm" in
                 ;;
 esac
 
-command="home-manager switch --flake $flake_dir"
-gencmd="home-manager generations"
-gengrep="head -n 1"
-if [[ "$rebuild" = "true" ]]; then
-        command="sudo nixos-rebuild switch --flake $flake_dir"
-        gencmd="nixos-rebuild list-generations"
-        gengrep="grep current"
-fi
+command="sudo nixos-rebuild switch --flake $flake_dir"
+gencmd="nixos-rebuild list-generations"
+gengrep="grep current"
 
 gdiff=$(git diff -U0)
 if [[ "$gdiff" != "" ]]; then

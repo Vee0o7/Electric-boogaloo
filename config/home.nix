@@ -4,7 +4,7 @@
   imports = [
     ./yazi/yazi.nix
     nixvim.homeManagerModules.nixvim
-    ./stylix/home-stylix.nix
+    # ./stylix/home-stylix.nix
   ];
   home.username = "viv";
   home.homeDirectory = "/home/viv";
@@ -35,9 +35,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-  home.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\\\${HOME}/.steam/root/compatibilitytools.d";
-  };
   home.sessionPath = [
     "$HOME/.dotfiles/bin"
   ];
@@ -93,6 +90,4 @@
       ca = "commit --amend";
     };
   };
-
-  programs.home-manager.enable = true;
 }

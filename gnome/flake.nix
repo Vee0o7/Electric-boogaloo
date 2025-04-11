@@ -25,6 +25,15 @@
           {networking.hostName = "Big-boogaloo";}
           ./../hostHardware/Big-boogaloo-hardware-configuration.nix
           stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.viv = ./home.nix;
+              home-manager.backupFileExtension = "backup";
+              home-manager.extraSpecialArgs = {
+                inherit nixvim;
+              };
+            }
         ];
       };
       Smol-boogaloo = lib.nixosSystem {
