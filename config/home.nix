@@ -4,7 +4,7 @@
   imports = [
     ./yazi/yazi.nix
     nixvim.homeManagerModules.nixvim
-    # ./stylix/home-stylix.nix
+    ./stylix/home-stylix.nix
   ];
   home.username = "viv";
   home.homeDirectory = "/home/viv";
