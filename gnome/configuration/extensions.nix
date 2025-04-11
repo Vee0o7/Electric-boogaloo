@@ -69,6 +69,7 @@
     "org/gnome/shell/extensions/blur-my-shell/overview" = {
       blur = false;
     };
+    "org/gnome/shell/extensions/blur-my-shell/applications".blacklist = ["Gimp-2.10" "gimp" "floorp"];
     "org/gnome/shell/extensions/blur-my-shell/panel/applications" = {
       blur-on-overview = false;
       opacity = 244;

@@ -2,8 +2,9 @@
 
 let 
   # background = ./backgrounds/floatingIslands.png;
+  bg-url = "https://w.wallhaven.cc/full/3l/wallhaven-3l66qd.png";
   background = pkgs.fetchurl {
-    url = "https://w.wallhaven.cc/full/3l/wallhaven-3l66qd.png";
+    url = bg-url;
     sha256 = "sha256-2wfvfzXDNEVc/3kBHe+r9JmorTmsNQCXvbhXNGKam7E=";
   };
   fromYAML = yaml:
@@ -40,7 +41,7 @@ in
     autoEnable = true;
 
     base16Scheme = {
-      name = "pywal colorz theme";
+      name = "pywal colorz theme: " + bg-url;
       base00 = palette.color0;
       base01 = palette.color0;
       base02 = palette.color2;
