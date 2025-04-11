@@ -8,47 +8,6 @@
     ];
   nixpkgs.overlays = [
     (final: prev: {
-      # gnome-shell = let
-      #   originalPackage = prev.gnome-shell;
-      #
-      #   # We use `overrideAttrs` instead of defining a new `mkDerivation` to keep
-      #   # the original package's `output`, `passthru`, and so on.
-      #   overwrittenGnome-shell = originalPackage.overrideAttrs (old: {
-      #     name = "gnome-shell-overridden";
-      #
-      #     # Using `buildCommand` replaces the original packages build phases.
-      #     buildCommand = ''
-      #       set -euo pipefail
-      #
-      #       ${
-      #         # Copy original files, for each split-output (`out`, `dev` etc.).
-      #         # E.g. `${package.dev}` to `$dev`, and so on. If none, just "out".
-      #         # Symlink all files from the original package to here (`cp -rs`),
-      #         # to save disk space.
-      #         # We could alternatiively also copy (`cp -a --no-preserve=mode`).
-      #         lib.concatStringsSep "\n"
-      #           (map
-      #             (outputName:
-      #               ''
-      #                 echo "Copying output ${outputName}"
-      #                 set -x
-      #                 cp -rs --no-preserve=mode "${originalPackage.${outputName}}" "''$${outputName}"
-      #                 set +x
-      #               ''
-      #             )
-      #             (old.outputs or ["out"])
-      #           )
-      #       }
-      #
-      #       # Example change:
-      #       # Change `usage:` to `USAGE:` in a shell script.
-      #       # Make the file to be not a symlink by full copying using `install` first.
-      #       # This also makes it writable (files in the nix store have `chmod -w`).
-      #       install -v "${originalPackage}"/src/st/st-theme.c {$out}/src/st/st-theme.c
-      #       sed -i -e 's/#define ACCENT_COLOR_BLUE   \"#3584e4\"/#define ACCENT_COLOR_BLUE   \"#ab8853\"/' "$out"/src/st/st-theme-context.c
-      #     '';
-      #
-      #   }); in overwrittenGnome-shell;
       mutter = prev.mutter.overrideAttrs (oldAttrs: {
         # GNOME dynamic triple buffering (huge performance improvement)
         # See https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/1441

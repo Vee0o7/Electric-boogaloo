@@ -34,6 +34,7 @@
           ./configuration.nix
           {networking.hostName = "Smol-boogaloo";}
           ./../hostHardware/Smol-boogaloo-hardware-configuration.nix
+          stylix.nixosModules.stylix
         ];
       };
     };
@@ -44,7 +45,6 @@
         modules = [ 
           ./home.nix
           nixvim.homeManagerModules.nixvim
-          # stylix.homeManagerModules.stylix
         ];
         extraSpecialArgs = {
           inherit pkgs-unstable;

@@ -36,8 +36,8 @@ in
   fonts.fontconfig.enable = true;
 
   stylix = {
-    autoEnable = true;
     enable = true;
+    autoEnable = true;
     # accent colors are done separately with a custom gnome-shell (if using gnome)
     base16Scheme = {
       base00 = palette.color0;
@@ -57,10 +57,6 @@ in
       base0E = palette.color14;
       base0F = palette.color15;
     };
-    override = {
-    };
-    targets.gtk.extraCss = ''
-    '';
     image = background;
 
     cursor = {
@@ -72,16 +68,17 @@ in
     fonts = {
       serif = {
         package = pkgs.fira-sans;
-        name = "Fira Sans 12";
+        name = "Fira Sans";
       };
-      sansSerif = config.stylix.fonts.serif;
+      sansSerif = {
+        package = pkgs.fira-sans;
+        name = "Fira Sans";
+      };
       monospace = {
         package = pkgs.fira-code-nerdfont;
         name = "FiraCode Nerd Font";
       };
     };
-    targets.floorp.profileNames = [ "viv" ];
-    targets.floorp.firefoxGnomeTheme.enable = true;
   };
 }
 
