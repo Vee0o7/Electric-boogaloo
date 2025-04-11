@@ -74,6 +74,6 @@ fi
 
 script -qfae -c "$command"  -O >(ansifilter >> "$SCRIPT_DIR/switch.log") || exit
 gen=$($gencmd | $gengrep)
-if [[ "$gen" != "$(git log -1 --pretty=%B)" ]]; then
+if [[ "$gen" != "$(git log --pretty=%B | grep "$gen")" ]]; then
         git commit -am "$gen"
 fi
