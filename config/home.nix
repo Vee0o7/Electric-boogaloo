@@ -4,7 +4,7 @@
   imports = [
     ./yazi/yazi.nix
     nixvim.homeManagerModules.nixvim
-    # ./stylix/home-stylix.nix
+    ./stylix/home-stylix.nix
   ];
   home.username = "viv";
   home.homeDirectory = "/home/viv";
@@ -14,7 +14,7 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
+    nerd-fonts.fira-code
     steam
     lutris
     cockatrice
