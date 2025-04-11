@@ -18,6 +18,8 @@
     # Add your plugins to ./plugins/custom/plugins and import them below
   ];
   plugins.transparent.enable = true;
+  plugins.yazi.enable = true;
+  plugins.snacks.enable = true;
   enable = true;
   defaultEditor = true;
   viAlias = true;

@@ -13,5 +13,6 @@
     "org/gnome/desktop/interface" = {
       enable-hot-corners = false;
     };
+    "org/gnome/settings-daemon/plugins/color".night-light-enabled = true;
   };
 }
