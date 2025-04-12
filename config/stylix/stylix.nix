@@ -59,6 +59,9 @@ in
     #   base0E = palette.color14;
     #   base0F = palette.color15;
     # };
+    override = {
+      base01 = config.stylix.generated.palette.base00;
+    };
     image = background;
 
     cursor = {
