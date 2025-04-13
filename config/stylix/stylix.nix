@@ -1,37 +1,12 @@
 {pkgs, config, ...}:
 
 let 
-  # background = ./backgrounds/floatingIslands.png;
-  bg-url = "https://w.wallhaven.cc/full/3l/wallhaven-3l66qd.png";
-  background = pkgs.fetchurl {
-    url = bg-url;
-    sha256 = "sha256-2wfvfzXDNEVc/3kBHe+r9JmorTmsNQCXvbhXNGKam7E=";
-  };
-  fromYAML = yaml:
-    builtins.fromJSON (builtins.readFile (pkgs.stdenv.mkDerivation {
-      name = "fromYAML";
-      phases = [ "buildPhase" ];
-      buildPhase = "echo '${yaml}' | ${pkgs.yaml2json}/bin/yaml2json > $out";
-  }));
-  pywal16palette = image:
-    builtins.fromJSON (builtins.readFile (pkgs.stdenv.mkDerivation {
-      name = "bg2colors";
-      nativeBuildInputs = [
-        pkgs.imagemagick
-        pkgs.colorz
-      ];
-      phases = [ "preBuild" "buildPhase" ];
-      preBuild = ''
-        export HOME=$(mktemp -d)
-        export CONF_DIR=$(mktemp -d)
-        export CACHE_DIR=$(mktemp -d)
-      '';
-      buildPhase = ''
-        ${pkgs.pywal16}/bin/wal -i ${background} --backend colorz
-        cat $HOME/.cache/wal/colors.json | sed 's/.*wallpaper.*/ /' > $out
-      '';
-  }));
-  palette = (pywal16palette background).colors;
+  background = ./floating-islands-rose.png;
+  # bg-url = "https://w.wallhaven.cc/full/3l/wallhaven-3l66qd.png";
+  # background = pkgs.fetchurl {
+  #   url = bg-url;
+  #   sha256 = "sha256-2wfvfzXDNEVc/3kBHe+r9JmorTmsNQCXvbhXNGKam7E=";
+  # };
 in
 {
   fonts.fontconfig.enable = true;
@@ -40,25 +15,6 @@ in
     enable = true;
     autoEnable = true;
 
-    # base16Scheme = {
-    #   name = "pywal colorz theme: " + bg-url;
-    #   base00 = palette.color0;
-    #   base01 = palette.color0;
-    #   base02 = palette.color2;
-    #   base03 = palette.color3;
-    #   base04 = palette.color4;
-    #   base05 = palette.color15;
-    #   base06 = palette.color6;
-    #   base07 = palette.color7;
-    #   base08 = palette.color8;
-    #   base09 = palette.color9;
-    #   base0A = palette.color10;
-    #   base0B = palette.color11;
-    #   base0C = palette.color12;
-    #   base0D = palette.color13;
-    #   base0E = palette.color14;
-    #   base0F = palette.color15;
-    # };
     override = {
       base01 = config.stylix.generated.palette.base00;
     };
