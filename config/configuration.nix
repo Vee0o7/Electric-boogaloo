@@ -6,7 +6,7 @@
 
 {
   imports = [
-    ./stylix/stylix.nix
+    # ./stylix/stylix.nix
     ./users.nix
   ];
 
