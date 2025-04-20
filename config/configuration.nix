@@ -89,6 +89,7 @@
     git
     curl
     home-manager
+    htop
   ];
   programs.npm.enable = true;
 
