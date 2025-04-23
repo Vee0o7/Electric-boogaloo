@@ -74,6 +74,12 @@
       bind 'set completion-ignore-case on'
     '';
   };
+  programs.dircolors = {
+    enable = true;
+    settings = {
+      OTHER_WRITABLE = "30;42";
+    };
+  };
   services.xsettingsd = {
     enable = true;
   };
