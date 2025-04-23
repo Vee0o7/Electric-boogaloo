@@ -71,6 +71,7 @@
     };
     bashrcExtra = ''
       eval "$(direnv hook bash)"
+      bind 'set completion-ignore-case on'
     '';
   };
   services.xsettingsd = {
