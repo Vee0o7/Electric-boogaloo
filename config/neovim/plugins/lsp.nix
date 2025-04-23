@@ -76,6 +76,7 @@
         nixd.enable = true;
         bashls.enable = true;
         basedpyright.enable = true;
+        metals.enable = true;
 
         lua_ls = {
           enable = true;
