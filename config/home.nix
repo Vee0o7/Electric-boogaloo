@@ -77,6 +77,7 @@
     shellAliases  = {
       ".." = "cd ..";
       "y" = "yazi";
+      "cdd" = "cd $HOME/Documents";
     };
     bashrcExtra = ''
       eval "$(direnv hook bash)"
