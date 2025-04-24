@@ -62,14 +62,10 @@
   programs.starship = {
     enable = true;
     settings = {
-      format = 
-''$username\\
-$directory\\
-$git_branch\\
-$nix_shell\\
-$line_break\\
-$character'';
+      format = "$username$directory$git_branch$nix_shell$line_break$character";
+      username.show_always = true;
     };
+
   };
   programs.direnv.enable = true;
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
