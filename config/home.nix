@@ -62,12 +62,12 @@
   programs.starship = {
     enable = true;
     settings = {
-      format = ''$username\
-$directory\
-$git_branch\
+      format = 
+''$username\\
+$directory\\
+$git_branch\\
 $shell
-[>]
-      '';
+[>]'';
     };
   };
   programs.direnv.enable = true;
