@@ -59,6 +59,9 @@
       mouse-hide-while-typing = true;
     };
   };
+  programs.starship = {
+    enable = true;
+  };
   programs.direnv.enable = true;
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
   home.file = {
