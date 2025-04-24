@@ -67,8 +67,7 @@
 $directory\\
 $git_branch\\
 $nix_shell\\
-$direnv\\
-$shell
+$line_break\\
 $character'';
     };
   };
