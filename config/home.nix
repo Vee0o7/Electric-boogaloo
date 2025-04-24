@@ -66,8 +66,8 @@
 ''$username\\
 $directory\\
 $git_branch\\
-$shell
-[>]'';
+$shell\\
+$character'';
     };
   };
   programs.direnv.enable = true;
