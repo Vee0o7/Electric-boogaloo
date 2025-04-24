@@ -66,7 +66,9 @@
 ''$username\\
 $directory\\
 $git_branch\\
-$shell\\
+$nix_shell\\
+$direnv\\
+$shell
 $character'';
     };
   };
