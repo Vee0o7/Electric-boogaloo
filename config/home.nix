@@ -61,6 +61,9 @@
   };
   programs.starship = {
     enable = true;
+    settings = {
+      format = "$username$directory$git_branch$shell";
+    };
   };
   programs.direnv.enable = true;
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
