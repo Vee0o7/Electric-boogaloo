@@ -16,6 +16,7 @@ let
       switch-to-application-3 = [];
       switch-to-application-4 = [];
       switch-to-application-5 = [];
+      toggle-message-tray = [];
       minimize = [];
       screenshot = ["<Super>s"];
       show-screenshot-ui = ["<Shift><Super>s"];
@@ -42,6 +43,7 @@ in
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
       ];
       www = ["<Super>f"];
       home = [];
@@ -65,6 +67,11 @@ in
       binding = "<Super>e";
       command = "ghostty -e yazi";
       name = "Yazi";
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+      binding = "<Super>m";
+      command = "floorp --new-window https://open.spotify.com";
+      name = "spotify";
     };
   };
 }
