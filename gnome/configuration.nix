@@ -80,7 +80,7 @@
     gnome-logs
     gnome-maps
     gnome-music
-    gnome-system-monitor
+    # gnome-system-monitor
     gnome-weather
     gnome-disk-utility
     seahorse
