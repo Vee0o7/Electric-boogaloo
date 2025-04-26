@@ -41,6 +41,7 @@
   ];
   home.sessionPath = [
     "$HOME/.dotfiles/bin"
+    "$HOME/.local/share/coursier/bin"
   ];
 
   xdg.configFile = {
