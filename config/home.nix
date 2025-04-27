@@ -53,7 +53,6 @@
   };
 
   programs.floorp.enable = true;
-  programs.firefox.enable = true;
 
   services.spotifyd = {
     enable = true;
