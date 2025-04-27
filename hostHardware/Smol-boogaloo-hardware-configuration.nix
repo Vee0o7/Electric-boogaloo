@@ -35,6 +35,22 @@
     enable = true;
     user = "viv";
   };
+
+  # power saving settings
+  services.power-profiles-daemon.enable = false;
+  powerManagement.enable = true;
+  services.thermald.enable = true;
+  services.auto-cpufreq.enable = true;
+  services.auto-cpufreq.settings = {
+    battery = {
+       governor = "powersave";
+       turbo = "never";
+    };
+    charger = {
+       governor = "performance";
+       turbo = "auto";
+    };
+  };
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
