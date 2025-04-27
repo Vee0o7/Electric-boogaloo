@@ -99,6 +99,10 @@
   };
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
+  # prioritise ram over swap
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 10;
+  };
 
   programs.gamemode.enable = true;
 
