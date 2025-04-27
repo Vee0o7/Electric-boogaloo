@@ -30,7 +30,6 @@
     ntfs3g
     gparted
     obsidian
-    spotifyd
     coursier
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -55,6 +54,16 @@
 
   programs.floorp.enable = true;
   programs.firefox.enable = true;
+
+  services.spotifyd = {
+    enable = true;
+    settings = {
+      volume_normalisation = true;
+      bitrate = 320;
+    };
+  };
+
+  ### Terminal stuff ###
 
   programs.ghostty = {
     enable = true;
