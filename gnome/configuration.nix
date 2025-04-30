@@ -2,10 +2,6 @@
 { pkgs, lib, config, ... }: 
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./../config/configuration.nix
-    ];
   nixpkgs.overlays = [
     (final: prev: {
       gnome-shell = prev.gnome-shell.overrideAttrs (oldAttrs: {
