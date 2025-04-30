@@ -50,13 +50,13 @@
       CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
 
       CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 20;
+      CPU_MAX_PERF_ON_BAT = 55;
       CPU_MIN_PERF_ON_AC = 0;
       CPU_MAX_PERF_ON_AC = 100;
 
       #Optional helps save long term battery health
-      START_CHARGE_THRESH_BAT0 = 60; 
-      STOP_CHARGE_THRESH_BAT0 = 80; 
+      START_CHARGE_THRESH_BAT0 = 60;
+      STOP_CHARGE_THRESH_BAT0 = 80;
     };
   };
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
