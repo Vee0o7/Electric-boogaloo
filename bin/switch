@@ -47,16 +47,14 @@ while [[ $# -gt 0 ]]; do
 done
 
 
-flake_dir="$SCRIPT_DIR/gnome"
 case "$wm" in
         gnome)
-                flake_dir="$SCRIPT_DIR/gnome"
                 ;;
         hypr)
                 ;;
 esac
 
-command="sudo nixos-rebuild switch --flake $flake_dir"
+command="sudo nixos-rebuild switch --flake $SCRIPT_DIR"
 gencmd="nixos-rebuild list-generations"
 gengrep="grep current"
 
