@@ -11,7 +11,7 @@
         "$mod, W, exec, ghostty"
         "$mod, F, exec, floorp"
         "$mod, Q, killactive"
-        ", $mod, plugin:overview:toggle"
+        # ", $mod, plugin:overview:toggle"
       ] ++ (
         builtins.concatLists (builtins.genList (i:
           let ws = i+1;
