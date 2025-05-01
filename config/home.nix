@@ -42,6 +42,8 @@
     "$HOME/.local/share/coursier/bin"
   ];
 
+  xsession.enable = true;
+
   xdg.configFile = {
     "autostart/vesktop.desktop".text = ''
         [Desktop Entry]
