@@ -37,12 +37,12 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  xsession.enable = true; # fixes seesion issues with logout and login
   home.sessionPath = [
     "$HOME/.dotfiles/bin"
-    "$HOME/.local/share/coursier/bin"
+    # "$HOME/.local/share/coursier/bin"
   ];
-
-  xsession.enable = true;
 
   xdg.configFile = {
     "autostart/vesktop.desktop".text = ''
@@ -96,6 +96,7 @@
     bashrcExtra = ''
       eval "$(direnv hook bash)"
       bind 'set completion-ignore-case on'
+      fastfetch
     '';
   };
   programs.dircolors = {
