@@ -58,7 +58,7 @@
     "org/gnome/shell/extensions/forge" = {
       stacked-tiling-mode-enabled = false;
       tabbed-tiling-mode-enabled = false;
-      focus-border-toggle = false;
+      focus-border-toggle = true;
       dnd-center-layout = "swap";
       window-gap-size =  lib.hm.gvariant.mkUint32 1;
       window-gap-hidden-on-single = true;
