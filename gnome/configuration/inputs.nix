@@ -54,6 +54,14 @@ in
       window-focus-left = ["<Super>h"];
       window-focus-right = ["<Super>l"];
       window-focus-up = ["<Super>k"];
+      window-swap-up = ["<Super><Shift>k"];
+      window-swap-down = ["<Super><Shift>j"];
+      window-swap-left = ["<Super><Shift>h"];
+      window-swap-right = ["<Super><Shift>l"];
+      window-move-up = [];
+      window-move-down = [];
+      window-move-left = [];
+      window-move-right = [];
       con-stacked-layout-toggle = [];
     };
 
