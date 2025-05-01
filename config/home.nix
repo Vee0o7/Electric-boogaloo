@@ -74,7 +74,7 @@
     enable = true;
     settings = {
       display = {
-        disable-linewrap = true;
+        disableLinewrap = true;
       };
     };
   };
