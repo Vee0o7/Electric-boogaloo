@@ -28,7 +28,7 @@
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      distro = ./hypr;
+      distro = ./gnome;
       config = [
           (distro + "/configuration.nix")
 
@@ -51,16 +51,14 @@
         inherit system;
         specialArgs = { inherit inputs; };
         modules = [ 
-          {networking.hostName = "Big-boogaloo";}
-          ./hostHardware/Big-boogaloo-hardware-configuration.nix
+          ./hostHardware/Big-boogaloo/configuration.nix
         ] ++ config;
       };
       Smol-boogaloo = lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs; };
         modules = [ 
-          {networking.hostName = "Smol-boogaloo";}
-          ./hostHardware/Smol-boogaloo-hardware-configuration.nix
+          ./hostHardware/Smol-boogaloo/configuration.nix
         ] ++ config;
       };
     };

@@ -27,6 +27,7 @@
     };
     plugins = [
       inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+      # inputs.hyprspace.packages.${pkgs.system}.Hyprspace
     ];
   };
 }
