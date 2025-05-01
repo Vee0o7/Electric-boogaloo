@@ -17,11 +17,10 @@
 
     lutris
     cockatrice
-    fastfetch
     tree
     nix-prefetch-git
     protonup
-    vesktop
+    # vesktop
     wine
     devenv
     ansifilter
@@ -68,6 +67,10 @@
   };
 
   programs.spotify-player = {
+    enable = true;
+  };
+
+  programs.fastfetch = {
     enable = true;
   };
 
