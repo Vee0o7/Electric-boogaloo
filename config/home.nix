@@ -54,7 +54,10 @@
       '';
   };
 
-  programs.floorp.enable = true;
+  programs.floorp = {
+    enable = true;
+    profiles.viv.extensions.force = true;
+  };
 
   services.spotifyd = {
     enable = true;
