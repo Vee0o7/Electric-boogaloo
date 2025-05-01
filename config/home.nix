@@ -72,6 +72,11 @@
 
   programs.fastfetch = {
     enable = true;
+    settings = {
+      display = {
+        disable-linewrap = true;
+      };
+    };
   };
 
   ### Terminal stuff ###
