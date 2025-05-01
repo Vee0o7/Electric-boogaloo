@@ -31,10 +31,10 @@
     [ { device = "/dev/disk/by-uuid/71204be4-3c8d-490f-9ab1-ac70af6f1ccb"; }
     ];
 
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "viv";
-  };
+  # services.displayManager.autoLogin = {
+  #   enable = true;
+  #   user = "viv";
+  # };
 
   services.xserver.xkb = {
     layout = "gb";

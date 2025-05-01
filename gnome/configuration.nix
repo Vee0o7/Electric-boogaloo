@@ -41,9 +41,7 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  # environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   services.xserver.excludePackages = [ pkgs.xterm ];
   environment.gnome.excludePackages = with pkgs; [
