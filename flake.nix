@@ -24,13 +24,13 @@
       inputs.hyprland.follows = "hyprland";
     };
   };
-  
+
   outputs = {self, nixpkgs, home-manager, nixvim, stylix, nixpkgs-unstable, ...} @ inputs:
     let 
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      distro = ./hypr;
+      distro = ./gnome;
       config = [
           (distro + "/configuration.nix")
 

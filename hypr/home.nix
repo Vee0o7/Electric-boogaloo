@@ -20,6 +20,10 @@
             "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
           ] ) 9)
         );
+
+      input = {
+        kb_layout = "gb";
+      };
     };
     plugins = [
       pkgs.hyprlandPlugins.hyprspace

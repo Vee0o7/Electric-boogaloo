@@ -87,9 +87,13 @@
     enable = true;
     shellAliases  = {
       ".." = "cd ..";
+      "la" = "ls -a";
       "y" = "yazi";
       "cdd" = "cd $HOME/Documents";
     };
+    initExtra = ''
+      . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+    '';
     bashrcExtra = ''
       eval "$(direnv hook bash)"
       bind 'set completion-ignore-case on'
@@ -119,4 +123,5 @@
       ca = "commit --amend";
     };
   };
+  systemd.user.startServices = "sd-switch";
 }
