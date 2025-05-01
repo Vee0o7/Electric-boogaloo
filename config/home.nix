@@ -70,6 +70,7 @@
     settings = {
       window-decoration = true;
       mouse-hide-while-typing = true;
+      font-size = "10pt";
     };
   };
   programs.starship = {
