@@ -63,6 +63,10 @@
     };
   };
 
+  programs.spotify-player = {
+    enable = true;
+  };
+
   ### Terminal stuff ###
 
   programs.ghostty = {
