@@ -32,7 +32,7 @@
       CPU_MAX_PERF_ON_AC = 100;
 
       #Optional helps save long term battery health
-      START_CHARGE_THRESH_BAT0 = 1;
+      START_CHARGE_THRESH_BAT0 = 0;
       STOP_CHARGE_THRESH_BAT0 = 1;
     };
   };
