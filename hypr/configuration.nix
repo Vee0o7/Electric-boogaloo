@@ -7,7 +7,11 @@ in
     enable = true;
     settings = {
       default_session = {
-        command = "${tuigreet} -- time --remember --cmd hyprland";
+        command = "${tuigreet} -- time --remember -cmd hyprland";
+        user = "viv";
+      };
+      initial_session = {
+        command = "${tuigreet} -- time --remember -cmd hyprland";
         user = "viv";
       };
     };
