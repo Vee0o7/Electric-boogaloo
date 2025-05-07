@@ -40,10 +40,9 @@
     # '')
   ];
 
-  xsession.enable = true; # fixes seesion issues with logout and login
+  xsession.enable = true; # fixes session issues with logout and login
   home.sessionPath = [
     "$HOME/.dotfiles/bin"
-    # "$HOME/.local/share/coursier/bin"
   ];
 
   xdg.configFile = {
