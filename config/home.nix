@@ -31,6 +31,7 @@
     obsidian
     cava
     vesktop
+    fzf
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
@@ -133,7 +134,7 @@
   home.file = {
   };
 
-  programs.bash = {
+  programs.zsh = {
     enable = true;
     shellAliases  = {
       ".." = "cd ..";
@@ -141,11 +142,11 @@
       "y" = "yazi";
       "cdd" = "cd $HOME/Documents";
     };
-    bashrcExtra = ''
-      eval "$(direnv hook bash)"
-      bind 'set completion-ignore-case on'
-      fastfetch
-    '';
+    autosuggestion.enable = true;
+    oh-my-zsh = {
+      enable = true;
+      plugins = ["direnv" "fzf" "git" "git-auto-fetch" "sudo" "copybuffer" "history"];
+    };
   };
   programs.dircolors = {
     enable = true;
