@@ -45,7 +45,7 @@
 
   services.xserver.excludePackages = [ pkgs.xterm ];
   environment.gnome.excludePackages = with pkgs; [
-    cheese
+    # cheese
     geary
     adwaita-icon-theme
     # nixos-background-info This can't be excluded since it's defined locally. So even if we removed all GNOME backgrounds it seems we have to keep the NixOS one.
@@ -79,15 +79,15 @@
     gnome-weather
     gnome-disk-utility
     seahorse
-    evince
-    pkgs.loupe
+    # evince
+    # pkgs.loupe
     # nautilus
     pkgs.gnome-connections
     simple-scan
     pkgs.snapshot
     totem
     yelp
-    file-roller
+    # file-roller
   ];
 
 }
