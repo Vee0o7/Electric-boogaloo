@@ -60,7 +60,7 @@
       '';
   };
 
-  programs.floorp = {
+  programs.firefox = {
     enable = true;
     profiles.viv.extensions.force = true;
   };

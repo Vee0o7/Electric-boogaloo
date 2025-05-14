@@ -78,7 +78,7 @@ in
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
       binding = "<Super>m";
-      command = "floorp --new-window https://open.spotify.com";
+      command = "firefox --new-window https://open.spotify.com";
       name = "spotify";
     };
   };
