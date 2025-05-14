@@ -2,7 +2,7 @@
 {
   stylix = {
     autoEnable = true;
-    targets.floorp.colorTheme.enable = true;
-    targets.floorp.profileNames = [ "viv" ];
+    targets.firefox.colorTheme.enable = true;
+    targets.firefox.profileNames = [ "viv" ];
   };
 }
