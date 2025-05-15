@@ -16,6 +16,8 @@ let
       switch-to-application-3 = [];
       switch-to-application-4 = [];
       switch-to-application-5 = [];
+      switch-input-source = [];
+      switch-input-source-backward = [];
       toggle-message-tray = [];
       minimize = [];
       screenshot = ["<Super>s"];
@@ -44,6 +46,7 @@ in
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
       ];
       www = ["<Super>f"];
       home = [];
@@ -78,8 +81,13 @@ in
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
       binding = "<Super>m";
-      command = "firefox --new-window https://open.spotify.com";
+      command = "ghostty -e spotify_player";
       name = "spotify";
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+      binding = "<Super>space";
+      command = "spotify_player playback play-pause";
+      name = "play/pause music";
     };
   };
 }
