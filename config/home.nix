@@ -75,6 +75,10 @@
 
   programs.spotify-player = {
     enable = true;
+    keymaps = [
+      {command = "None"; keymap = "q";}
+      {command = "VolumeChange { offset: 5}"; keymap = "=";}
+    ];
   };
 
   programs.fastfetch = {
