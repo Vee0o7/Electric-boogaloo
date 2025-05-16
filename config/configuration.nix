@@ -89,6 +89,7 @@
     curl
     home-manager
     htop
+    paprefs
   ];
   programs.npm.enable = true;
 
