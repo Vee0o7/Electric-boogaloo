@@ -89,7 +89,7 @@
     curl
     home-manager
     htop
-    paprefs
+    pavucontrol
   ];
   programs.npm.enable = true;
 
