@@ -76,8 +76,8 @@
   programs.spotify-player = {
     enable = true;
     keymaps = [
-      {command = "None"; key_sequence = "q";}
-      {command = { VolumeChange = {offset = 5;};}; key_sequence  = "=";}
+      # {command = "None"; key_sequence = "q";}
+      {command.VolumeChange.offset = 5; key_sequence  = "=";}
     ];
   };
 
