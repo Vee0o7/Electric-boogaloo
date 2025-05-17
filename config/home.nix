@@ -59,6 +59,12 @@
         Exec=vesktop --start-minimized
         Name=Stylix: enable User Themes extension for GNOME Shell
       '';
+    "autostart/spotify-player.desktop".text = ''
+        [Desktop Entry]
+        Type=Application
+        Exec=spotify_player -d
+        Name=Stylix: enable User Themes extension for GNOME Shell
+      '';
   };
 
   programs.firefox = {
@@ -66,13 +72,13 @@
     profiles.viv.extensions.force = true;
   };
 
-  services.spotifyd = {
-    enable = true;
-    settings = {
-      volume_normalisation = true;
-      bitrate = 320;
-    };
-  };
+  # services.spotifyd = {
+  #   enable = true;
+  #   settings = {
+  #     volume_normalisation = true;
+  #     bitrate = 320;
+  #   };
+  # };
 
   programs.spotify-player = {
     enable = true;
