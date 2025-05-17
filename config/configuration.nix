@@ -90,6 +90,7 @@
     home-manager
     htop
     pulseaudioFull
+    pavucontrol
   ];
   programs.npm.enable = true;
 
