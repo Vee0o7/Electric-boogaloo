@@ -54,9 +54,9 @@
     pulse.enable = true;
     extraConfig.pipewire-pulse = {
       "spotify-sink-loop" = {
-        "context.exec" = [
-          {path = "pactl"; args = "load-module module-null-sink sink_name=spotify";}
-          {path = "pactl"; args = "load-module module-loopback sink=alsa_output.pci-0000_00_1f.3.analog-stereo source=spotify.monitor";}
+        "pulse.cmd" = [
+          {cmd = "load-module"; args = "module-null-sink sink_name=spotify";}
+          {cmd = "load-module"; args = "module-loopback sink=alsa_output.pci-0000_00_1f.3.analog-stereo source=spotify.monitor";}
         ];
       };
     };
