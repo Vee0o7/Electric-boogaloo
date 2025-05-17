@@ -82,14 +82,14 @@
     ];
   };
   systemd.user.services.spotify-player = {
-      Unit.description = "spotify player daemon";
-      Install.wantedBy = [ "default.target" ];
-
-      Service = {
-        Restart = "on-failure";
-        ExecStart = "spotify_player -d";
-      };
+    Install = {
+      WantedBy = [ "default.target" ];
     };
+    Unit.Description = "My Cool User Service";
+    Service = {
+        ExecStart = ''spotify_player -d'';
+    };
+  };
 
   programs.fastfetch = {
     enable = true;
