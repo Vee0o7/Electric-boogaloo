@@ -66,13 +66,13 @@
     profiles.viv.extensions.force = true;
   };
 
-  # services.spotifyd = {
-  #   enable = true;
-  #   settings = {
-  #     volume_normalisation = true;
-  #     bitrate = 320;
-  #   };
-  # };
+  services.spotifyd = {
+    enable = true;
+    settings = {
+      volume_normalisation = true;
+      bitrate = 320;
+    };
+  };
 
   programs.spotify-player = {
     enable = true;
@@ -80,6 +80,9 @@
       # {command = "None"; key_sequence = "q";}
       {command.VolumeChange.offset = 5; key_sequence  = "=";}
     ];
+    settings = {
+      default_device = "spotifyd";
+    };
   };
   systemd.user.services.spotify-player = {
     Install = {
