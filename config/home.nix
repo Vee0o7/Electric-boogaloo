@@ -166,6 +166,7 @@
       "la" = "ls -a";
       "y" = "yazi";
       "cdd" = "cd $HOME/Documents";
+      "spotifyrtp" = "pactl load-module module-rtp-send source=spotify.monitor";
     };
     autosuggestion.enable = true;
     oh-my-zsh = {
