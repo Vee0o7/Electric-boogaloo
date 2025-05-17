@@ -71,7 +71,8 @@
     settings = {
       volume_normalisation = true;
       bitrate = 320;
-      device-name = "spotifyd";
+      device = "spotify";
+      device_name = "spotifyd";
     };
   };
 
