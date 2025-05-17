@@ -45,7 +45,10 @@
 
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
+  services.pulseaudio= {
+    enable = false;
+    package = pkgs.pulseaudioFull;
+  };
   security.rtkit.enable = true;
   # services.pipewire = {
   #   enable = true;
@@ -90,7 +93,6 @@
     home-manager
     htop
     pavucontrol
-    pulseaudioFull
   ];
   programs.npm.enable = true;
 
