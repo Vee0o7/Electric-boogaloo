@@ -84,6 +84,7 @@
     ];
     settings = {
       default_device = "spotifyd";
+      enable_streaming = false;
     };
   };
   systemd.user.services.spotify-player = {
