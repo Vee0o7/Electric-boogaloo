@@ -53,10 +53,11 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     extraConfig.pipewire-pulse = {
-      "spotify-sink-loop" = {
+      "shared-sink-loop" = {
         "pulse.cmd" = [
-          {cmd = "load-module"; args = "module-null-sink sink_name=spotify";}
-          {cmd = "load-module"; args = "module-loopback sink=alsa_output.pci-0000_00_1f.3.analog-stereo source=spotify.monitor";}
+          {cmd = "load-module"; args = "module-null-sink sink_name=shared";}
+          {cmd = "load-module"; args = "module-loopback sink=alsa_output.pci-0000_00_1f.3.analog-stereo source=shared.monitor";}
+          {cmd = "load-module"; args= "module-loopback sink=alsa_output.usb-Razer_Razer_BlackShark_V2_Pro-00.iec958-stereo source=shared.monitor sink_dont_move=true";}
         ];
       };
     };

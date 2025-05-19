@@ -71,8 +71,9 @@
     settings = {
       volume_normalisation = true;
       bitrate = 320;
-      device = "spotify";
+      device = "shared";
       device_name = "spotifyd";
+      # use_mpris = true; # Don't know what this does...
     };
   };
 
@@ -85,15 +86,7 @@
     settings = {
       default_device = "spotifyd";
       enable_streaming = false;
-    };
-  };
-  systemd.user.services.spotify-player = {
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
-    Unit.Description = "My Cool User Service";
-    Service = {
-        ExecStart = ''spotify_player -d'';
+      client_id_command = { command = "cat"; args = ["$HOME/.spotifyid"];};
     };
   };
 
