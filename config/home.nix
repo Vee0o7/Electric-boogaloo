@@ -83,15 +83,15 @@
       # {command = "None"; key_sequence = "q";}
       {command.VolumeChange.offset = 5; key_sequence  = "=";}
     ];
-    # settings = {
+    settings = {
     #   enable_streaming = true;
     #   client_id_command = { command = "cat"; args = ["${config.home.homeDirectory}/.spotifyid"];};
-    #   device = {
-    #     device = "shared";
-    #     audio_cache = true;
-    #     normalization = true;
-    #   };
-    # };
+      device = {
+        device = "shared";
+        audio_cache = true;
+        normalization = true;
+      };
+    };
   };
 
   programs.fastfetch = {
