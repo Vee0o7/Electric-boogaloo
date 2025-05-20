@@ -84,9 +84,13 @@
       {command.VolumeChange.offset = 5; key_sequence  = "=";}
     ];
     settings = {
-      default_device = "spotifyd";
-      enable_streaming = false;
+      enable_streaming = true;
       client_id_command = { command = "cat"; args = ["${config.home.homeDirectory}/.spotifyid"];};
+      device = {
+        device = "shared";
+        audio_cache = true;
+        normalization = true;
+      };
     };
   };
 
