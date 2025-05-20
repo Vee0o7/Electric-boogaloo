@@ -66,16 +66,16 @@
     profiles.viv.extensions.force = true;
   };
 
-  services.spotifyd = {
-    enable = true;
-    settings = {
-      volume_normalisation = true;
-      bitrate = 320;
-      device = "shared";
-      device_name = "spotifyd";
-      # use_mpris = true; # Don't know what this does...
-    };
-  };
+  # services.spotifyd = {
+  #   enable = true;
+  #   settings = {
+  #     volume_normalisation = true;
+  #     bitrate = 320;
+  #     device = "shared";
+  #     device_name = "spotifyd";
+  #     # use_mpris = true; # Don't know what this does...
+  #   };
+  # };
 
   programs.spotify-player = {
     enable = true;
