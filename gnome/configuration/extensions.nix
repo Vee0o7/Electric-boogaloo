@@ -9,6 +9,7 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.appindicator
     gnomeExtensions.color-picker
+    gnomeExtensions.quick-settings-tweaker
   ];
 
   dconf.settings = {
@@ -25,6 +26,7 @@
         "blur-my-shell@aunetx"
         "appindicatorsupport@rgcjonas.gmail.com"
         "color-picker@tuberry"
+        "quick-settings-tweaks@qwreey"
       ];
     };
     "org/gnome/shell/extensions/just-perfection".window-picker-icon = false;
@@ -72,9 +74,10 @@
     "org/gnome/shell/extensions/blur-my-shell/applications".blacklist = ["Gimp-2.10" "gimp" "floorp" "firefox"];
     "org/gnome/shell/extensions/blur-my-shell/panel/applications" = {
       blur-on-overview = false;
-      opacity = 244;
+      opacity = 240;
       enable-all = true;
       sigma = 0;
+      hacks-level = 2;
     };
   };
 }
