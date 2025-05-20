@@ -85,7 +85,7 @@
     ];
     settings = {
       enable_streaming = false;
-    #   client_id_command = { command = "cat"; args = ["${config.home.homeDirectory}/.spotifyid"];};
+      client_id_command = { command = "cat"; args = ["${config.home.homeDirectory}/.spotifyid"];};
     };
   };
 
