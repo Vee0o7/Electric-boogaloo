@@ -85,8 +85,8 @@
     ];
     settings = {
       default_device = "spotifyd";
-      enable_streaming = true;
-      client_id_command = { command = "cat"; args = ["$HOME/.spotifyid"];};
+      enable_streaming = false;
+      client_id_command = { command = "cat"; args = ["${config.home.homeDirectory}/.spotifyid"];};
     };
   };
 
