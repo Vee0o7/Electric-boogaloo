@@ -76,6 +76,10 @@
       # use_mpris = true; # Don't know what this does...
     };
   };
+  programs.zoxide = {
+    enable = true;
+    options = [ "--cmd cd"] ;
+  };
 
   programs.spotify-player = {
     enable = true;
