@@ -175,10 +175,10 @@
     };
   }
   {initContent = "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh";}
-  {initContent = lib.mkBefore ''
-if [[ -r "$\{XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$\{(%):-%n}.zsh" ]]; then
-  source "$\{XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$\{(%):-%n}.zsh"
-fi'';}
+  {initContent = lib.mkBefore (''
+if [[ -r "'' + ''$'' + ''{XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$''+ ''{(%):-%n}.zsh" ]]; then
+  source "$''+ ''{XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$'' + ''{(%):-%n}.zsh"
+fi'');}
   ];
   programs.dircolors = {
     enable = true;
