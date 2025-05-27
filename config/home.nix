@@ -63,10 +63,10 @@
       '';
   };
 
-  # programs.firefox = {
-  #   enable = true;
-  #   profiles.viv.extensions.force = true;
-  # };
+  programs.firefox = {
+    enable = true;
+    profiles.viv.extensions.force = true;
+  };
   programs.librewolf = {
     enable = true;
     profiles.viv.extensions.force = true;
