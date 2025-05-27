@@ -43,6 +43,7 @@
     tealdeer
     nsxiv
     thefuck
+    zsh-powerlevel10k
   ];
 
   xsession.enable = true; # fixes session issues with logout and login
@@ -144,14 +145,14 @@
       mouse-hide-while-typing = true;
     };
   };
-  programs.starship = {
-    enable = true;
-    settings = {
-      format = "$username$directory$git_branch$nix_shell$line_break$character";
-      username.show_always = true;
-    };
-
-  };
+  # programs.starship = {
+  #   enable = true;
+  #   settings = {
+  #     format = "$username$directory$git_branch$nix_shell$line_break$character";
+  #     username.show_always = true;
+  #   };
+  #
+  # };
   programs.direnv.enable = true;
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
   home.file = {
@@ -166,6 +167,7 @@
       "cdd" = "cd $HOME/Documents";
       "spotifyrtp" = "pactl load-module module-rtp-send source=spotify.monitor";
     };
+    initContent = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
     autosuggestion.enable = true;
     oh-my-zsh = {
       enable = true;
