@@ -44,6 +44,7 @@
     nsxiv
     zsh-powerlevel10k
     direnv
+    thefuck
   ];
 
   xsession.enable = true; # fixes session issues with logout and login
