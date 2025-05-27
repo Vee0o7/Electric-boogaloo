@@ -1,4 +1,4 @@
-{ config, pkgs, nixvim, ... }:
+{ config, pkgs, nixvim, lib, ... }:
 
 {
   imports = [
@@ -158,7 +158,8 @@
   home.file = {
   };
 
-  programs.zsh = {
+  programs.zsh = lib.mkMerge [
+  {
     enable = true;
     shellAliases  = {
       ".." = "cd ..";
@@ -167,13 +168,18 @@
       "cdd" = "cd $HOME/Documents";
       "spotifyrtp" = "pactl load-module module-rtp-send source=spotify.monitor";
     };
-    initContent = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
     autosuggestion.enable = true;
     oh-my-zsh = {
       enable = true;
       plugins = ["direnv" "fzf" "git" "git-auto-fetch" "sudo" "copybuffer" "history"];
     };
-  };
+  }
+  {initContent = "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh";}
+  {initContent = lib.mkBefore ''
+if [[ -r "$\{XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$\{(%):-%n}.zsh" ]]; then
+  source "$\{XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$\{(%):-%n}.zsh"
+fi'';}
+  ];
   programs.dircolors = {
     enable = true;
     settings = {
