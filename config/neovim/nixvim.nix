@@ -13,6 +13,9 @@
     ./plugins/nvim-cmp.nix
     ./plugins/mini.nix
     ./plugins/treesitter.nix
+    ./plugins/kickstart/plugins/autopairs.nix
+    ./plugins/kickstart/plugins/neo-tree.nix
+    ./plugins/kickstart/plugins/indent-blankline.nix
   
     # NOTE: Configure your own plugins `see https://nix-community.github.io/nixvim/`
     # Add your plugins to ./plugins/custom/plugins and import them below
@@ -20,6 +23,7 @@
   plugins.transparent.enable = true;
   plugins.yazi.enable = true;
   plugins.snacks.enable = true;
+  plugins.nvim-surround.enable = true;
   enable = true;
   defaultEditor = true;
   viAlias = true;
