@@ -158,7 +158,7 @@
   home.file = {
   };
 
-  programs.zsh = lib.mkMerge [
+  programs.zsh = 
   {
     enable = true;
     shellAliases  = {
@@ -173,13 +173,11 @@
       enable = true;
       plugins = ["direnv" "fzf" "git" "git-auto-fetch" "sudo" "copybuffer" "history"];
     };
-  }
-  {initContent = "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh";}
-  {initContent = lib.mkBefore (''
+    initContent = let after = lib.mkAfter "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh"; before = lib.mkBefore (''
 if [[ -r "'' + ''$'' + ''{XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$''+ ''{(%):-%n}.zsh" ]]; then
   source "$''+ ''{XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$'' + ''{(%):-%n}.zsh"
-fi'');}
-  ];
+fi''); in lib.mkMerge [before after];
+  };
   programs.dircolors = {
     enable = true;
     settings = {
