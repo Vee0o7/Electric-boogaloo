@@ -39,6 +39,8 @@
     fd
     eclipses.eclipse-java
     trx
+    rsync
+    tldr
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
@@ -61,7 +63,11 @@
       '';
   };
 
-  programs.firefox = {
+  # programs.firefox = {
+  #   enable = true;
+  #   profiles.viv.extensions.force = true;
+  # };
+  programs.librewolf = {
     enable = true;
     profiles.viv.extensions.force = true;
   };
