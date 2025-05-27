@@ -158,7 +158,7 @@
   home.file = {
   };
 
-  programs.zsh = 
+  programs.zsh =
   {
     enable = true;
     shellAliases  = {
@@ -173,10 +173,12 @@
       enable = true;
       plugins = ["direnv" "fzf" "git" "git-auto-fetch" "sudo" "copybuffer" "history"];
     };
-    initContent = let after = lib.mkAfter "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh"; before = lib.mkBefore (''
-if [[ -r "'' + ''$'' + ''{XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$''+ ''{(%):-%n}.zsh" ]]; then
-  source "$''+ ''{XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$'' + ''{(%):-%n}.zsh"
-fi''); in lib.mkMerge [before after];
+    initContent = let after = lib.mkOrder 1600 "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh"; before = lib.mkOrder 480 (''
+      if [[ -r "'' + ''$'' + ''{XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$''+ ''{(%):-%n}.zsh" ]]; then
+      source "$''+ ''{XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$'' + ''{(%):-%n}.zsh"
+      fi
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme'');
+      in lib.mkMerge [before after];
   };
   programs.dircolors = {
     enable = true;
