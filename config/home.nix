@@ -42,7 +42,6 @@
     rsync
     tealdeer
     nsxiv
-    thefuck
     zsh-powerlevel10k
     direnv
   ];
@@ -79,10 +78,6 @@
       device_name = "spotifyd";
       # use_mpris = true; # Don't know what this does...
     };
-  };
-  programs.zoxide = {
-    enable = true;
-    options = [ "--cmd cd"] ;
   };
 
   programs.spotify-player = {
@@ -139,6 +134,11 @@
 
   ### Terminal stuff ###
 
+  programs.zoxide = {
+    enable = true;
+    options = [ "--cmd cd"] ;
+  };
+
   programs.ghostty = {
     enable = true;
     settings = {
@@ -180,6 +180,8 @@
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme'');
       in lib.mkMerge [before after];
   };
+
+  programs.thefuck.enable = true;
   programs.dircolors = {
     enable = true;
     settings = {
