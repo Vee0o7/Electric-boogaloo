@@ -88,6 +88,7 @@
 
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
+  documentation.man.generateCaches = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
