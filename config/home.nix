@@ -1,4 +1,4 @@
-{ config, pkgs, nixvim, lib, ... }:
+{ config, osConfig, pkgs, nixvim, lib, ... }:
 
 {
   imports = [
@@ -90,6 +90,7 @@
     settings = {
       enable_streaming = false;
       client_id_command = { command = "cat"; args = ["${config.home.homeDirectory}/.spotifyid"];};
+      default_device = ''Spotifyd@${osConfig.networking.hostName}'';
     };
   };
 
