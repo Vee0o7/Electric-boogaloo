@@ -10,6 +10,7 @@
     Timer = {
       onBootSec = "1m";
       OnUnitActiveSec = "1m";
+      Unit = "low-charge-shutoff.service";
     };
   };
 }
