@@ -101,6 +101,7 @@
     htop
     pulseaudioFull
     pavucontrol
+    libnotify
   ];
   programs.npm.enable = true;
 
