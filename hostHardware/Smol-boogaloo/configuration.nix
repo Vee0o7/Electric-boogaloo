@@ -47,7 +47,7 @@
   };
   systemd.services."sleep-low-charge" = {
     script = ''
-      BAT=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "percentage" | grep -oP "[0-9]+")
+      BAT=$(${pkgs.upower}/bin/upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "percentage" | grep -oP "[0-9]+")
       ${pkgs.libnotify}/bin/notify-send -u critical -t 0 "Critical battery: shutdown in 5 minutes" -a "System"
       (sleep 240; gnome-session-quit --power-off) &
     '';
