@@ -5,6 +5,7 @@
     ./yazi/yazi.nix
     nixvim.homeManagerModules.nixvim
     ./stylix/home-stylix.nix
+    (./../hostHardware + "/${osConfig.networking.hostName}/home.nix")
   ];
   home.username = "viv";
   home.homeDirectory = "/home/viv";

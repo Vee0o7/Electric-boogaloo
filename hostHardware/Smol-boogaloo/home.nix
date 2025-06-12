@@ -1,0 +1,15 @@
+{ config, osConfig, pkgs, nixvim, lib, ... }:
+
+{
+
+  systemd.user.services."low-charge-shutoff" = {
+    Service.ExecStart = "exec ${./low-charge}";
+  };
+  systemd.user.timers."low-charge-shutoff" = {
+    Install.wantedBy = [ "timers.target" ];
+    Timer = {
+      onBootSec = "1m";
+      OnUnitActiveSec = "1m";
+    };
+  };
+}
