@@ -10,6 +10,20 @@
   services.power-profiles-daemon.enable = false;
   # powerManagement.enable = true;
   # services.thermald.enable = true;
+  systemd.services."low-charge-shutoff" = {
+    script = builtins.readFile ./low-charge;
+    serviceConfig = {
+      User = "viv";
+      Type = "oneshot";
+    };
+  };
+  systemd.timers."low-charge-shutoff" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      onBootSec = "1m";
+      OnUnitActiveSec = "1m";
+    };
+  };
   services.tlp = {
     enable = true;
     settings = {
