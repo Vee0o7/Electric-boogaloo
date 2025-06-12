@@ -1,4 +1,4 @@
-{...}:
+{pkgs, ...}:
 {
   imports = [./hardware-configuration.nix];
   networking.hostName = "Smol-boogaloo";
@@ -34,6 +34,26 @@
       #Optional helps save long term battery health
       START_CHARGE_THRESH_BAT0 = 0;
       STOP_CHARGE_THRESH_BAT0 = 1;
+    };
+  };
+
+  systemd.timers."sleep-low-charge" = {
+    wantedBy = ["timers.target"];
+    timerConfig = {
+      OnBootSec = "1m";
+      OnUnitActiveSec = "1m";
+      Unit = "sleep-low-charge.service"; 
+    };
+  };
+  systemd.services."sleep-low-charge" = {
+    script = ''
+      BAT=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "percentage" | grep -oP "[0-9]+")
+      ${pkgs.libnotify}/bin/notify-send -u critical -t 0 "Critical battery: shutdown in 5 minutes" -a "System"
+      (sleep 240; gnome-session-quit --power-off) &
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
     };
   };
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
