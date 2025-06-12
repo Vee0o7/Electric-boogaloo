@@ -51,6 +51,9 @@
   home.sessionPath = [
     "$HOME/.dotfiles/bin"
   ];
+  home.sessionVariables = {
+    CHARGE_SHUTDOWN = 0;
+  };
 
   xdg.configFile = {
     "autostart/vesktop.desktop".text = ''

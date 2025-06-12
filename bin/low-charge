@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+BAT=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "percentage" | grep -oP "[0-9]+")
+
+if  [[ "$CHARGE_SHUTDOWN" -eq "0" && $BAT -lt "20" && $(cat /sys/class/power_supply/BAT0/status) = "Discharging" ]]; then
+  export CHARGE_SHUTDOWN=1
+  notify-send -u critical -t 0 "Critical battery: shutdown in 5 minutes" -a "System"
+  (sleep 240; unset CHARGE_SHUTDOWN; gnome-session-quit --power-off) &
+fi
