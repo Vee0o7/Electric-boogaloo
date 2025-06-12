@@ -3,7 +3,7 @@
 {
 
   systemd.user.services."low-charge-shutoff" = {
-    Service.ExecStart = "exec ${./low-charge}";
+    Service.ExecStart = "bash ${./low-charge}";
   };
   systemd.user.timers."low-charge-shutoff" = {
     Install.wantedBy = [ "timers.target" ];
