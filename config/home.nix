@@ -52,9 +52,6 @@
   home.sessionPath = [
     "$HOME/.dotfiles/bin"
   ];
-  home.sessionVariables = {
-    CHARGE_SHUTDOWN = 0;
-  };
 
   xdg.configFile = {
     "autostart/vesktop.desktop".text = ''
@@ -81,7 +78,6 @@
       bitrate = 320;
       device = "shared";
       device_name = "spotifyd";
-      # use_mpris = true; # Don't know what this does...
     };
   };
 
