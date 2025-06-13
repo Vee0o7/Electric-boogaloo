@@ -2,6 +2,10 @@
 
 {
 
+  home.packages = [
+    pkgs.libnotify
+    pkgs.upower
+  ];
   systemd.user.services."low-charge-shutoff" = {
     Service.ExecStart = "/usr/bin/env bash -c ${./low-charge}";
   };
