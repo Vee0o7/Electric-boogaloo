@@ -74,10 +74,13 @@
   services.spotifyd = {
     enable = true;
     settings = {
-      volume_normalisation = true;
-      bitrate = 320;
-      device = "shared";
-      device_name = "spotifyd";
+      global = {
+        volume_normalisation = true;
+        bitrate = 320;
+        # device = "shared";
+        # device_name = "spotifyd";
+        initial_volume = 70;
+      };
     };
   };
 

@@ -2,10 +2,9 @@
 
 let 
   background = ./floating-islands-rose.png;
-  # bg-url = "https://w.wallhaven.cc/full/3l/wallhaven-3l66qd.png";
   # background = pkgs.fetchurl {
-  #   url = bg-url;
-  #   sha256 = "sha256-2wfvfzXDNEVc/3kBHe+r9JmorTmsNQCXvbhXNGKam7E=";
+  #   url = "https://w.wallhaven.cc/full/5y/wallhaven-5yd6d5.png";
+  #   sha256 = "sha256-KJV1PUMofXWlX/R8qUuIuhQTBnQ7QXXioWghkZQ/5Hk=";
   # };
 in
 {
