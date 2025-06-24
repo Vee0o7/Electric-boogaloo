@@ -6,6 +6,7 @@
     waybar
     rofi-wayland
   ];
+  services.hyprpaper.enable = true;
   programs.hyprlock = {
     enable = true;
     settings = import ./hyprlock.nix;
