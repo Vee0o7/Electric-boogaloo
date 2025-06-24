@@ -10,9 +10,13 @@ in
     settings.default_session = {
       command = "${getExe pkgs.greetd.tuigreet} --time --cmd ${getExe pkgs.zsh}"; # Shell only by default
     };
-    settings.init_session = {
+    settings.initial_session = {
       command = "${getExe pkgs.greetd.tuigreet} --time --cmd ${getExe pkgs.zsh}"; # Shell only by default
     };
+  };
+  xdg.portal = {
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   # Launches hyprland, redirecting output to systemd journal
