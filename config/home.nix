@@ -166,7 +166,7 @@
     autosuggestion.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = ["direnv" "fzf" "git" "thefuck" "git-auto-fetch" "copybuffer" "history"];
+      plugins = ["direnv" "fzf" "git" "git-auto-fetch" "copybuffer" "history"];
     };
     initContent = let after = lib.mkOrder 1600 "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh"; before = lib.mkOrder 400 (''
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme'');
