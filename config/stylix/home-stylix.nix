@@ -6,5 +6,6 @@
     targets.firefox.profileNames = [ "viv" ];
     targets.librewolf.colorTheme.enable = true;
     targets.librewolf.profileNames = [ "viv" ];
+    targets.waybar.addCss = false;
   };
 }

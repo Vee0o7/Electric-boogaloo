@@ -1,7 +1,4 @@
 {
-# exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-# exec-once=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
 ###################
 ### MY PROGRAMS ###
 ###################
@@ -73,7 +70,12 @@ bindel = [
 
 
 exec-once = [
+"dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+"dbus-update-activation-environment --systemd --all"
+"systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 "waybar"
+"systemctl start --user hyprpaper.service"
+"hyprlock"
 # "hyprpm enable Hyprspace"
 ];
 
