@@ -108,6 +108,7 @@
     pulseaudioFull
     pavucontrol
     libnotify
+    iwd
   ];
   programs.npm.enable = true;
 

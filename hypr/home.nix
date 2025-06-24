@@ -1,13 +1,15 @@
 { pkgs, lib, config, inputs, ... }:
 {
   
+  home.packages = with pkgs; [
+    hyprshot
+    waybar
+    rofi-wayland
+  ];
   programs.hyprlock = {
     enable = true;
     settings = import ./hyprlock.nix;
   };
-  home.packages = with pkgs; [
-    hyprshot
-  ];
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = false;
@@ -23,5 +25,9 @@
       onChange = "pkill waybar && waybar";
     };
     ".config/rofi".source = ./rofi;
+  };
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 }
