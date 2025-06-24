@@ -81,6 +81,12 @@
     substituters = ["https://hyprland.cachix.org"];
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
+  nixpkgs.config.packageOverrides = pkgs: {
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/main.tar.gz") {
+      inherit pkgs;
+    };
+  };
+
   nix.extraOptions = ''
       trusted-users = root viv
   '';

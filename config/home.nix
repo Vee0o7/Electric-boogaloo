@@ -45,7 +45,6 @@
     nsxiv
     zsh-powerlevel10k
     direnv
-    thefuck
   ];
 
   xsession.enable = true; # fixes session issues with logout and login
@@ -53,29 +52,21 @@
     "$HOME/.dotfiles/bin"
   ];
 
-  xdg.configFile = {
-    "autostart/vesktop.desktop".text = ''
-        [Desktop Entry]
-        Type=Application
-        Exec=vesktop --start-minimized
-        Name=Stylix: enable User Themes extension for GNOME Shell
-      '';
-  };
+  # xdg.configFile = {
+  #   "autostart/vesktop.desktop".text = ''
+  #       [Desktop Entry]
+  #       Type=Application
+  #       Exec=vesktop --start-minimized
+  #       Name=Stylix: enable User Themes extension for GNOME Shell
+  #     '';
+  # };
   
   programs.firefox = {
     enable = true;
     package = pkgs.librewolf;
-    ExtensionSettings = {
-      "addon@darkreader.org" = {
-        install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
-        installation_mode = "force_installed";
-       };
+    profiles.viv = {
+      extensions.force = true;
     };
-  };
-  programs.librewolf = {
-    enable = true;
-    profiles.viv.extensions.force = true;
-    ex
   };
 
   services.spotifyd = {

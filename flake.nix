@@ -28,7 +28,7 @@
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      distro = ./gnome;
+      distro = ./hypr;
       config = [
           (distro + "/configuration.nix")
 
