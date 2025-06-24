@@ -1,3 +1,4 @@
+{extraInputs}:
 {
 ###################
 ### MY PROGRAMS ###
@@ -70,12 +71,12 @@ bindel = [
 
 
 exec-once = [
+(if extraInputs.autologin then "" else "hyprlock")
 "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 "dbus-update-activation-environment --systemd --all"
 "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 "waybar"
 "systemctl start --user hyprpaper.service"
-"hyprlock"
 # "hyprpm enable Hyprspace"
 ];
 

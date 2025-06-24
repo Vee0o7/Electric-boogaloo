@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, ... }:
+{ pkgs, lib, config, inputs, extraInputs, ... }:
 {
   imports = [./waybar];
   home.packages = with pkgs; [
@@ -17,7 +17,7 @@
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     plugins = [
     ];
-    settings = lib.mkForce (import ./hyprland.nix);
+    settings = lib.mkForce (import ./hyprland.nix {inherit extraInputs;});
   };
   home.file = {
     ".config/rofi".source = ./rofi;

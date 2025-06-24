@@ -7,11 +7,15 @@ in
   services.greetd = {
     enable = true;
     vt = 2; # This prevents kernel logs from mangling greetd
-    settings.default_session = {
-      command = "${getExe pkgs.greetd.tuigreet} --time --cmd ${getExe pkgs.zsh}"; # Shell only by default
-    };
-    settings.initial_session = {
-      command = "${getExe pkgs.greetd.tuigreet} --time --cmd hyprland"; # Shell only by default
+    settings = {
+      default_session = {
+        command = "${getExe pkgs.greetd.tuigreet} --time --cmd hyprland";
+        user = "greeter";
+      };
+      initial_session = {
+        command = "${getExe pkgs.greetd.tuigreet} --time --cmd hyprland";
+        user = "viv";
+      };
     };
   };
   xdg.portal = {

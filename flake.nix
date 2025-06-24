@@ -28,8 +28,11 @@
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      extra = {
+        autologin = false;
+      };
       distro = ./hypr;
-      config = [
+      config = {extraInputs}: [
           (distro + "/configuration.nix")
 
           ./config/configuration.nix
@@ -42,24 +45,31 @@
               home-manager.extraSpecialArgs = {
                 inherit nixvim;
                 inherit inputs;
+                inherit extraInputs;
               };
             }
       ];
     in {
     nixosConfigurations = {
-      Big-boogaloo = lib.nixosSystem {
+      Big-boogaloo = let extraInputs = extra; in lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [ 
+        specialArgs = { 
+            inherit inputs;
+            inherit extraInputs;
+          };
+        modules = [
           ./hostHardware/Big-boogaloo/configuration.nix
-        ] ++ config;
+        ] ++ (config {inherit extraInputs;});
       };
-      Smol-boogaloo = lib.nixosSystem {
+      Smol-boogaloo = let extraInputs = (lib.attrsets.recursiveUpdate extra {autologin = true;}); in lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [ 
+        specialArgs = {
+            inherit inputs;
+            inherit extraInputs;
+          };
+        modules = [
           ./hostHardware/Smol-boogaloo/configuration.nix
-        ] ++ config;
+        ] ++ (config {inherit extraInputs;});
       };
     };
   };
