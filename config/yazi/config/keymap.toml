@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 prepend_keymap = [
   { on = "<S-t>", run = 'shell --orphan --confirm ghostty', desc = "Just for test!" },
   { on = "<Right>", run = 'noop', desc = "Just for test!" },

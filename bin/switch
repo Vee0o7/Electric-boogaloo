@@ -56,7 +56,7 @@ esac
 
 command="sudo nixos-rebuild switch --flake $SCRIPT_DIR"
 gencmd="nixos-rebuild list-generations"
-gengrep="grep current"
+gengrep="grep True"
 
 gdiff=$(git diff -U0)
 if [[ "$gdiff" != "" ]]; then

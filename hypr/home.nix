@@ -1,9 +1,8 @@
 { pkgs, lib, config, inputs, ... }:
 {
-  
+  imports = [./waybar];
   home.packages = with pkgs; [
     hyprshot
-    waybar
     rofi-wayland
   ];
   services.hyprpaper.enable = true;
@@ -21,10 +20,6 @@
     settings = lib.mkForce (import ./hyprland.nix);
   };
   home.file = {
-    ".config/waybar" = {
-      source = ./waybar;
-      onChange = "pkill waybar && waybar";
-    };
     ".config/rofi".source = ./rofi;
   };
   xdg.portal = {
