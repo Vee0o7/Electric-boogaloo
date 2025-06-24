@@ -11,7 +11,7 @@ in
       command = "${getExe pkgs.greetd.tuigreet} --time --cmd ${getExe pkgs.zsh}"; # Shell only by default
     };
     settings.initial_session = {
-      command = "${getExe pkgs.greetd.tuigreet} --time --cmd ${getExe pkgs.zsh}"; # Shell only by default
+      command = "${getExe pkgs.greetd.tuigreet} --time --cmd hyprland"; # Shell only by default
     };
   };
   xdg.portal = {
