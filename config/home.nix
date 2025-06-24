@@ -62,10 +62,6 @@
       '';
   };
 
-  programs.firefox = {
-    enable = true;
-    profiles.viv.extensions.force = true;
-  };
   programs.librewolf = {
     enable = true;
     profiles.viv.extensions.force = true;
@@ -151,14 +147,6 @@
       mouse-hide-while-typing = true;
     };
   };
-  # programs.starship = {
-  #   enable = true;
-  #   settings = {
-  #     format = "$username$directory$git_branch$nix_shell$line_break$character";
-  #     username.show_always = true;
-  #   };
-  #
-  # };
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
   home.file = {
   };

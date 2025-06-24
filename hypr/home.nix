@@ -1,33 +1,22 @@
 { pkgs, lib, config, inputs, ... }:
 {
+  
+  programs.hyprlock.enable;
+  programs.hyprshot.enable;
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = false;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    settings = {
-      "$mod" = "SUPER";
-      bind = [
-        "$mod, W, exec, ghostty"
-        "$mod, F, exec, floorp"
-        "$mod, Q, killactive"
-        # ", $mod, plugin:overview:toggle"
-      ] ++ (
-        builtins.concatLists (builtins.genList (i:
-          let ws = i+1;
-          in [
-            "$mod, code:1${toString i}, workspace, ${toString ws}"
-            "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-          ] ) 9)
-        );
-
-      input = {
-        kb_layout = "gb";
-      };
-    };
     plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
-      # inputs.hyprspace.packages.${pkgs.system}.Hyprspace
     ];
+    home.file = {
+      ".config/hypr".source = ./hypr;
+      ".config/waybar" = {
+        source = ./waybar;
+	onChange = "pkill waybar && waybar";
+      };
+      ".config/rofi".source = ./rofi;
+    };
   };
 }
