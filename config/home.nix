@@ -61,10 +61,21 @@
         Name=Stylix: enable User Themes extension for GNOME Shell
       '';
   };
-
+  
+  programs.firefox = {
+    enable = true;
+    package = pkgs.librewolf;
+    ExtensionSettings = {
+      "addon@darkreader.org" = {
+        install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+        installation_mode = "force_installed";
+       };
+    };
+  };
   programs.librewolf = {
     enable = true;
     profiles.viv.extensions.force = true;
+    ex
   };
 
   services.spotifyd = {
