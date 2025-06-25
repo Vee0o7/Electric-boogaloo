@@ -164,7 +164,6 @@ misc = {
 #############
 
 input = {
-    kb_layout = "gb";
     accel_profile = "flat";
     follow_mouse = 1;
     sensitivity = 0.7;

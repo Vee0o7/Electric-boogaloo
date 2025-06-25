@@ -36,9 +36,6 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

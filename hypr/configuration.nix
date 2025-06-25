@@ -3,7 +3,6 @@ let
   inherit (lib) getExe;
 in
 {
-  boot.kernelParams = [ "console=tty1" ];
   services.greetd = {
     enable = true;
     vt = 2; # This prevents kernel logs from mangling greetd
@@ -13,11 +12,22 @@ in
         user = "greeter";
       };
       initial_session = {
-        command = "${getExe pkgs.greetd.tuigreet} --time --cmd hyprland";
+        command = "hyprland";
         user = "viv";
       };
     };
   };
+  # systemd.services.greetd.serviceConfig = {
+  #   Type = "idle";
+  #   StandardInput = "tty";
+  #   StandardOutput = "tty";
+  #   StandardError = "journal"; # Without this errors will spam on screen
+  #   # Without these bootlogs will spam on screen
+  #   TTYReset = true;
+  #   TTYVHangup = true;
+  #   TTYVTDisallocate = true;
+  # };
+  boot.plymouth.enable = true;
   xdg.portal = {
     enable = true;
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
