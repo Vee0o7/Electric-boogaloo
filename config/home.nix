@@ -4,8 +4,9 @@
   imports = [
     ./yazi
     ./zsh
+    ./spotify
     nixvim.homeManagerModules.nixvim
-    ./stylix/home-stylix.nix
+    ./stylix/home.nix
     (./../hostHardware + "/${osConfig.networking.hostName}/home.nix")
   ];
   home.username = "viv";
@@ -15,53 +16,45 @@
 
   home.packages = with pkgs; [
     nerd-fonts.fira-code
-    steam
 
+    ### gaming ###
+    steam
     lutris
     cockatrice
+    protonup
+    wine
+
+    ### cli ###
     tree
     nix-prefetch-git
-    protonup
-    # vesktop
-    wine
     devenv
     ansifilter
-    expect
-    flatpak
-    ntfs3g
-    gparted
-    obsidian
-    cava
-    vesktop
-    fzf
-    whatsie
-    libreoffice
     ripgrep
     imagemagick
     fd
-    eclipses.eclipse-java
-    trx
     rsync
     tealdeer
-    nsxiv
     zsh-powerlevel10k
     direnv
+    fzf
+
+    ### disk ###
+    ntfs3g
+    gparted
+
+    ### misc ###
+    obsidian
+    cava
+    vesktop
+    whatsie
+    libreoffice
+    nsxiv
   ];
 
-  xsession.enable = true; # fixes session issues with logout and login
   home.sessionPath = [
     "$HOME/.dotfiles/bin"
   ];
 
-  # xdg.configFile = {
-  #   "autostart/vesktop.desktop".text = ''
-  #       [Desktop Entry]
-  #       Type=Application
-  #       Exec=vesktop --start-minimized
-  #       Name=Stylix: enable User Themes extension for GNOME Shell
-  #     '';
-  # };
-  
   programs.firefox = {
     enable = true;
     package = pkgs.librewolf;
@@ -70,31 +63,6 @@
     };
   };
 
-  services.spotifyd = {
-    enable = true;
-    settings = {
-      global = {
-        volume_normalisation = true;
-        bitrate = 320;
-        # device = "shared";
-        # device_name = "spotifyd";
-        initial_volume = 70;
-      };
-    };
-  };
-
-  programs.spotify-player = {
-    enable = true;
-    keymaps = [
-      # {command = "None"; key_sequence = "q";}
-      {command.VolumeChange.offset = 5; key_sequence  = "=";}
-    ];
-    settings = {
-      enable_streaming = false;
-      client_id_command = { command = "cat"; args = ["${config.home.homeDirectory}/.spotifyid"];};
-      default_device = ''Spotifyd@${osConfig.networking.hostName}'';
-    };
-  };
 
   programs.fastfetch = {
     enable = true;
