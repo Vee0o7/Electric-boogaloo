@@ -2,10 +2,6 @@
 {
   imports = [./hardware-configuration.nix];
   networking.hostName = "Smol-boogaloo";
-  services.xserver.xkb = {
-    layout = "gb";
-    variant = "";
-  };
   # power saving settings
   services.power-profiles-daemon.enable = false;
   # powerManagement.enable = true;

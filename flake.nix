@@ -30,6 +30,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       extra = {
         autologin = false;
+        kb = "us";
       };
       distro = ./hypr;
       config = {extraInputs}: [
@@ -61,7 +62,7 @@
           ./hostHardware/Big-boogaloo/configuration.nix
         ] ++ (config {inherit extraInputs;});
       };
-      Smol-boogaloo = let extraInputs = (lib.attrsets.recursiveUpdate extra {autologin = true;}); in lib.nixosSystem {
+      Smol-boogaloo = let extraInputs = (lib.attrsets.recursiveUpdate extra {autologin = true; kb = "gb";}); in lib.nixosSystem {
         inherit system;
         specialArgs = {
             inherit inputs;

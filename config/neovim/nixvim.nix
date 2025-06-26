@@ -62,6 +62,8 @@
     number = true;
     relativenumber = true;
 
+    syntax = "off";
+
     # Enable mouse mode, can be useful for resizing splits for example!
     mouse = "a";
 
