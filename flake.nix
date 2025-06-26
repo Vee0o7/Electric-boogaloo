@@ -3,14 +3,21 @@
   
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
-    stylix.url = "github:danth/stylix";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland = {
       url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
@@ -18,12 +25,11 @@
     };
     hyprspace = {
       url = "github:KZDKM/Hyprspace";
-
       inputs.hyprland.follows = "hyprland";
     };
   };
 
-  outputs = {self, nixpkgs, home-manager, nixvim, stylix, nixpkgs-unstable, ...} @ inputs:
+  outputs = {self, nixpkgs, home-manager, nixvim, stylix, ...} @ inputs:
     let 
       lib = nixpkgs.lib;
       system = "x86_64-linux";

@@ -1,9 +1,10 @@
 { pkgs, lib, config, inputs, extraInputs, ... }:
 {
-  imports = [./waybar];
+  # imports = [./waybar];
   home.packages = with pkgs; [
     hyprshot
     rofi-wayland
+    nwg-panel
   ];
   services.hyprpaper.enable = true;
   programs.hyprlock = {

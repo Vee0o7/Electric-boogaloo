@@ -13,10 +13,8 @@ Usage: $0 [OPTION]...
 Syncs home-manager with working flakes and commits to git
 
 OPTIONS:
-  --gnome                 Install gnome (Default option)
-  --hypr                  Install hyprland
   -h, --help              Show help
-  -r, --rebuild           Rebuild nixos
+  -f, --fast              Only update config (--no-reexec)
 EOF
 }
 

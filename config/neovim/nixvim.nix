@@ -45,11 +45,11 @@
 
     # Sync clipboard between OS and Neovim
     #  Remove this option if you want your OS clipboard to remain independent.
-    register = "unnamedplus";
-    providers = {
-      xsel.enable = true; # For X11
-      xclip.enable = true;
-    };
+    # register = "unnamedplus";
+    # providers = {
+    #   xsel.enable = true; # For X11
+    #   xclip.enable = true;
+    # };
   };
 
   # [[ Setting options ]]
@@ -62,7 +62,7 @@
     number = true;
     relativenumber = true;
 
-    syntax = "off";
+    syntax = false;
 
     # Enable mouse mode, can be useful for resizing splits for example!
     mouse = "a";

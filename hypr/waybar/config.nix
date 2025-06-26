@@ -2,19 +2,19 @@
 mainbar = {
   layer = "top";
   modules-left = [
-    "hyprland/workspaces"
+    "custom/keybinds"
+    "backlight"
+    "pulseaudio"
+    "battery"
+    "custom/power"
   ];
   modules-center = [
     "clock"
   ];
   modules-right = [
-    "custom/keybinds"
-    "tray"
     "cava"
-    "backlight"
-    "pulseaudio"
-    "battery"
-    "custom/power"
+    "tray"
+    "hyprland/workspaces"
   ];
   pulseaudio = {
     tooltip = false;
@@ -34,7 +34,7 @@ mainbar = {
     framerate = 120;
     autosens = 1;
     sensitivity = 5;
-    bars = 16;
+    bars = 8;
     lower_cutoff_freq = 50;
     higher_cutoff_freq = 10000;
     method = "pulse";
@@ -157,7 +157,7 @@ mainbar = {
     on-click-right = "killall rofi";
   };
   clock = {
-    format = "{:%A %d %B - %R}";
+    format = "{:%R}";
     tooltip = false;
   };
   "hyprland/workspaces" = {
