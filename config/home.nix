@@ -6,9 +6,10 @@
     ./zsh
     ./spotify
     nixvim.homeManagerModules.nixvim
-    ./stylix/home.nix
     (./../hostHardware + "/${osConfig.networking.hostName}/home.nix")
   ];
+
+  stylix.autoEnable = true;
   home.username = "viv";
   home.homeDirectory = "/home/viv";
 
@@ -61,6 +62,12 @@
     profiles.viv = {
       extensions.force = true;
     };
+  };
+  stylix.targets = {
+    firefox.colorTheme.enable = true;
+    firefox.profileNames = [ "viv" ];
+    librewolf.colorTheme.enable = true;
+    librewolf.profileNames = [ "viv" ];
   };
 
 

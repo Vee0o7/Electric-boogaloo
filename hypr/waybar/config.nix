@@ -1,12 +1,11 @@
 {
 mainbar = {
-  layer = "top";
+  layer = "bottom";
   modules-left = [
-    "custom/keybinds"
+    "custom/power"
+    "battery"
     "backlight"
     "pulseaudio"
-    "battery"
-    "custom/power"
   ];
   modules-center = [
     "clock"
@@ -34,7 +33,7 @@ mainbar = {
     framerate = 120;
     autosens = 1;
     sensitivity = 5;
-    bars = 8;
+    bars = 12;
     lower_cutoff_freq = 50;
     higher_cutoff_freq = 10000;
     method = "pulse";
@@ -44,7 +43,7 @@ mainbar = {
     bar_delimiter = 0;
     monstercat = true;
     waves = true;
-    noise_reduction = 0.77;
+    noise_reduction = 0.85;
     input_delay = 0;
     format-icons = [
       "▁"
@@ -89,23 +88,9 @@ mainbar = {
     ];
     max-length = 25;
   };
-  keyboard-state = {
-    numlock = false;
-    capslock = true;
-    format = "{icon} {name}";
-    format-icons = {
-      locked = "";
-      unlocked = "";
-    };
-  };
   tray = {
     icon-size = 18;
     spacing = 10;
-  };
-  disk = {
-    interval = 30;
-    format = "  {percentage_used}%";
-    path = "/";
   };
   privacy = {
     icon-spacing = 10;
@@ -129,26 +114,6 @@ mainbar = {
         tooltip-icon-size = 24;
       }
     ];
-  };
-  "hyprland/language" = {
-    format = "  {1}";
-    tooltip = false;
-  };
-  cpu = {
-    interval = 15;
-    format = "  {}%";
-    max-length = 10;
-  };
-  memory = {
-    interval = 30;
-    format = "  {}%";
-    max-length = 10;
-  };
-  "custom/launcher" = {
-    format = " ";
-    on-click = "rofi -show drun";
-    on-click-right = "killall rofi";
-    tooltip = false;
   };
   "custom/power" = {
     format = "⏻ ";

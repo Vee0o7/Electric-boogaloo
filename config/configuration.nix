@@ -7,7 +7,7 @@
 {
   imports = [
     ./pipewire
-    ./stylix/configuration.nix
+    ./stylix
   ];
 
   # List packages installed in system profile. To search, run:
