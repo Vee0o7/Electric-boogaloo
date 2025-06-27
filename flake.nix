@@ -3,14 +3,21 @@
   
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
-    stylix.url = "github:danth/stylix";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland = {
       url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
@@ -18,18 +25,21 @@
     };
     hyprspace = {
       url = "github:KZDKM/Hyprspace";
-
       inputs.hyprland.follows = "hyprland";
     };
   };
 
-  outputs = {self, nixpkgs, home-manager, nixvim, stylix, nixpkgs-unstable, ...} @ inputs:
+  outputs = {self, nixpkgs, home-manager, nixvim, stylix, ...} @ inputs:
     let 
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      distro = ./gnome;
-      config = [
+      extra = {
+        autologin = false;
+        kb = "us";
+      };
+      distro = ./hypr;
+      config = {extraInputs}: [
           (distro + "/configuration.nix")
 
           ./config/configuration.nix
@@ -42,24 +52,31 @@
               home-manager.extraSpecialArgs = {
                 inherit nixvim;
                 inherit inputs;
+                inherit extraInputs;
               };
             }
       ];
     in {
     nixosConfigurations = {
-      Big-boogaloo = lib.nixosSystem {
+      Big-boogaloo = let extraInputs = extra; in lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [ 
+        specialArgs = { 
+            inherit inputs;
+            inherit extraInputs;
+          };
+        modules = [
           ./hostHardware/Big-boogaloo/configuration.nix
-        ] ++ config;
+        ] ++ (config {inherit extraInputs;});
       };
-      Smol-boogaloo = lib.nixosSystem {
+      Smol-boogaloo = let extraInputs = (lib.attrsets.recursiveUpdate extra {autologin = true; kb = "gb";}); in lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [ 
+        specialArgs = {
+            inherit inputs;
+            inherit extraInputs;
+          };
+        modules = [
           ./hostHardware/Smol-boogaloo/configuration.nix
-        ] ++ config;
+        ] ++ (config {inherit extraInputs;});
       };
     };
   };

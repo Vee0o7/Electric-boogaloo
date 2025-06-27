@@ -13,10 +13,8 @@ Usage: $0 [OPTION]...
 Syncs home-manager with working flakes and commits to git
 
 OPTIONS:
-  --gnome                 Install gnome (Default option)
-  --hypr                  Install hyprland
   -h, --help              Show help
-  -r, --rebuild           Rebuild nixos
+  -f, --fast              Only update config (--no-reexec)
 EOF
 }
 
@@ -56,7 +54,7 @@ esac
 
 command="sudo nixos-rebuild switch --flake $SCRIPT_DIR"
 gencmd="nixos-rebuild list-generations"
-gengrep="grep current"
+gengrep="grep True"
 
 gdiff=$(git diff -U0)
 if [[ "$gdiff" != "" ]]; then

@@ -78,6 +78,7 @@
         basedpyright.enable = true;
         metals.enable = true;
         jdtls.enable = true;
+        ocamllsp.enable = true;
 
         lua_ls = {
           enable = true;
