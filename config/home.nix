@@ -134,6 +134,7 @@
       co = "checkout";
       ci = "commit";
       ca = "commit --amend";
+      squash = ''!git reset --soft $(git log --branches=$(git branch) --not --remotes --no-color --pretty=format:%H | ${lib.getExe pkgs.ansifilter} | tail -n 1) && git commit -a'';
     };
   };
   systemd.user.startServices = "sd-switch";
