@@ -1,11 +1,7 @@
-{pkgs, ...}:
+{pkgs, lib, ...}:
 {
   imports = [./hardware-configuration.nix];
   networking.hostName = "Smol-boogaloo";
-  services.xserver.xkb = {
-    layout = "gb";
-    variant = "";
-  };
   # power saving settings
   services.power-profiles-daemon.enable = false;
   # powerManagement.enable = true;
@@ -56,15 +52,4 @@
   #     User = "root";
   #   };
   # };
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "viv";
-  };
-
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
 }

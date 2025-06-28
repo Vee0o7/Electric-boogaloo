@@ -1,0 +1,112 @@
+* {
+    border: none;
+    font-family: "JetbrainsMono Nerd Font" ;
+    font-size: 14;
+    border-radius: 20;
+}
+window#waybar {
+    background: transparent;
+}
+#network {
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style: solid;
+    transition: 0.3s;
+}
+#network.disconnected {
+    border-style: solid;
+}
+#cava {
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0px;
+    border-style: solid;
+    transition: 0.3s; 
+}
+#battery {
+    /* margin-left: 8px; */
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 0px;
+    border-style: solid;
+    transition: 0.3s; 
+    background: @base00;
+}
+
+#backlight {
+    /* margin-left: 8px; */
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 0px;
+    border-style: solid;
+    transition: 0.3s; 
+    background: @base00;
+}
+#pulseaudio {
+    /* margin-left: 8px; */
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 0px;
+    padding: 8px;
+    border-style: solid;
+    transition: 0.3s;
+    background: @base00;
+}
+/* #pulseaudio.muted { */
+/*     border-style: solid; */
+/*     transition: 0.3s; */
+/* } */
+#clock {
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0px;
+    border-style: solid;
+    transition: 0.3s;
+}
+
+/* #privacy { */
+/*     margin-left: 8px; */
+/*     padding-left: 10px; */
+/*     padding-right: 10px; */
+/*     margin-bottom: 0px; */
+/*     border-style: solid; */
+/*     transition: 0.3s; */
+/* } */
+/* #idle_inhibitor{ */
+/*     margin-left: 8px; */
+/*     padding-left: 15px; */
+/*     padding-right: 15px; */
+/*     margin-bottom: 0px; */
+/*     border-style: solid; */
+/*     transition: 0.3s; */
+/* } */
+#custom-power {
+    /* margin-left: 8px; */
+    /* margin-right: 8; */
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 0px;
+    border-style: solid;
+    transition: 0.3s;
+    background: @base00;
+}
+#custom-power button {
+    transition: 0.3s;
+}
+#workspaces {
+    margin-right: 10px;
+    padding-left: 0px;
+    padding-right: 12px;
+    border-style: solid;
+    transition: 0.3s;
+}
+#workspaces button {
+    transition: 0.3s;
+}
+#workspaces button:hover {
+    transition: 0.3s;
+    background: @base00;
+}

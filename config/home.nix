@@ -2,11 +2,14 @@
 
 {
   imports = [
-    ./yazi/yazi.nix
+    ./yazi
+    ./zsh
+    ./spotify
     nixvim.homeManagerModules.nixvim
-    ./stylix/home-stylix.nix
     (./../hostHardware + "/${osConfig.networking.hostName}/home.nix")
   ];
+
+  stylix.autoEnable = true;
   home.username = "viv";
   home.homeDirectory = "/home/viv";
 
@@ -14,88 +17,59 @@
 
   home.packages = with pkgs; [
     nerd-fonts.fira-code
-    steam
 
+    ### gaming ###
+    steam
     lutris
     cockatrice
+    protonup
+    wine
+
+    ### cli ###
     tree
     nix-prefetch-git
-    protonup
-    # vesktop
-    wine
     devenv
     ansifilter
-    expect
-    flatpak
-    ntfs3g
-    gparted
-    obsidian
-    cava
-    vesktop
-    fzf
-    whatsie
-    libreoffice
     ripgrep
     imagemagick
     fd
-    eclipses.eclipse-java
-    trx
     rsync
     tealdeer
-    nsxiv
     zsh-powerlevel10k
     direnv
-    thefuck
+    fzf
+
+    ### disk ###
+    ntfs3g
+    gparted
+
+    ### misc ###
+    obsidian
+    cava
+    vesktop
+    whatsie
+    libreoffice
+    nsxiv
   ];
 
-  xsession.enable = true; # fixes session issues with logout and login
   home.sessionPath = [
     "$HOME/.dotfiles/bin"
   ];
 
-  xdg.configFile = {
-    "autostart/vesktop.desktop".text = ''
-        [Desktop Entry]
-        Type=Application
-        Exec=vesktop --start-minimized
-        Name=Stylix: enable User Themes extension for GNOME Shell
-      '';
-  };
-
   programs.firefox = {
     enable = true;
-    profiles.viv.extensions.force = true;
-  };
-  programs.librewolf = {
-    enable = true;
-    profiles.viv.extensions.force = true;
-  };
-
-  services.spotifyd = {
-    enable = true;
-    settings = {
-      global = {
-        volume_normalisation = true;
-        bitrate = 320;
-        # device = "shared";
-        # device_name = "spotifyd";
-        initial_volume = 70;
-      };
+    package = pkgs.librewolf;
+    profiles.viv = {
+      extensions.force = true;
     };
   };
-
-  programs.spotify-player = {
-    enable = true;
-    keymaps = [
-      # {command = "None"; key_sequence = "q";}
-      {command.VolumeChange.offset = 5; key_sequence  = "=";}
-    ];
-    settings = {
-      enable_streaming = false;
-      client_id_command = { command = "cat"; args = ["${config.home.homeDirectory}/.spotifyid"];};
-      default_device = ''Spotifyd@${osConfig.networking.hostName}'';
-    };
+  stylix.targets = {
+    firefox.colorTheme.enable = true;
+    firefox.profileNames = [ "viv" ];
+    librewolf.colorTheme.enable = true;
+    librewolf.profileNames = [ "viv" ];
   };
+
 
   programs.fastfetch = {
     enable = true;
@@ -137,13 +111,6 @@
     };
   };
 
-  ### Terminal stuff ###
-
-  programs.zoxide = {
-    enable = true;
-    options = [ "--cmd cd"] ;
-  };
-
   programs.ghostty = {
     enable = true;
     settings = {
@@ -151,48 +118,9 @@
       mouse-hide-while-typing = true;
     };
   };
-  # programs.starship = {
-  #   enable = true;
-  #   settings = {
-  #     format = "$username$directory$git_branch$nix_shell$line_break$character";
-  #     username.show_always = true;
-  #   };
-  #
-  # };
+
   programs.nixvim = import ./neovim/nixvim.nix {inherit pkgs;};
-  home.file = {
-  };
 
-  programs.zsh =
-  {
-    enable = true;
-    shellAliases  = {
-      ".." = "cd ..";
-      "la" = "ls -a";
-      "y" = "yazi";
-      "cdd" = "cd $HOME/Documents";
-      # "spotifyrtp" = "pactl load-module module-rtp-send source=spotify.monitor";
-    };
-    autosuggestion.enable = true;
-    oh-my-zsh = {
-      enable = true;
-      plugins = ["direnv" "fzf" "git" "thefuck" "git-auto-fetch" "copybuffer" "history"];
-    };
-    initContent = let after = lib.mkOrder 1600 "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh"; before = lib.mkOrder 400 (''
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme'');
-      in lib.mkMerge [before after];
-  };
-
-  # programs.thefuck.enable = true;
-  programs.dircolors = {
-    enable = true;
-    settings = {
-      OTHER_WRITABLE = "30;42";
-    };
-  };
-  services.xsettingsd = {
-    enable = true;
-  };
 
   programs.git = {
     enable = true;
@@ -206,6 +134,7 @@
       co = "checkout";
       ci = "commit";
       ca = "commit --amend";
+      squash = ''!git reset --soft $(git log --branches=$(git branch) --not --remotes --no-color --pretty=format:%H | ${lib.getExe pkgs.ansifilter} | tail -n 1) && git commit -a'';
     };
   };
   systemd.user.startServices = "sd-switch";

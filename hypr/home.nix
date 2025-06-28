@@ -1,33 +1,30 @@
-{ pkgs, lib, config, inputs, ... }:
+{ pkgs, lib, config, inputs, extraInputs, ... }:
 {
+  imports = [./waybar];
+  home.packages = with pkgs; [
+    hyprshot
+    rofi-wayland
+    # nwg-panel
+  ];
+  services.hyprpaper.enable = true;
+  programs.hyprlock = {
+    enable = true;
+    settings = import ./hyprlock.nix;
+  };
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = false;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    settings = {
-      "$mod" = "SUPER";
-      bind = [
-        "$mod, W, exec, ghostty"
-        "$mod, F, exec, floorp"
-        "$mod, Q, killactive"
-        # ", $mod, plugin:overview:toggle"
-      ] ++ (
-        builtins.concatLists (builtins.genList (i:
-          let ws = i+1;
-          in [
-            "$mod, code:1${toString i}, workspace, ${toString ws}"
-            "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-          ] ) 9)
-        );
-
-      input = {
-        kb_layout = "gb";
-      };
-    };
     plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
-      # inputs.hyprspace.packages.${pkgs.system}.Hyprspace
     ];
+    settings = lib.mkForce (import ./hyprland.nix {inherit extraInputs;});
+  };
+  home.file = {
+    ".config/rofi".source = ./rofi;
+  };
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 }
