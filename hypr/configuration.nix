@@ -3,6 +3,7 @@ let
   inherit (lib) getExe;
 in
 {
+  programs.light.brightnessKeys.enable = true;
   services.greetd = {
     enable = true;
     vt = 2; # This prevents kernel logs from mangling greetd
@@ -30,7 +31,7 @@ in
   boot.plymouth.enable = true;
   xdg.portal = {
     enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    extraPortals = [pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk];
     config.common.default = "*";
   };
 

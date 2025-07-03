@@ -27,10 +27,10 @@ bind = [
 "$mainMod, M, exit"
 "$mainMod, F, fullscreen"
 "$mainMod, E, exec, $fileManager"
-"alt, F, togglefloating,"
+# "$mainMod shift, F, togglefloating,"
 "$mainMod, space, exec, $menu"
 "$mainMod, escape, exec, $powermenu"
-"alt, S, togglesplit, "
+# "$mainMod shift, S, togglesplit, "
 "$mainMod, H, movefocus, l"
 "$mainMod, J, movefocus, d"
 "$mainMod, K, movefocus, u"
@@ -48,8 +48,8 @@ bind = [
 ];
 
 bindm = [
-"alt, mouse:272, movewindow"
-"alt shift, mouse:272, resizewindow"
+"mainMod shift, mouse:272, movewindow"
+# "mainMod shift shift, mouse:272, resizewindow"
 ];
 
 bindel = [
@@ -115,7 +115,7 @@ decoration = {
         render_power = 1000;
     };
     blur = {
-        enabled = "true, blur";
+        enabled = "false, blur";
         size = 1;
         passes = 1;
 
@@ -156,6 +156,7 @@ master = {
 misc = {
     force_default_wallpaper = -1;
     disable_hyprland_logo = false;
+    vfr = true;
 };
 
 

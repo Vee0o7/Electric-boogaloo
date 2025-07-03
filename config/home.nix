@@ -5,6 +5,7 @@
     ./yazi
     ./zsh
     ./spotify
+    ./helix
     nixvim.homeManagerModules.nixvim
     (./../hostHardware + "/${osConfig.networking.hostName}/home.nix")
   ];
@@ -33,12 +34,12 @@
     ripgrep
     imagemagick
     fd
+    sd
     rsync
     tealdeer
     zsh-powerlevel10k
     direnv
     fzf
-    helix
 
     ### disk ###
     ntfs3g
