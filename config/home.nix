@@ -38,6 +38,7 @@
     zsh-powerlevel10k
     direnv
     fzf
+    helix
 
     ### disk ###
     ntfs3g
@@ -134,7 +135,7 @@
       co = "checkout";
       ci = "commit";
       ca = "commit --amend";
-      squash = ''!git reset --soft $(git log --branches=$(git branch) --not --remotes --no-color --pretty=format:%H | ${lib.getExe pkgs.ansifilter} | tail -n 1) && git commit -a'';
+      squash = ''!git reset --soft $(git log --branches=$(git branch) --not --remotes --no-color --pretty=format:%H | ${lib.getExe pkgs.ansifilter} | tail -n 1) && git commit --amend -a'';
     };
   };
   systemd.user.startServices = "sd-switch";
