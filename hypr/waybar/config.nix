@@ -6,14 +6,15 @@ mainbar = {
     "battery"
     "backlight"
     "pulseaudio"
+    "network"
   ];
   modules-center = [
-    "clock"
+    "hyprland/workspaces"
   ];
   modules-right = [
+    "clock"
     "cava"
     "tray"
-    "hyprland/workspaces"
   ];
   pulseaudio = {
     tooltip = false;
