@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       general =  {
-        lock_cmd = "hyprlock";
+        lock_cmd = "uwsm app -- hyprlock";
       };
       listener = [
         { # screen off after 5 mins
@@ -14,7 +14,7 @@
         }
         { # lock after 10 mins
           timeout = 600;
-          on-timeout = "hyprlock";
+          on-timeout = "uwsm app -- hyprlock";
         }
         { # suspend after 20 mins
           timeout = 1200;

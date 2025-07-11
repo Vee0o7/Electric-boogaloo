@@ -1,4 +1,8 @@
 {extraInputs}:
+let
+    movetoworkspace = {n}: "exec, hyprctl dispatch movetoworkspace ${n}";
+    toworkspace = {n}: "exec, hyprctl dispatch workspace ${n} && hyprctl dispatch overview:close";
+in
 {
 ###################
 ### MY PROGRAMS ###
@@ -9,9 +13,7 @@
 "$menu" = "rofi -show drun";
 "$powermenu" = "zsh ~/.config/rofi/powermenu.sh";
 "$screenshot" = "hyprshot -m region -m active --clipboard-only";
-"$hyprlock" = "hyprlock";
-"$killpanel" = "killall waybar";
-"$startpanel" = "waybar";
+"$hyprlock" = "uwsm app -- hyprlock";
 
 ###################
 ### KEYBINDINGS ###
@@ -24,7 +26,7 @@ bind = [
 "$mainMod, return, exec, $terminal"
 "$mainMod, W, exec, $web"
 "$mainMod, Q, killactive,"
-"$mainMod, M, exit"
+"$mainMod, M, togglespecialworkspace"
 "$mainMod, F, fullscreen"
 "$mainMod, E, exec, $fileManager"
 # "$mainMod shift, F, togglefloating,"
@@ -35,16 +37,16 @@ bind = [
 "$mainMod, J, movefocus, d"
 "$mainMod, K, movefocus, u"
 "$mainMod, L, movefocus, r"
-"$mainMod, 1, workspace, 1"
-"$mainMod, 2, workspace, 2"
-"$mainMod, 3, workspace, 3"
-"$mainMod, 4, workspace, 4"
-"$mainMod, 5, workspace, 5"
-"$mainMod shift, 1, movetoworkspace, 1"
-"$mainMod shift, 2, movetoworkspace, 2"
-"$mainMod shift, 3, movetoworkspace, 3"
-"$mainMod shift, 4, movetoworkspace, 4"
-"$mainMod shift, 5, movetoworkspace, 5"
+"$mainMod, 1, ${toworkspace {n="1";}}"
+"$mainMod, 2, ${toworkspace {n="2";}}"
+"$mainMod, 3, ${toworkspace {n="3";}}"
+"$mainMod, 4, ${toworkspace {n="4";}}"
+"$mainMod, 5, ${toworkspace {n="5";}}"
+"$mainMod shift, 1, ${movetoworkspace {n="1";}}"
+"$mainMod shift, 2, ${movetoworkspace {n="2";}}"
+"$mainMod shift, 3, ${movetoworkspace {n="3";}}"
+"$mainMod shift, 4, ${movetoworkspace {n="4";}}"
+"$mainMod shift, 5, ${movetoworkspace {n="5";}}"
 ];
 
 bindm = [
@@ -61,7 +63,9 @@ bindel = [
 ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
 ];
 
-# bindr = $mainMod, $mainMod_L, overview:toggle
+bindr = [
+    "$mainMod, $mainMod_L, overview:toggle"
+];
 
 
 #################
@@ -75,31 +79,29 @@ exec-once = [
 "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 "dbus-update-activation-environment --systemd --all"
 "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-"waybar"
 "systemctl start --user hyprpaper.service"
+"uwsm app -- waybar"
+"[workspace special silent] ghostty --command=spotify_player"
+"[workspace 1] ghostty --initial-command='sleep 2 && fastfetch && exec zsh'"
 # "hyprpm enable Hyprspace"
 ];
 
 #####################
 ### LOOK AND FEEL ###
 #####################
-# plugin = {
-#     hyprexpo = {
-#         columns = 3;
-#         gap_size = 5;
-#         workspace_method = "center current"; # [center/first] [workspace] e.g. first 1 or center m+1
-#
-#         enable_gesture = true;
-#         gesture_fingers = 3;
-#         gesture_distance = 300;
-#         gesture_positive = true;
-#     };
-# };
+plugin = {
+    overview = {
+        affectStrut = true;
+        panelHeight = 150;
+        gapsOut = 10;
+        hideTopLayers = true;
+    };
+};
 
 general = {
     gaps_in = 1;
     gaps_out = 0;
-    border_size = 3;
+    border_size = 2;
     resize_on_border = false;
     allow_tearing = false;
     layout = "dwindle";
@@ -138,6 +140,7 @@ animation = [
 "windowsMove, 1, 7, winIn, slide"
 "workspacesIn, 1, 8, winIn, slide"
 "workspacesOut, 1, 8, winOut, slide"
+"specialWorkspace, 1, 6, default, slidefadevert -50%"
 "layersIn, 1, 10, winIn, slide"
 "layersOut, 1, 3, layerOut, popin 50%"
 ];

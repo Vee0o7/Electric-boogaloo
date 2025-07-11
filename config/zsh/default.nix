@@ -23,6 +23,7 @@
       plugins = ["direnv" "fzf" "git" "git-auto-fetch" "copybuffer" "history"];
     };
     initContent = let after = lib.mkOrder 1600 "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh"; before = lib.mkOrder 400 (''
+      DISABLE_AUTO_UPDATE="true"
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme'');
       in lib.mkMerge [before after];
   };

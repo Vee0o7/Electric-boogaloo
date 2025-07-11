@@ -27,6 +27,15 @@
       CPU_MIN_PERF_ON_AC = 0;
       CPU_MAX_PERF_ON_AC = 100;
 
+      INTEL_GPU_MIN_FREQ_ON_AC = 100;
+      INTEL_GPU_MIN_FREQ_ON_BAT = 100;
+
+      INTEL_GPU_MAX_FREQ_ON_AC = 1100;
+      INTEL_GPU_MAX_FREQ_ON_BAT = 500;
+
+      INTEL_GPU_BOOST_FREQ_ON_AC = 1100;
+      INTEL_GPU_BOOST_FREQ_ON_BAT = 800;
+
       #Optional helps save long term battery health
       START_CHARGE_THRESH_BAT0 = 0;
       STOP_CHARGE_THRESH_BAT0 = 1;

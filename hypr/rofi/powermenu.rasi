@@ -4,7 +4,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "./colors.rasi"
+@import                          "./colours.rasi"
 @import                          "./fonts.rasi"
 
 /*****----- Main Window -----*****/
@@ -21,7 +21,7 @@ window {
     /* properties for all widgets */
     enabled:                     true;
     margin:                      0px;
-    padding:                     0px;
+    padding:                     20px;
     border:                      0px solid;
     border-radius:               20px;
     border-color:                @selected;

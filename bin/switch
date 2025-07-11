@@ -58,7 +58,7 @@ gengrep="grep True"
 
 gdiff=$(git diff -U0 HEAD~1)
 if [[ "$gdiff" != "" ]]; then
-        echo "$gdiff" | $EDITOR
+        echo "$gdiff" | $EDITOR -R
 else
         echo "no changes to commit"
 fi

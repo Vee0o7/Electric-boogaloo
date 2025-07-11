@@ -22,6 +22,7 @@
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprspace = {
       url = "github:KZDKM/Hyprspace";

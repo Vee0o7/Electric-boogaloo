@@ -4,16 +4,24 @@ let
 in
 {
   programs.light.brightnessKeys.enable = true;
+  programs.uwsm = {
+    enable = true;
+    # waylandCompositors.hyprland = {
+    #   prettyName = "Hyprland";
+    #   comment = "Hyprland compositor managed by UWSM";
+    #   binPath = "${getExe inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}";
+    # };
+  };
   services.greetd = {
     enable = true;
     vt = 2; # This prevents kernel logs from mangling greetd
     settings = {
       default_session = {
-        command = "${getExe pkgs.greetd.tuigreet} --time --cmd hyprland";
+        command = "${getExe pkgs.greetd.tuigreet} --time --cmd uwsm start default";
         user = "greeter";
       };
       initial_session = {
-        command = "hyprland";
+        command = "uwsm start default";
         user = "viv";
       };
     };
@@ -29,11 +37,11 @@ in
   #   TTYVTDisallocate = true;
   # };
   boot.plymouth.enable = true;
-  xdg.portal = {
-    enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk];
-    config.common.default = "*";
-  };
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = [inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk];
+  #   config.common.default = "*";
+  # };
 
   # Launches hyprland, redirecting output to systemd journal
   # environment.systemPackages = [
@@ -47,6 +55,7 @@ in
   # ];
 
   programs.hyprland = {
+    enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     withUWSM = true;

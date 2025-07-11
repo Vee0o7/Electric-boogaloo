@@ -3,11 +3,11 @@
   imports = [
     ./waybar
     ./hypridle
+    ./rofi
   ];
   home.packages = with pkgs; [
     hyprshot
     rofi-wayland
-    # nwg-panel
   ];
   services.hyprpaper = {
     enable = true;
@@ -20,17 +20,16 @@
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = false;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    xwayland.enable = true;
+    package = null;
+    portalPackage = null;
     plugins = [
+      inputs.hyprspace.packages.${pkgs.system}.Hyprspace
     ];
     settings = lib.mkForce (import ./hyprland.nix {inherit extraInputs;});
   };
-  home.file = {
-    ".config/rofi".source = ./rofi;
-  };
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  # };
 }
