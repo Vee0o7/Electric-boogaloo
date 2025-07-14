@@ -20,7 +20,7 @@ no='󰰲'
 
 # Rofi CMD
 rofi_cmd() {
-	rofi -dmenu \
+	rofi -dmenu -replace \
 		-p "Uptime: $uptime" \
 		-mesg "Uptime: $uptime" \
 		-theme ${dir}/${theme}.rasi
@@ -33,7 +33,7 @@ confirm_cmd() {
 		-theme-str 'listview {columns: 2; lines: 1;}' \
 		-theme-str 'element-text {horizontal-align: 0.5;}' \
 		-theme-str 'textbox {horizontal-align: 0.5;}' \
-		-dmenu \
+		-dmenu -replace \
 		-p 'Confirmation' \
 		-mesg 'Are you Sure?' \
 		-theme ${dir}/${theme}.rasi
@@ -93,7 +93,6 @@ case ${chosen} in
     $suspend)
 		run_cmd --suspend
 		hyprlock
-		i3lock
         ;;
     $logout)
 		run_cmd --logout

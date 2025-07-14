@@ -52,6 +52,7 @@
     whatsie
     libreoffice
     nsxiv
+    xclip
   ];
 
   home.sessionPath = [

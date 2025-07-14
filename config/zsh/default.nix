@@ -20,7 +20,7 @@
     autosuggestion.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = ["direnv" "fzf" "git" "git-auto-fetch" "copybuffer" "history"];
+      plugins = ["direnv" "fzf" "git" "git-auto-fetch" "copybuffer" "history" "vi-mode"];
     };
     initContent = let after = lib.mkOrder 1600 "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh"; before = lib.mkOrder 400 (''
       DISABLE_AUTO_UPDATE="true"

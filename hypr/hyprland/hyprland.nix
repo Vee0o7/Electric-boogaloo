@@ -2,7 +2,8 @@
 let
     movetoworkspace = {n}: "exec, hyprctl dispatch movetoworkspace ${n}";
     toworkspace = {n}: ''exec, hyprctl dispatch workspace ${n} & hyprctl dispatch overview:close & bash -c "hyprctl monitors | grep -Po 'workspace.+special:\K.*(?=\))' | xargs -r hyprctl dispatch togglespecialworkspace "'';
-    scratchpad = {name}: "togglespecialworkspace, ${name}";
+    scratchpad = {name}: "hyprctl dispatch togglespecialworkspace ${name}";
+    inherit (lib) getExe;
 in
     {
     wayland.windowManager.hyprland.settings = lib.mkForce
@@ -13,9 +14,10 @@ in
     "$terminal" = "ghostty";
     "$web" = "librewolf";
     "$fileManager" = "yazi";
-    "$menu" = "rofi -show drun";
+    "$menu" = "rofi -replace -show drun";
     "$powermenu" = "zsh ~/.config/rofi/powermenu.sh";
-    "$screenshot" = "hyprshot -m region -m active --clipboard-only";
+    "$notes" = "zsh ~/.config/rofi/notesmenu.sh";
+    "$screenshot" = "${getExe pkgs.grimblast} copy";
     "$hyprlock" = "uwsm app -- hyprlock";
 
     ###################
@@ -24,13 +26,15 @@ in
     "$mainMod" = "SUPER"; 
 
     bind = [
-        "$mainMod shift, S, exec, $screenshot"
+        "$mainMod shift, S, exec, $screenshot area"
+        "$mainMod, S, exec, $screenshot"
         "$mainMod, C, exec, $themes"
         "$mainMod, return, exec, $terminal"
         "$mainMod, W, exec, $web"
         "$mainMod, Q, killactive,"
-        "$mainMod, M, ${scratchpad {name="music";}}"
-        "$mainMod, V, ${scratchpad {name="volume";}}"
+        "$mainMod, N, exec, $notes"
+        "$mainMod, M, exec, ${scratchpad {name="music";}}"
+        "$mainMod, V, exec, ${scratchpad {name="volume";}}"
         "$mainMod, F, fullscreen"
         "$mainMod, E, exec, $fileManager"
         # "$mainMod shift, F, togglefloating,"
@@ -86,10 +90,9 @@ in
         "systemctl start --user hyprpaper.service"
         "uwsm app -- waybar"
         "uwsm app -- pypr"
-        "[workspace music silent] ghostty --command=spotify_player"
-        "[workspace volume silent] pavucontrol"
+        "[workspace special:music silent] ghostty --command=spotify_player"
+        "[workspace special:volume silent] pavucontrol"
         "[workspace 1] ghostty --initial-command='sleep 1.5 && fastfetch && exec zsh'"
-        # "hyprpm enable Hyprspace"
     ];
 
     #####################
@@ -191,7 +194,7 @@ in
     windowrulev2 = [
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-        "opacity 0.7, workspace:-95"
+        "opacity 0.7, class:org.pulseaudio.pavucontrol"
     ];
 };
 }

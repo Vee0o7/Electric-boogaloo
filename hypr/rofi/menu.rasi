@@ -1,10 +1,12 @@
 * {
     width: 600;
     font: "JetBrainsMono Nerd Font 14";
+    background-color: inherit;
+    highlight: none; 
 }
 @import                          "./colours.rasi"
 element-text, element-icon, mode-switcher {
-    background-color: inherit;
+    background-color: transparent;
     text-color: inherit;
     border-radius: 20px;
     font: @font;

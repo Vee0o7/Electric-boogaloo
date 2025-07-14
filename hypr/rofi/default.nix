@@ -1,7 +1,11 @@
 {config, ...}:
 {
+  home.shellAliases = {
+    rofi = "rofi -replace";
+  };
   home.file = {
     ".config/rofi/menu.rasi".source = ./menu.rasi;
+    ".config/rofi/notesmenu.sh".source = ./notesmenu.sh;
     ".config/rofi/powermenu.sh".source = ./powermenu.sh;
     ".config/rofi/powermenu.rasi".source = ./powermenu.rasi;
     ".config/rofi/fonts.rasi".source = ./fonts.rasi;

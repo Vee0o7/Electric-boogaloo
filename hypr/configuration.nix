@@ -17,7 +17,7 @@ in
     vt = 2; # This prevents kernel logs from mangling greetd
     settings = {
       default_session = {
-        command = "${getExe pkgs.greetd.tuigreet} --time --cmd uwsm start default";
+        command = "${getExe pkgs.greetd.tuigreet} --time";
         user = "greeter";
       };
       initial_session = {
