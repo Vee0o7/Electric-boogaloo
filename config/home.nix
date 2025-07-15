@@ -41,6 +41,12 @@
     direnv
     fzf
 
+    ### random ###
+    cowsay
+    figlet
+    fortune
+
+
     ### disk ###
     ntfs3g
     gparted
