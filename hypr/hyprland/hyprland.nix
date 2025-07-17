@@ -1,4 +1,4 @@
-{extraInputs, pkgs, lib, ...}:
+{extraInputs, osConfig, pkgs, lib, ...}:
 let
     movetoworkspace = {n}: "exec, hyprctl dispatch movetoworkspace ${n}";
     toworkspace = {n}: ''exec, hyprctl dispatch workspace ${n} & hyprctl dispatch overview:close & bash -c "hyprctl monitors | grep -Po 'workspace.+special:\K.*(?=\))' | xargs -r hyprctl dispatch togglespecialworkspace "'';
@@ -8,6 +8,15 @@ in
     {
     wayland.windowManager.hyprland.settings = lib.mkForce
 {
+
+    monitor = if osConfig.networking.hostName == "Smol-boogaloo" then {
+        "eDP-1" = "1920x1200@60, 0x0, 1";
+    } else {
+
+    };
+    xwayland = {
+      force_zero_scaling = true;
+    };
     ###################
     ### MY PROGRAMS ###
     ###################

@@ -8,7 +8,6 @@
     ./hyprland
   ];
   home.packages = with pkgs; [
-    hyprshot
     rofi-wayland
     inputs.pyprland.packages.${pkgs.system}.pyprland
   ];
