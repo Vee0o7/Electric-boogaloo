@@ -9,11 +9,11 @@ in
     wayland.windowManager.hyprland.settings = lib.mkForce
 {
 
-    monitor = if osConfig.networking.hostName == "Smol-boogaloo" then {
-        "eDP-1" = "1920x1200@60, 0x0, 1";
-    } else {
+    monitor = if (osConfig.networking.hostName == "Smol-boogaloo") then [
+        "eDP-1, 1920x1200@60, 0x0, 1"
+    ] else [
 
-    };
+    ];
     xwayland = {
       force_zero_scaling = true;
     };
