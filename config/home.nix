@@ -50,6 +50,7 @@
     ### disk ###
     ntfs3g
     gparted
+    nautilus
 
     ### misc ###
     obsidian
