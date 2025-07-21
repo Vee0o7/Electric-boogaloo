@@ -14,10 +14,11 @@ in
     enable = true;
     autoEnable = true;
 
-    override = {
-      base01 = config.stylix.generated.palette.base00;
-    };
+    # override = {
+    #   base01 = config.stylix.generated.palette.base00;
+    # };
     image = background;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
 
     cursor = {
       package = pkgs.rose-pine-cursor;
