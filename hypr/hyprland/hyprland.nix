@@ -58,8 +58,8 @@ in
     ];
 
     bindm = [
-        "mainMod shift, mouse:272, movewindow"
-        # "mainMod shift shift, mouse:272, resizewindow"
+        "alt, mouse:272, movewindow"
+        "alt shift, mouse:272, resizewindow"
     ];
 
     bindel = [
