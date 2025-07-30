@@ -23,6 +23,8 @@
   plugins.yazi.enable = true;
   plugins.snacks.enable = true;
   plugins.nvim-surround.enable = true;
+  plugins.guess-indent.enable = true;
+  plugins.orgmode.enable = true;
   enable = true;
   defaultEditor = true;
   viAlias = true;
