@@ -25,6 +25,7 @@
   plugins.nvim-surround.enable = true;
   plugins.guess-indent.enable = true;
   plugins.orgmode.enable = true;
+  plugins.markview.enable = true;
   enable = true;
   defaultEditor = true;
   viAlias = true;
