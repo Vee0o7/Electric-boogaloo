@@ -8,7 +8,8 @@
         package = null;
         portalPackage = null;
         plugins = [
-            inputs.hyprspace.packages.${pkgs.system}.Hyprspace
+            # inputs.hyprspace.packages.${pkgs.system}.Hyprspace
+            inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
         ];
     };
 

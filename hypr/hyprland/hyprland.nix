@@ -81,7 +81,8 @@ in
     ];
 
     bindr = [
-        "$mainMod, $mainMod_L, overview:toggle"
+        # "$mainMod, $mainMod_L, overview:toggle"
+        "$mainMod, $mainMod_L, hyprexpo:expo, toggle"
     ];
 
 
