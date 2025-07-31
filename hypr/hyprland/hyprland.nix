@@ -81,7 +81,7 @@ in
     ];
 
     bindr = [
-        # "$mainMod, $mainMod_L, overview:toggle"
+        "$mainMod, $mainMod_L, overview:toggle"
     ];
 
 
@@ -109,10 +109,10 @@ in
     #####################
     plugin = {
         overview = {
-            affectStrut = true;
+            affectStrut = false;
             panelHeight = 150;
             gapsOut = 10;
-            hideTopLayers = true;
+            hideTopLayers = false;
         };
     };
 
