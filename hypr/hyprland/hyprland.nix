@@ -109,10 +109,10 @@ in
     #####################
     plugin = {
         overview = {
-            affectStrut = false;
-            panelHeight = 150;
-            gapsOut = 10;
-            hideTopLayers = false;
+            # affectStrut = false;
+            # panelHeight = 150;
+            # gapsOut = 10;
+            # hideTopLayers = false;
         };
     };
 
