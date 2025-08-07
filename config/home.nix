@@ -25,6 +25,7 @@
     cockatrice
     protonup
     wine
+    atlauncher
 
     ### cli ###
     tree
