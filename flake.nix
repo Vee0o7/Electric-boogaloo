@@ -43,7 +43,7 @@
         autologin = false;
         kb = "us";
       };
-      distro = ./gnome;
+      distro = ./hypr;
       config = {extraInputs}: [
           (distro + "/configuration.nix")
 
