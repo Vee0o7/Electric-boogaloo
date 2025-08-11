@@ -28,6 +28,7 @@
   plugins.markview.enable = true;
   plugins.gx.enable = true;
   plugins.img-clip.enable = true;
+  plugins.image.enable = true;
   enable = true;
   defaultEditor = true;
   viAlias = true;
