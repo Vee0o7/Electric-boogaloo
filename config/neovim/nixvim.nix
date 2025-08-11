@@ -28,7 +28,7 @@
   plugins.markview.enable = true;
   plugins.markdown-preview = {
       enable = true;
-      settings.images_path = "$HOME/img/";
+      settings.images_path = "/home/viv/";
   };
   plugins.gx.enable = true;
   plugins.clipboard-image.enable = true;
