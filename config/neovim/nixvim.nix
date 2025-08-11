@@ -26,7 +26,10 @@
   plugins.guess-indent.enable = true;
   plugins.orgmode.enable = true;
   plugins.markview.enable = true;
-  plugins.markdown-preview.enable = true;
+  plugins.markdown-preview = {
+      enable = true;
+      settings.images_path = "$HOME/img/";
+  };
   plugins.gx.enable = true;
   plugins.clipboard-image.enable = true;
   enable = true;
