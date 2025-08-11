@@ -41,6 +41,7 @@
     zsh-powerlevel10k
     direnv
     fzf
+    wl-clipboard
 
     ### random ###
     cowsay
