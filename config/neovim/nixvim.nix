@@ -27,7 +27,7 @@
   plugins.orgmode.enable = true;
   plugins.markview.enable = true;
   plugins.gx.enable = true;
-  plugins.img-clip.enable = true;
+  plugins.clipboard-image.enable = true;
   plugins.image.enable = true;
   enable = true;
   defaultEditor = true;
