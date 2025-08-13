@@ -115,7 +115,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # Before changing this value read the documentation for this option
   system.stateVersion = "24.11"; # Did you read the comment?
