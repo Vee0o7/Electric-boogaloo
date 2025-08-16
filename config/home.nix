@@ -42,6 +42,7 @@
     direnv
     fzf
     wl-clipboard
+    android-tools
 
     ### random ###
     cowsay
