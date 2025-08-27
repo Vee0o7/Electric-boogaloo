@@ -67,7 +67,7 @@ in
     ];
 
     bindm = [
-        "alt, mouse:272, movewindow"
+        "$mainMod, mouse:272, movewindow"
         "alt shift, mouse:272, resizewindow"
     ];
 
