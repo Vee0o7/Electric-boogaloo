@@ -5,6 +5,7 @@
     gnomeExtensions.vertical-workspaces
     gnomeExtensions.forge
     gnomeExtensions.rounded-window-corners-reborn
+    gnomeExtensions.paperwm
     gnomeExtensions.user-themes
     gnomeExtensions.blur-my-shell
     gnomeExtensions.appindicator
@@ -19,14 +20,15 @@
       enabled-extensions = [
         "dash-to-panel@jderose9.github.com"
         "vertical-workspaces@G-dH.github.com"
-        "forge@jmmaranan.com"
+        # "forge@jmmaranan.com"
         "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
-        "rounded-window-corners@fxgn"
+        # "rounded-window-corners@fxgn"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
         "blur-my-shell@aunetx"
         "appindicatorsupport@rgcjonas.gmail.com"
         "color-picker@tuberry"
         "quick-settings-tweaks@qwreey"
+        "paperwm@paperwm.github.com"
       ];
     };
     "org/gnome/shell/extensions/just-perfection".window-picker-icon = false;
@@ -70,6 +72,17 @@
     };
     "org/gnome/shell/extensions/blur-my-shell/overview" = {
       blur = false;
+    };
+    "org/gnome/shell/extensions/paperwm" = {
+      gesture-workspace-fingers = 0;
+      selection-border-radius-bottom = 15;
+      selection-border-radius-top = 5;
+      selection-border-size = 2;
+      vertical-margin = 2;
+      vertical-margin-bottom = 2;
+      horizontal-margin = 0;
+      window-gap = 2;
+      edge-preview-enable = false;
     };
     "org/gnome/shell/extensions/blur-my-shell/applications".blacklist = ["Gimp-2.10" "gimp" "floorp" "firefox" "librewolf"];
     "org/gnome/shell/extensions/blur-my-shell/panel/applications" = {

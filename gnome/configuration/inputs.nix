@@ -48,7 +48,7 @@ in
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
       ];
-      www = ["<Super>f"];
+      www = ["<Super>w"];
       home = [];
     };
     "org/gnome/shell/extensions/forge/keybindings"= {
@@ -70,7 +70,7 @@ in
 
     # custom bindings #
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      binding = "<Super>w";
+      binding = "<Super><Enter>";
       command = "ghostty";
       name = "Terminal";
     };
