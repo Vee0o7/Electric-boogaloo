@@ -35,6 +35,7 @@
   programs.nix-ld.libraries = with pkgs; [
     wayland
     fontconfig
+    xorg.libX11
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];
