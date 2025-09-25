@@ -43,6 +43,7 @@
     fzf
     wl-clipboard
     android-tools
+    chromedriver
 
     ### random ###
     cowsay
