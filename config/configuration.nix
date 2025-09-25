@@ -55,6 +55,7 @@
     util-linux
     xz
     systemd
+    xcb-util-cursor
     
     # My own additions
     xorg.libXcomposite
