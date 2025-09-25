@@ -57,6 +57,12 @@
       xorg.xcbutil
       xorg.xcbutilrenderutil
       xcb-util-cursor
+      xcb-imdkit
+      xcbuild
+      xcb-proto
+      xcbutilxrm
+      xcbuildHook
+      xorg.xcbutilwm
       xorg.xcbutilkeysyms
       xorg.xcbutilimage
       xorg.xcbproto
