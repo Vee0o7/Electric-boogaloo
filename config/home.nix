@@ -46,6 +46,8 @@
     google-chrome
     chromium
     selenium-server-standalone
+    libglibutil
+    libnss_nis
 
     ### random ###
     cowsay
