@@ -43,7 +43,6 @@
     fzf
     wl-clipboard
     android-tools
-    chromedriver
     google-chrome
 
     ### random ###
