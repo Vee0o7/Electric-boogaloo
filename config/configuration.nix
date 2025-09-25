@@ -57,6 +57,7 @@
     systemd
     xcb-util-cursor
     xcbuild
+    xorg.xcbutilrenderutil
     
     # My own additions
     xorg.libXcomposite
