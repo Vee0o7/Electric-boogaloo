@@ -44,6 +44,7 @@
     wl-clipboard
     android-tools
     google-chrome
+    chromium
 
     ### random ###
     cowsay
