@@ -56,6 +56,7 @@
     xz
     systemd
     xcb-util-cursor
+    xcbuild
     
     # My own additions
     xorg.libXcomposite
