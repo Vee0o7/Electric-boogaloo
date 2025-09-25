@@ -57,6 +57,7 @@
       xorg.xcbutil
       xorg.xcbutilrenderutil
       xcb-util-cursor
+      xorg.xcbutilkeysyms
       xorg.libXcomposite
       xorg.libXtst
       xorg.libXrandr
