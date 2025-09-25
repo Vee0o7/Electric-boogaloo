@@ -54,7 +54,10 @@
       systemd
 
       # My own additions
-	    xorg.libXcomposite
+      xorg.xcbutil
+      xorg.xcbutilrenderutil
+      xcb-util-cursor
+      xorg.libXcomposite
       xorg.libXtst
       xorg.libXrandr
       xorg.libXext
