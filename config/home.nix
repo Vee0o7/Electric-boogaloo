@@ -45,6 +45,7 @@
     android-tools
     google-chrome
     chromium
+    selenium-server-standalone
 
     ### random ###
     cowsay
