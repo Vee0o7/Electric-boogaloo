@@ -43,11 +43,6 @@
     fzf
     wl-clipboard
     android-tools
-    google-chrome
-    chromium
-    selenium-server-standalone
-    libglibutil
-    libnss_nis
 
     ### random ###
     cowsay
