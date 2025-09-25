@@ -58,6 +58,8 @@
       xorg.xcbutilrenderutil
       xcb-util-cursor
       xorg.xcbutilkeysyms
+      xorg.xcbutilimage
+      xorg.xcbproto
       xorg.libXcomposite
       xorg.libXtst
       xorg.libXrandr
