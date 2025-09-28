@@ -208,7 +208,14 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [ epson-escpr ];
+  };
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
 
   nixpkgs.config.allowUnfree = true;
 
