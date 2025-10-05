@@ -23,6 +23,7 @@
     pavucontrol
     libnotify
     iwd
+    protonvpn-gui
   ];
   programs.npm.enable = true;
 
