@@ -24,6 +24,7 @@
     libnotify
     iwd
     protonvpn-gui
+    python3
   ];
   programs.npm.enable = true;
 
