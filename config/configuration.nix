@@ -27,6 +27,7 @@
     python3
   ];
   programs.npm.enable = true;
+  virtualisation.virtualbox.host.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
