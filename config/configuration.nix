@@ -216,6 +216,7 @@
     enable = true;
     nssmdns4 = true;
   };
+  services.flatpak.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
