@@ -27,6 +27,7 @@
     protonup
     wine
     atlauncher
+    flatpak
 
     ### cli ###
     tree
