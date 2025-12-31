@@ -45,6 +45,7 @@
     fzf
     wl-clipboard
     android-tools
+    legendary-heroic
 
     ### random ###
     cowsay
