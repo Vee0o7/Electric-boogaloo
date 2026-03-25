@@ -26,6 +26,7 @@
         wine
         atlauncher
         flatpak
+        archipelago
 
 ### cli ###
         tree
