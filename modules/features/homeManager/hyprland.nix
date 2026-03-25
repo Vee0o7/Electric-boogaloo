@@ -209,7 +209,8 @@
       windowrule = [
         "suppress_event maximize, match:class .*"
 # "no_focus on, match:class:^$, match:title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-        "opacity 0.7, match:class org.pulseaudio.pavucontrol"
+        "opacity 0.7 override, match:class org.pulseaudio.pavucontrol"
+        "opacity 1 override, match:class librewolf"
       ];
     };
   };

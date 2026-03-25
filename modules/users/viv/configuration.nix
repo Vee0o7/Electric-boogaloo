@@ -125,18 +125,19 @@
 
     programs.git = {
       enable = true;
+      signing.format = null;
       settings = {
       user.name = "Vee0o7";
       user.email = "114813444+Vee0o7@users.noreply.github.com";
         init.defaultBranch = "main";
         pull.rebase = true;
+      };
         aliases = {
           co = "checkout";
           ci = "commit";
           ca = "commit --amend";
           squash = ''!git reset --soft $(git log --branches=$(git branch) --not --remotes --no-color --pretty=format:%H | ${lib.getExe pkgs.ansifilter} | tail -n 1) && git commit --amend -a'';
         };
-      };
     };
     systemd.user.startServices = "sd-switch";
   };

@@ -86,7 +86,7 @@
 
     users.defaultUserShell = pkgs.zsh;
     programs.zsh.enable = true;
-    documentation.man.generateCaches = true;
+    documentation.man.cache.enable = true;
 
     environment.sessionVariables = {
       STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
