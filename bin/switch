@@ -20,14 +20,6 @@ EOF
 
 while [[ $# -gt 0 ]]; do
         case "${1}" in
-        --hypr)
-                wm="hypr"
-                shift
-                ;;
-        --gnome)
-                wm="gnome"
-                shift
-                ;;
         -r | --rebuild)
                 rebuild="true"
                 shift
@@ -44,13 +36,6 @@ while [[ $# -gt 0 ]]; do
         esac
 done
 
-
-case "$wm" in
-        gnome)
-                ;;
-        hypr)
-                ;;
-esac
 
 command="sudo nixos-rebuild switch --flake $SCRIPT_DIR"
 gencmd="nixos-rebuild list-generations"
