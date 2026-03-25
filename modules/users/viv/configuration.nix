@@ -7,6 +7,7 @@
       hyprland
       noctalia
       zsh
+      nvf
     ];
 
     home.username = "viv";
