@@ -6,7 +6,7 @@
       hyprland
       stylix
       common
-      homeManager
+      homeManagerBig
     ] ++ [ inputs.home-manager.nixosModules.home-manager ];
 
   };

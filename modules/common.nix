@@ -4,17 +4,17 @@
   {
     environment.systemPackages = with pkgs; [
       vim 
-        wget
-        git
-        curl
-        htop
-        pulseaudioFull
-        pavucontrol
-        libnotify
-        iwd
-        protonvpn-gui
-        python3
-        gparted
+      wget
+      git
+      curl
+      htop
+      pulseaudioFull
+      pavucontrol
+      libnotify
+      iwd
+      protonvpn-gui
+      python3
+      gparted
     ];
 
     programs.npm.enable = true;

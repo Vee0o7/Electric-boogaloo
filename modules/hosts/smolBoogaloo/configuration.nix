@@ -6,8 +6,7 @@
       hyprland
       stylix
       common
-      homeManager
-    ] ++ [ inputs.home-manager.nixosModules.home-manager ];
-
+      homeManagerSmol
+    ] ++ [ inputs.home-manager.nixosModules.home-manager ./variables.nix ];
   };
 }

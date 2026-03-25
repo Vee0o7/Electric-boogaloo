@@ -1,6 +1,6 @@
 {self, inputs, ...}:
 {
-  flake.homeModules.hyprland = {pkgs, lib, ...}:
+  flake.homeModules.hyprland = {pkgs, lib, config, ...}:
   {
     wayland.windowManager.hyprland = {
       enable = true;
@@ -19,6 +19,7 @@
       movetoworkspace = {n}: "exec, hyprctl dispatch movetoworkspace ${n}";
     toworkspace = {n}: ''exec, hyprctl dispatch workspace ${n} & bash -c "hyprctl monitors | grep -Po 'workspace.+special:\K.*(?=\))' | xargs -r hyprctl dispatch togglespecialworkspace "'';
     scratchpad = {name}: "hyprctl dispatch togglespecialworkspace ${name}";
+    keyboardLayout = config.var.keyboardLayout;
     inherit (lib) getExe;
     in
     {
@@ -191,7 +192,7 @@
 #############
 
       input = {
-        kb_layout = "us";
+        kb_layout = keyboardLayout;
         accel_profile = "flat";
         follow_mouse = 1;
         sensitivity = 0.7;

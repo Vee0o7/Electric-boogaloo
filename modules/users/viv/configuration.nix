@@ -51,7 +51,6 @@
         figlet
         fortune
 
-
 ### disk ###
         ntfs3g
         nautilus
