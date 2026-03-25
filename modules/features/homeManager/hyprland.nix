@@ -32,7 +32,8 @@
       "$terminal" = "ghostty";
       "$web" = "librewolf";
       "$fileManager" = "yazi";
-      "$menu" = "noctalia-shell ipc call launcher toggle";
+      "$launcher" = "noctalia-shell ipc call launcher toggle";
+      "$powermenu" = "noctalia-shell ipc call sessionMenu toggle";
       "$screenshot" = "${getExe pkgs.grimblast} copy";
       "$hyprlock" = "uwsm app -- hyprlock";
 
@@ -53,7 +54,7 @@
           "$mainMod, F, fullscreen"
           "$mainMod, E, exec, $fileManager"
 # "$mainMod shift, F, togglefloating,"
-          "$mainMod, space, exec, $menu"
+          "$mainMod, space, exec, $launcher"
           "$mainMod, escape, exec, $powermenu"
 # "$mainMod shift, S, togglesplit, "
           "$mainMod, H, movefocus, l"
