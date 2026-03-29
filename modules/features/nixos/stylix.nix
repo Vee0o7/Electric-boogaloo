@@ -1,6 +1,10 @@
 {self, inputs, ...}:
 {
   flake.nixosModules.stylix = {pkgs, config, ...}:
+  let background = pkgs.fetchurl {
+    url = "https://whvn.cc/md6dqk";
+  };
+  in
   {
     imports = [ inputs.stylix.nixosModules.stylix ];
 
