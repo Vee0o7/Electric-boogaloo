@@ -2,7 +2,8 @@
 {
   flake.nixosModules.stylix = {pkgs, config, ...}:
   let background = pkgs.fetchurl {
-    url = "https://whvn.cc/md6dqk";
+    url = "https://w.wallhaven.cc/full/md/wallhaven-md6dqk.jpg";
+    hash = "sha256-9CK50o765thC6f8w3HzNLEUGYgZmu+1U+j8mgTR9qLw=";
   };
   in
   {
@@ -17,7 +18,7 @@
 # override = {
 #   base01 = config.stylix.generated.palette.base00;
 # };
-      # image = background;
+      image = background;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
 
       cursor = {
