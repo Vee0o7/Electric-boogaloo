@@ -1,9 +1,11 @@
-{self, inputs, ...}:
 {
-  flake.nixosModules.common = { pkgs, ... }:
-  {
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.common = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
-      vim 
+      vim
       wget
       git
       curl
@@ -12,7 +14,7 @@
       pavucontrol
       libnotify
       iwd
-      protonvpn-gui
+      proton-vpn
       python3
       gparted
     ];
@@ -20,27 +22,26 @@
     programs.npm.enable = true;
     virtualisation.virtualbox.host.enable = true;
 
-# Bootloader.
+    # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
     systemd.settings.Manager = {
       # DefaultTimeoutStopSec = "10s";
     };
 
-# Enable networking
+    # Enable networking
     networking.networkmanager.enable = true;
-
 
     users.users.viv = {
       isNormalUser = true;
       description = "viv";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = ["networkmanager" "wheel"];
     };
 
-# Set your time zone.
+    # Set your time zone.
     time.timeZone = "Europe/London";
 
-# Select internationalisation properties.
+    # Select internationalisation properties.
     i18n.defaultLocale = "en_GB.UTF-8";
 
     i18n.extraLocaleSettings = {
@@ -57,7 +58,7 @@
 
     services.printing = {
       enable = true;
-      drivers = with pkgs; [ epson-escpr ];
+      drivers = with pkgs; [epson-escpr];
     };
     services.avahi = {
       enable = true;
@@ -90,7 +91,7 @@
 
     nix.extraOptions = ''
       trusted-users = root viv
-      '';
+    '';
     security.sudo.wheelNeedsPassword = false;
 
     users.defaultUserShell = pkgs.zsh;
@@ -99,12 +100,12 @@
 
     environment.sessionVariables = {
       STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
-      TERM="ghostty";
+      TERM = "ghostty";
     };
     programs.steam.enable = true;
     programs.steam.gamescopeSession.enable = true;
 
-# prioritise ram over swap
+    # prioritise ram over swap
     boot.kernel.sysctl = {
       "vm.swappiness" = 10;
     };
@@ -122,17 +123,16 @@
       dates = ["weekly"];
     };
 
-# Enable the OpenSSH daemon.
+    # Enable the OpenSSH daemon.
     services.openssh.enable = true;
 
-# Open ports in the firewall.
-# networking.firewall.allowedTCPPorts = [ ... ];
-# networking.firewall.allowedUDPPorts = [ ... ];
-# Or disable the firewall altogether.
+    # Open ports in the firewall.
+    # networking.firewall.allowedTCPPorts = [ ... ];
+    # networking.firewall.allowedUDPPorts = [ ... ];
+    # Or disable the firewall altogether.
     networking.firewall.enable = false;
 
-# Before changing this value read the documentation for this option
+    # Before changing this value read the documentation for this option
     system.stateVersion = "24.11"; # Did you read the comment?
-
   };
 }
