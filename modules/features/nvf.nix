@@ -17,6 +17,7 @@
           options = {
             shiftwidth = 2;
             tabstop = 2;
+            autoindent = true;
           };
           autocomplete.blink-cmp.enable = true;
           lsp.enable = true;
