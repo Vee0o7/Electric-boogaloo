@@ -20,10 +20,10 @@
             autoindent = true;
           };
           autocomplete.blink-cmp.enable = true;
-          lsp.enable = true;
-          languages = {
-            nix.enable = true;
-          };
+          # lsp.enable = true;
+          # languages = {
+          #   nix.enable = true;
+          # };
         };
       };
     };
