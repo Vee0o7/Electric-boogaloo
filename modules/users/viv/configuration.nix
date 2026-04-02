@@ -1,7 +1,13 @@
-{inputs, self, ...}:
 {
-  flake.homeModules.viv = { pkgs, lib, ... }:
-  {
+  inputs,
+  self,
+  ...
+}: {
+  flake.homeModules.viv = {
+    pkgs,
+    lib,
+    ...
+  }: {
     imports = with self.homeModules; [
       stylix
       hyprland
@@ -15,58 +21,61 @@
 
     home.stateVersion = "24.05"; # Please read the comment before changing.
 
-      home.packages = with pkgs; [
+    home.packages = with pkgs; [
       nerd-fonts.fira-code
 
-### gaming ###
-        steam
-        lutris
-        cockatrice
-        protonup-ng
-        wine
-        atlauncher
-        flatpak
-        archipelago
+      ### gaming ###
+      steam
+      lutris
+      cockatrice
+      protonup-ng
+      wine
+      atlauncher
+      flatpak
+      archipelago
 
-### cli ###
-        tree
-        nix-prefetch-git
-        devenv
-        ansifilter
-        ripgrep
-        imagemagick
-        fd
-        sd
-        rsync
-        tealdeer
-        zsh-powerlevel10k
-        direnv
-        fzf
-        wl-clipboard
-        android-tools
-        legendary-gl
+      ### cli ###
+      tree
+      nix-prefetch-git
+      devenv
+      ansifilter
+      ripgrep
+      imagemagick
+      fd
+      sd
+      rsync
+      tealdeer
+      zsh-powerlevel10k
+      direnv
+      fzf
+      wl-clipboard
+      android-tools
+      legendary-gl
 
-### random ###
-        cowsay
-        figlet
-        fortune
+      ### random ###
+      cowsay
+      figlet
+      fortune
 
-### disk ###
-        ntfs3g
-        nautilus
+      ### disk ###
+      ntfs3g
+      nautilus
 
-### misc ###
-        obsidian
-        cava
-        vesktop
-        libreoffice
-        nsxiv
-        xclip
-        ];
+      ### misc ###
+      obsidian
+      cava
+      vesktop
+      libreoffice
+      nsxiv
+      xclip
+    ];
 
     home.sessionPath = [
       "$HOME/.dotfiles/bin"
     ];
+    home.sessionVariables = {
+      EDITOR = "vim";
+    };
 
     programs.firefox = {
       enable = true;
@@ -82,37 +91,37 @@
         display = {
           disableLinewrap = true;
         };
-        modules= [
+        modules = [
           "title"
-            "separator"
-            "os"
-            "host"
-            "kernel"
-            "uptime"
-            "packages"
-            "shell"
-            "display"
-            "de"
-            "wm"
-            "wmtheme"
-            "theme"
-            "icons"
-            "font"
-            "cursor"
-            "terminal"
-            "terminalfont"
-            "cpu"
-            "gpu"
-            "memory"
-            "swap"
-            "disk"
-            "localip"
-            "battery"
-            "poweradapter"
-            "locale"
-            "break"
-            "colors"
-            ];
+          "separator"
+          "os"
+          "host"
+          "kernel"
+          "uptime"
+          "packages"
+          "shell"
+          "display"
+          "de"
+          "wm"
+          "wmtheme"
+          "theme"
+          "icons"
+          "font"
+          "cursor"
+          "terminal"
+          "terminalfont"
+          "cpu"
+          "gpu"
+          "memory"
+          "swap"
+          "disk"
+          "localip"
+          "battery"
+          "poweradapter"
+          "locale"
+          "break"
+          "colors"
+        ];
       };
     };
 
@@ -128,8 +137,8 @@
       enable = true;
       signing.format = null;
       settings = {
-      user.name = "Vee0o7";
-      user.email = "114813444+Vee0o7@users.noreply.github.com";
+        user.name = "Vee0o7";
+        user.email = "114813444+Vee0o7@users.noreply.github.com";
         init.defaultBranch = "main";
         pull.rebase = true;
         alias = {
