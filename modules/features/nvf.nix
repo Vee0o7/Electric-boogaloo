@@ -22,13 +22,7 @@
           opts.shiftwidth = 2;
           opts.tabstop = 2;
 
-          spellcheck = {
-            enable = true;
-          };
-
           lsp = {
-            # This must be enabled for the language modules to hook into
-            # the LSP API.
             enable = true;
 
             formatOnSave = true;
@@ -111,7 +105,7 @@
           git = {
             enable = true;
             gitsigns.enable = true;
-            gitsigns.codeActions.enable = false; # throws an annoying debug message
+            gitsigns.codeActions.enable = false;
           };
 
           notify = {
