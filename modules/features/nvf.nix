@@ -1,12 +1,14 @@
-{self, inputs, ...}:
 {
-  flake.homeModules.nvf = {...}:
-  {
-    imports = [ inputs.nvf.homeManagerModules.default ];
+  self,
+  inputs,
+  ...
+}: {
+  flake.homeModules.nvf = {...}: {
+    imports = [inputs.nvf.homeManagerModules.default];
     programs.nvf = {
       enable = true;
       settings = {
-          vim = {
+        vim = {
           viAlias = true;
           vimAlias = true;
           debugMode = {
@@ -17,6 +19,8 @@
 
           # vim.opts and vim.options are aliased
           opts.expandtab = true;
+          opts.shiftwidth = 2;
+          opts.tabstop = 2;
 
           spellcheck = {
             enable = true;
