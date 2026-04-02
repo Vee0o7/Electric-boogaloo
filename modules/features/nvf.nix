@@ -16,11 +16,11 @@
             level = 16;
             logFile = "/tmp/nvim.log";
           };
-
-          # vim.opts and vim.options are aliased
-          opts.expandtab = true;
-          opts.shiftwidth = 2;
-          opts.tabstop = 2;
+          opts = {
+            expandtab = true;
+            shiftwidth = 2;
+            tabstop = 2;
+          };
 
           lsp = {
             enable = true;
@@ -144,7 +144,6 @@
             smartcolumn = {
               enable = true;
               setupOpts.custom_colorcolumn = {
-                # this is a freeform module, it's `buftype = int;` for configuring column position
                 nix = "110";
                 ruby = "120";
                 java = "130";
