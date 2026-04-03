@@ -85,6 +85,10 @@
       };
     };
 
+    programs.yazi = {
+      enable = true;
+    };
+
     programs.fastfetch = {
       enable = true;
       settings = {
