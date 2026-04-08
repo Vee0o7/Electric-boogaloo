@@ -68,6 +68,7 @@
       libreoffice
       nsxiv
       xclip
+      kicad
     ];
 
     home.sessionPath = [
