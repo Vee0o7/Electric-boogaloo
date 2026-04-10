@@ -97,6 +97,10 @@
         # "$mainMod, $mainMod_L, hyprexpo:expo, toggle"
       ];
 
+      gesture = [
+        "3, horizontal, workspace"
+      ];
+
       #################
       ### AUTOSTART ###
       #################
