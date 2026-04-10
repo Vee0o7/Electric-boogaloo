@@ -97,6 +97,9 @@
         # "$mainMod, $mainMod_L, hyprexpo:expo, toggle"
       ];
 
+      gestures = {
+        workspace_swipe_invert = false;
+      };
       gesture = [
         "3, horizontal, workspace"
       ];
