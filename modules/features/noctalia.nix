@@ -1,12 +1,23 @@
-{self, inputs, ...}:
 {
-  flake.homeModules.noctalia = {lib, ...}: {
-    imports = [ inputs.noctalia.homeModules.default ];
+  self,
+  inputs,
+  ...
+}: {
+  flake.homeModules.noctalia = {
+    lib,
+    pkgs,
+    ...
+  }: {
+    imports = [inputs.noctalia.homeModules.default];
+    home.packages = [
+      pkgs.gpu-screen-recorder
+    ];
     programs.noctalia-shell = {
       enable = true;
-      settings = lib.mkForce
+      settings =
+        lib.mkForce
         (builtins.fromJSON
-         (builtins.readFile ./noctalia.json)).settings;
+          (builtins.readFile ./noctalia.json)).settings;
     };
   };
 }
