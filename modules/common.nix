@@ -23,6 +23,7 @@
     programs.npm.enable = true;
     virtualisation.virtualbox.host.enable = true;
     services.upower.enable = true;
+    services.gnome.gnome-keyring.enable = true;
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
