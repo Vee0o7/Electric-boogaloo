@@ -35,6 +35,7 @@
     # Enable networking
     networking.networkmanager = {
       enable = true;
+      wifi.backend = "iwd";
     };
 
     users.users.viv = {
