@@ -17,6 +17,7 @@
       proton-vpn
       python3
       gparted
+      networkmanagerapplet
     ];
 
     programs.npm.enable = true;
