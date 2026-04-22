@@ -1,36 +1,45 @@
-{self, inputs, ...}:
 {
-  flake.homeModules.zsh = {pkgs, lib, ...}:
-  {
+  self,
+  inputs,
+  ...
+}: {
+  flake.homeModules.zsh = {
+    pkgs,
+    lib,
+    ...
+  }: {
     home.file = {
       ".p10k.zsh".source = ./p10k.zsh;
     };
     programs.zoxide = {
       enable = true;
-      options = [ "--cmd cd"] ;
+      options = ["--cmd cd"];
     };
-    programs.zsh =
-    {
+    programs.zsh = {
       enable = true;
-      shellAliases  = {
+      shellAliases = {
         ".." = "cd ..";
         "la" = "ls -a";
         "y" = "yazi";
         "cdd" = "cd $HOME/Documents";
-# "spotifyrtp" = "pactl load-module module-rtp-send source=spotify.monitor";
+        "nix-shell" = "nix-shell --run '$SHELL'";
+        # "spotifyrtp" = "pactl load-module module-rtp-send source=spotify.monitor";
       };
       autosuggestion.enable = true;
       oh-my-zsh = {
         enable = true;
         plugins = ["direnv" "fzf" "git" "git-auto-fetch" "copybuffer" "history" "vi-mode"];
       };
-      initContent = let after = lib.mkOrder 1600 "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh"; before = lib.mkOrder 400 (''
+      initContent = let
+        after = lib.mkOrder 1600 "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh";
+        before = lib.mkOrder 400 ''
           DISABLE_AUTO_UPDATE="true"
-          source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme'');
-      in lib.mkMerge [before after];
+          source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme'';
+      in
+        lib.mkMerge [before after];
     };
 
-# programs.thefuck.enable = true;
+    # programs.thefuck.enable = true;
     programs.dircolors = {
       enable = true;
       settings = {
