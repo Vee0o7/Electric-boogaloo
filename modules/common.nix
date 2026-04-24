@@ -18,6 +18,7 @@
       python3
       gparted
       networkmanagerapplet
+      simplescreenrecorder
     ];
 
     programs.npm.enable = true;
