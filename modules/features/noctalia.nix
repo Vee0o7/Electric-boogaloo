@@ -9,9 +9,6 @@
     ...
   }: {
     imports = [inputs.noctalia.homeModules.default];
-    home.packages = [
-      pkgs.gpu-screen-recorder
-    ];
     programs.noctalia-shell = {
       enable = true;
       settings =

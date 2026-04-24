@@ -33,7 +33,6 @@
       atlauncher
       flatpak
       archipelago
-      gpu-screen-recorder-gtk
 
       ### cli ###
       tree
