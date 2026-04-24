@@ -19,6 +19,7 @@
       gparted
       networkmanagerapplet
       simplescreenrecorder
+      obs-studio
     ];
 
     programs.npm.enable = true;
