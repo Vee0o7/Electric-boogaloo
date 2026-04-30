@@ -39,7 +39,7 @@
       "$fileManager" = "yazi";
       "$launcher" = "noctalia-shell ipc call launcher toggle";
       "$powermenu" = "noctalia-shell ipc call sessionMenu toggle";
-      "$screenshot" = "${lib.getExe pkgs.hyprshot} -m region";
+      "$screenshot" = "${lib.getExe pkgs.hyprshot} --freeze -m region";
       "$hyprlock" = "uwsm app -- hyprlock";
 
       ###################
