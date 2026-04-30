@@ -48,8 +48,7 @@
       "$mainMod" = "SUPER";
 
       bind = [
-        "$mainMod shift, S, exec, $screenshot area"
-        "$mainMod, S, exec, $screenshot"
+        "$mainMod shift, S, exec, $screenshot"
         "$mainMod, return, exec, $terminal"
         "$mainMod, W, exec, $web"
         "$mainMod, Q, killactive,"
