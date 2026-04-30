@@ -20,6 +20,7 @@
       networkmanagerapplet
       simplescreenrecorder
       obs-studio
+      hyprpicker
     ];
 
     programs.npm.enable = true;
