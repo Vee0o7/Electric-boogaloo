@@ -793,6 +793,7 @@
         "noctalia": "noctalia",
         "nvf": "nvf",
         "sops-nix": "sops-nix",
+        "sops-secrets": "sops-secrets",
         "stylix": "stylix"
       }
     },
@@ -815,6 +816,18 @@
         "repo": "sops-nix",
         "type": "github"
       }
+    },
+    "sops-secrets": {
+      "flake": false,
+      "locked": {
+        "path": "git+ssh:/git@github.com:Vee0o7/sops-secrets.git",
+        "type": "path"
+      },
+      "original": {
+        "path": "git+ssh:/git@github.com:Vee0o7/sops-secrets.git",
+        "type": "path"
+      },
+      "parent": []
     },
     "stylix": {
       "inputs": {

@@ -23,6 +23,7 @@ in {
       noctalia
       zsh
       nvf
+      sops
     ];
 
     home.username = "viv";

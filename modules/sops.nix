@@ -6,15 +6,18 @@
   flake.homeModules.sops = {
     pkgs,
     config,
+    lib,
     ...
-  }: {
+  }: let
+    sopsFolder = lib.toString inputs.nix-secrets;
+  in {
     imports = [inputs.sops-nix.homeManagerModules.sops];
 
     home.packages = with pkgs; [
       sops
     ];
     sops = {
-      defaultSopsFile = ./secrets.yaml;
+      defaultSopsFile = "${sopsFolder}/secrets.yaml";
       validateSopsFiles = false;
       defaultSopsFormat = "yaml";
       age = {
@@ -24,9 +27,9 @@
       };
 
       secrets = {
-        "gitKey" = {
-          path = "/home/viv/.ssh/git";
-        };
+        # "gitKey" = {
+        #   path = "/home/viv/.ssh/git";
+        # };
       };
     };
   };
