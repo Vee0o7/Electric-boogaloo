@@ -9,7 +9,7 @@
     lib,
     ...
   }: let
-    sopsFolder = lib.toString inputs.nix-secrets;
+    sopsFolder = lib.toString inputs.sops-secrets;
   in {
     imports = [inputs.sops-nix.homeManagerModules.sops];
 
@@ -27,9 +27,9 @@
       };
 
       secrets = {
-        # "gitKey" = {
-        #   path = "/home/viv/.ssh/git";
-        # };
+        "gitKey" = {
+          path = "/home/viv/.ssh/git";
+        };
       };
     };
   };

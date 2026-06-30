@@ -106,7 +106,8 @@
       trusted-users = root viv
     '';
     security = {
-      sudo.wheelNeedsPassword = false;
+      sudo.extraConfig = "%wheel  ALL=(ALL:ALL)    NOPASSWD: /home/viv/.dotfiles/bin/switch";
+
       polkit.enable = true;
     };
 
