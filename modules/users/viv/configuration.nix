@@ -63,10 +63,10 @@
       ### disk ###
       ntfs3g
       kdePackages.dolphin
-      kdePackages.kio
-      kdePackages.kio-extras
-      kdePackages.kio-fuse
-      kdePackages.kio-gdrive
+      # kdePackages.kio
+      # kdePackages.kio-extras
+      # kdePackages.kio-fuse
+      # kdePackages.kio-gdrive
 
       ### misc ###
       obsidian
@@ -97,6 +97,11 @@
 
     programs.yazi = {
       enable = true;
+    };
+
+    programs.keepassxc = {
+      enable = true;
+      autostart = true;
     };
 
     programs.fastfetch = {

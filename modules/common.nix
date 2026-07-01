@@ -21,6 +21,7 @@
       simplescreenrecorder
       obs-studio
       hyprpicker
+      rclone
     ];
     # programs.npm.enable = true;
     virtualisation.virtualbox.host.enable = true;
@@ -34,9 +35,14 @@
     };
 
     # Enable networking
-    networking.networkmanager = {
-      enable = true;
+    networking = {
+      networkmanager.enable = true;
+      wireless = {
+        # enable = true;
+        userControlled = true;
+      };
     };
+    programs.fuse.userAllowOther = true;
 
     users.users.viv = {
       isNormalUser = true;
