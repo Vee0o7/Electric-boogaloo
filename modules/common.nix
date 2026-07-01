@@ -22,7 +22,7 @@
       obs-studio
       hyprpicker
     ];
-    programs.npm.enable = true;
+    # programs.npm.enable = true;
     virtualisation.virtualbox.host.enable = true;
     services.upower.enable = true;
 

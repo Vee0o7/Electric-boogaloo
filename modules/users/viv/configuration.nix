@@ -75,7 +75,7 @@ in {
       ### misc ###
       obsidian
       cava
-      vesktop
+      # vesktop
       libreoffice
       nsxiv
       xclip

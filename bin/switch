@@ -46,7 +46,8 @@ else
         echo "no changes to commit"
 fi
 
-sudo bash -c 'script -qfae -c "$command"  -O >(ansifilter >> "$SCRIPT_DIR/switch.log") || exit' || exit
+# script -qfae -c "$command"  -O >(ansifilter >> "$SCRIPT_DIR/switch.log") || exit
+$command || exit
 
 gencmd="nixos-rebuild list-generations"
 gengrep="grep True"
