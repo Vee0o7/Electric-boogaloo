@@ -10,7 +10,7 @@
     ...
   }: {
     imports = with self.homeModules; [
-      #stylix
+      stylix
       hyprland
       noctalia
       zsh
