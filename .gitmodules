@@ -1,0 +1,3 @@
+[submodule "modules/sops/sops-secrets"]
+	path = modules/sops/sops-secrets
+	url = git@github.com:Vee0o7/sops-secrets.git

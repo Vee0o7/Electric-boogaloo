@@ -2,15 +2,7 @@
   inputs,
   self,
   ...
-}: let
-  insecureNixPkg = import <nixos> {
-    config = {
-      permittedInsecurePackages = [
-        "librewolf-151.0.1-2"
-      ];
-    };
-  };
-in {
+}: {
   flake.homeModules.viv = {
     pkgs,
     lib,
@@ -18,7 +10,7 @@ in {
     ...
   }: {
     imports = with self.homeModules; [
-      stylix
+      #stylix
       hyprland
       noctalia
       zsh
@@ -70,7 +62,11 @@ in {
 
       ### disk ###
       ntfs3g
-      nautilus
+      kdePackages.dolphin
+      kdePackages.kio
+      kdePackages.kio-extras
+      kdePackages.kio-fuse
+      kdePackages.kio-gdrive
 
       ### misc ###
       obsidian
@@ -80,7 +76,7 @@ in {
       nsxiv
       xclip
       kicad
-      stremio-linux-shell
+      # stremio-linux-shell
     ];
 
     home.sessionPath = [
@@ -92,7 +88,7 @@ in {
 
     programs.firefox = {
       enable = true;
-      package = insecureNixPkg.librewolf;
+      package = pkgs.librewolf-bin;
       profiles.viv = {
         extensions.force = true;
       };

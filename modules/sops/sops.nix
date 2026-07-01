@@ -22,8 +22,8 @@
       defaultSopsFormat = "yaml";
       age = {
         keyFile = "/home/viv/.config/sops/age/keys.txt";
-        sshKeyPaths = ["/home/viv/.ssh/id_ed25519"];
-        generateKey = true;
+        # sshKeyPaths = ["/home/viv/.ssh/id_ed25519"];
+        # generateKey = false;
       };
 
       secrets = {

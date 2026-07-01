@@ -9,7 +9,7 @@
         smolBoogalooHardware
         hyprland
         # kde
-        stylix
+        #stylix
         common
         homeManagerSmol
         powerSave

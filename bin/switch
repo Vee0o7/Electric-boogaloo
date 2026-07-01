@@ -37,7 +37,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 
-command="sudo nixos-rebuild switch --accept-flake-config --impure --flake $SCRIPT_DIR"
+command="sudo nixos-rebuild switch --accept-flake-config --flake $SCRIPT_DIR"
 
 gdiff=$(git diff -U0 HEAD)
 if [[ "$gdiff" != "" ]]; then

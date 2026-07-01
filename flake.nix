@@ -34,7 +34,7 @@
       url = "github:hyprwm/Hyprland";
     };
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:noctalia-dev/noctalia/cachix";
     };
     nvf = {
       url = "github:NotAShelf/nvf";
@@ -44,8 +44,12 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # sops-secrets = {
+    #   url = "git+ssh://git@github.com:Vee0o7/sops-secrets.git";
+    #   flake = false;
+    # };
     sops-secrets = {
-      url = "git+ssh://git@github.com:Vee0o7/sops-secrets.git";
+      url = "git+file:modules/sops/sops-secrets"; # the submodule is in the ./subproject dir
       flake = false;
     };
   };

@@ -359,11 +359,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1782893559,
-        "narHash": "sha256-l92uUHanb7vX8ss30kkM+oX5vc2T4zwa+NY4sjYcIUE=",
+        "lastModified": 1782911665,
+        "narHash": "sha256-+cD/se9l5rd5qj6HUcRebNqnSu1JPCKRoWNF5kaCplI=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "1b63ceecdfc6c33b68b677b8285ac621fc2b058f",
+        "rev": "f747152f938349660626a0a369b6f2959fe64850",
         "type": "github"
       },
       "original": {
@@ -698,16 +698,17 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1782876167,
-        "narHash": "sha256-3yP82Djjr//6Mn+Y0AYe/ywo7PpRCMpDqPxHrPqAWn0=",
+        "lastModified": 1782919043,
+        "narHash": "sha256-Y4P7WHwoVJCpAoy6+brTa0E51T17Tvx7CQCXefXVRe8=",
         "owner": "noctalia-dev",
-        "repo": "noctalia-shell",
-        "rev": "5f636c6cbed0ee6858fa6b83a9981a455c6d4d2c",
+        "repo": "noctalia",
+        "rev": "fee9ff554738bd0efcfda18611813895bef4a26e",
         "type": "github"
       },
       "original": {
         "owner": "noctalia-dev",
-        "repo": "noctalia-shell",
+        "ref": "cachix",
+        "repo": "noctalia",
         "type": "github"
       }
     },
@@ -820,14 +821,18 @@
     "sops-secrets": {
       "flake": false,
       "locked": {
-        "path": "git+ssh:/git@github.com:Vee0o7/sops-secrets.git",
-        "type": "path"
+        "lastModified": 1782921382,
+        "narHash": "sha256-GvZhi38xc5nA6mM5JBLgEiN/bB30RghXdVFd0THpyX8=",
+        "ref": "refs/heads/main",
+        "rev": "bf06779ba764f6d82238d29a8dcdad1dc6bb7970",
+        "revCount": 5,
+        "type": "git",
+        "url": "file:modules/sops/sops-secrets"
       },
       "original": {
-        "path": "git+ssh:/git@github.com:Vee0o7/sops-secrets.git",
-        "type": "path"
-      },
-      "parent": []
+        "type": "git",
+        "url": "file:modules/sops/sops-secrets"
+      }
     },
     "stylix": {
       "inputs": {
@@ -849,11 +854,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1782879555,
-        "narHash": "sha256-5fEWsMLRP/rO3uYZOrX8woSQrPjXALkhLfsq1pyitww=",
+        "lastModified": 1782920579,
+        "narHash": "sha256-ZXFvKfh6u0s+jGiT7sbq8ZTyxNgSASkrrllWBuARl4I=",
         "owner": "danth",
         "repo": "stylix",
-        "rev": "f76230a1ac191b01646dad5ab1720e2f1044662d",
+        "rev": "8bca95e381f44aea7f1bd98dd10ee0ca7b26e8c1",
         "type": "github"
       },
       "original": {
