@@ -821,17 +821,24 @@
     "sops-secrets": {
       "flake": false,
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1783125500,
         "narHash": "sha256-a8eZEvjhMP8kPCBKgNSHZgvI32PMdVTK6jXLc/6BeaQ=",
         "ref": "refs/heads/main",
         "rev": "4d03d5dd362e62266d4cb6b77424c4ba09e47f60",
         "revCount": 9,
+=======
+        "lastModified": 1782994819,
+        "narHash": "sha256-xmK3GOfZZ6ENREkwlEM45Lt1zYm3heXvRNMr2l+NZzs=",
+        "rev": "997172dad9dfdd54308f53f9d4ea8a556c2bbbcc",
+        "revCount": 8,
+>>>>>>> c24d41f (158         2026-07-03 00:46:25  26.11.20260629.b5aa0fb  6.18.37  Unknown                 []              True)
         "type": "git",
-        "url": "ssh://git@github.com/Vee0o7/sops-secrets.git"
+        "url": "file:modules/sops/sops-secrets"
       },
       "original": {
         "type": "git",
-        "url": "ssh://git@github.com/Vee0o7/sops-secrets.git"
+        "url": "file:modules/sops/sops-secrets"
       }
     },
     "stylix": {
