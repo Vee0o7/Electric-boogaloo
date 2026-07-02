@@ -821,11 +821,11 @@
     "sops-secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1782984964,
-        "narHash": "sha256-b+KcLd1LFRCYMkV4txRQqaOnMjhGpAsVCR7rpgcNMAM=",
+        "lastModified": 1782994819,
+        "narHash": "sha256-xmK3GOfZZ6ENREkwlEM45Lt1zYm3heXvRNMr2l+NZzs=",
         "ref": "refs/heads/main",
-        "rev": "6c7b36c29d16b09fd3cf396ad660288616aa9465",
-        "revCount": 7,
+        "rev": "997172dad9dfdd54308f53f9d4ea8a556c2bbbcc",
+        "revCount": 8,
         "type": "git",
         "url": "ssh://git@github.com/Vee0o7/sops-secrets.git"
       },
