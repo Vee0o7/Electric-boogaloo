@@ -30,6 +30,7 @@
           #!/run/current-system/sw/bin/bash
           ${lib.getExe pkgs.rclone} mount proton: /home/viv/ProtonDrive --vfs-cache-mode writes --vfs-cache-max-size 500M --vfs-cache-max-age 1h --dir-cache-time 5m --poll-interval 1m --log-level INFO --umask 002 --allow-other
         ''}";
+        ExecStop = "${lib.getExe pkgs.fuse3} -u /home/viv/ProtonDrive";
       };
     };
     sops = {
@@ -45,6 +46,9 @@
       secrets = {
         "gitKey" = {
           path = "/home/viv/.ssh/git";
+        };
+        "rcloneConf" = {
+          path = "/home/viv/rclone/rclone.conf";
         };
         passwdKey = {
           format = "binary";
