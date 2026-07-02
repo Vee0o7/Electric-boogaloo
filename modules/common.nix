@@ -27,6 +27,11 @@
     virtualisation.virtualbox.host.enable = true;
     services.upower.enable = true;
 
+    nixpkgs.overlays = [
+      (final: _prev: {
+        pnpm_10_29_2 = final.pnpm_10;
+      })
+    ];
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -112,7 +117,7 @@
       trusted-users = root viv
     '';
     security = {
-      sudo.extraConfig = "%wheel  ALL=(ALL:ALL)    NOPASSWD: /home/viv/.dotfiles/bin/switch";
+      # sudo.extraConfig = "%wheel  ALL=(ALL:ALL)    NOPASSWD: /home/viv/.dotfiles/bin/switch";
 
       polkit.enable = true;
     };
