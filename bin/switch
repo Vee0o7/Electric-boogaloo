@@ -39,7 +39,7 @@ done
 
 command="sudo nixos-rebuild switch --accept-flake-config --flake $SCRIPT_DIR"
 
-nix flake lock --update-input sops-secrets
+# nix flake lock --update-input sops-secrets
 gdiff=$(git diff -U0 HEAD)
 if [[ "$gdiff" != "" ]]; then
         echo "$gdiff" | $EDITOR -R
