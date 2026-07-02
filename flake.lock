@@ -827,11 +827,11 @@
         "rev": "6c7b36c29d16b09fd3cf396ad660288616aa9465",
         "revCount": 7,
         "type": "git",
-        "url": "file:modules/sops/sops-secrets"
+        "url": "ssh://git@github.com/Vee0o7/sops-secrets.git"
       },
       "original": {
         "type": "git",
-        "url": "file:modules/sops/sops-secrets"
+        "url": "ssh://git@github.com/Vee0o7/sops-secrets.git"
       }
     },
     "stylix": {
