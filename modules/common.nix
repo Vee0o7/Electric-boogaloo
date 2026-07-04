@@ -10,7 +10,6 @@
       git
       curl
       htop
-      pulseaudioFull
       pavucontrol
       polkit
       libnotify
@@ -23,6 +22,11 @@
       hyprpicker
       rclone
     ];
+    services.pulseaudio.package = pkgs.pulseaudioFull;
+    services.pulseaudio.configFile = pkgs.runCommand "default.pa" {} ''
+      sed 's/module-udev-detect$/module-udev-detect tsched=0/' \
+        ${pkgs.pulseaudio}/etc/pulse/default.pa > $out
+    '';
     # programs.npm.enable = true;
     virtualisation.virtualbox.host.enable = true;
     services.upower.enable = true;
