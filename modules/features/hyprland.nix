@@ -15,7 +15,7 @@
       xwayland.enable = true;
       package = null;
       portalPackage = null;
-      configType = "hyprlang";
+      # configType = "hyprlang";
       plugins = [
         # inputs.hyprspace.packages.${pkgs.system}.Hyprspace
         # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo

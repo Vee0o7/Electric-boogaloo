@@ -84,9 +84,6 @@
 
     nixpkgs.config.allowUnfree = true;
 
-    nixpkgs.config.permittedInsecurePackages = [
-      "librewolf-bin-151.0.1-2"
-    ];
     nix.settings = {
       experimental-features = ["nix-command" "flakes"];
       trusted-users = ["@wheel"];
