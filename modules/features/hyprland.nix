@@ -116,7 +116,7 @@
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "dbus-update-activation-environment --systemd --all"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "noctalia"
+        "uwsm app -- noctalia"
         "[workspace special:volume silent] pavucontrol"
         # "[workspace 1] ghostty --initial-command='sleep 1.5 && fastfetch && exec zsh'"
       ];
