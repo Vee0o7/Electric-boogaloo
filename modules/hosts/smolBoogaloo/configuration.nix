@@ -13,6 +13,7 @@
         common
         homeManagerSmol
         powerSave
+        pipewire
       ]
       ++ [inputs.home-manager.nixosModules.home-manager ./variables.nix];
   };
