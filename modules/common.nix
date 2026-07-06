@@ -155,6 +155,7 @@
     # networking.firewall.allowedUDPPorts = [ ... ];
     # Or disable the firewall altogether.
     networking.firewall.enable = false;
+    networking.nameservers = ["9.9.9.9" "130.59.31.248"];
 
     # Before changing this value read the documentation for this option
     system.stateVersion = "24.11"; # Did you read the comment?
