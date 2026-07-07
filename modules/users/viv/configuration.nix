@@ -88,7 +88,7 @@
 
     programs.firefox = {
       enable = true;
-      # package = pkgs.librewolf-bin;
+      package = pkgs.librewolf-bin;
       profiles.viv = {
         extensions.force = true;
       };
