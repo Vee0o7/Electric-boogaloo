@@ -21,9 +21,12 @@
       obs-studio
       hyprpicker
       rclone
+      waydroid-helper
     ];
     # programs.npm.enable = true;
     virtualisation.virtualbox.host.enable = true;
+    virtualisation.waydroid.enable = true;
+    virtualisation.waydroid.package = pkgs.waydroid-nftables;
     services.upower.enable = true;
 
     nixpkgs.overlays = [

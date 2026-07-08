@@ -7,8 +7,8 @@
     modules = with inputs.self.nixosModules;
       [
         smolBoogalooHardware
-        hyprland
         # kde
+        noctalia
         stylix
         common
         homeManagerSmol

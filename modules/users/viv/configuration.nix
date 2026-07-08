@@ -11,7 +11,6 @@
   }: {
     imports = with self.homeModules; [
       stylix
-      hyprland
       noctalia
       zsh
       nvf
@@ -37,6 +36,7 @@
       flatpak
       archipelago
       vintagestory
+      waydroid
 
       ### cli ###
       tree
@@ -77,7 +77,7 @@
       nsxiv
       xclip
       kicad
-      # stremio-linux-shell
+      stremio-linux-shell
     ];
 
     home.sessionPath = [
