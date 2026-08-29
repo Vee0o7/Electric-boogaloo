@@ -11,8 +11,12 @@
         settings =
           lib.mkForce
           (builtins.fromTOML
-            (builtins.readFile ./noctalia.toml));
+            (builtins.readFile ./noctalia/config.toml));
       };
+    };
+
+    xdg.configFile = {
+      "umbriel/config.toml".source = ./umbriel/config.toml;
     };
   };
 
