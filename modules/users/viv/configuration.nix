@@ -36,6 +36,7 @@
       atlauncher
       flatpak
       archipelago
+      vintagestory
 
       ### cli ###
       tree
