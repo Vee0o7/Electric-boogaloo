@@ -25,6 +25,14 @@
     lib,
     ...
   }: {
+    # imports = [./greeter/config.nix];
+    imports = [
+      inputs.noctalia-greeter.nixosModules.default
+    ];
+
+    programs.noctalia-greeter = {
+      enable = true;
+    };
     programs.umbriel.enable = true;
   };
 }

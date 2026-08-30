@@ -23,6 +23,7 @@
       rclone
       waydroid-helper
     ];
+    programs.gnome-disks.enable = true;
     # programs.npm.enable = true;
     virtualisation.virtualbox.host.enable = true;
     virtualisation.waydroid.enable = true;
