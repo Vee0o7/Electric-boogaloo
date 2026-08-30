@@ -37,7 +37,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 
-command="nixos-rebuild switch --sudo --accept-flake-config --flake $SCRIPT_DIR"
+command="sudo nixos-rebuild switch --sudo --accept-flake-config --flake $SCRIPT_DIR"
 
 # nix flake lock --update-input sops-secrets
 gdiff=$(git diff -U0 HEAD)

@@ -7,7 +7,7 @@
     modules = with inputs.self.nixosModules;
       [
         bigBoogalooHardware
-        hyprland
+        noctalia
         stylix
         common
         homeManagerBig
