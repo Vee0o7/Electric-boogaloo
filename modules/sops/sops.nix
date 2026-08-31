@@ -47,8 +47,10 @@
         "gitKey" = {
           path = "/home/viv/.ssh/git";
         };
-        "rcloneConf" = {
+        rcloneconf = {
+          format = "binary";
           path = "/home/viv/.config/rclone/rclone.conf";
+          sopsFile = "${sopsFolder}/rclone.conf";
         };
         passwdKey = {
           format = "binary";
