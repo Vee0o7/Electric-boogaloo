@@ -9,6 +9,7 @@
       umbriel
       noctalia
       stylix
+      vpn
     ];
     environment.systemPackages = with pkgs; [
       vim
@@ -28,6 +29,7 @@
       hyprpicker
       rclone
       waydroid-helper
+      usbimager
     ];
     programs.gnome-disks.enable = true;
     # programs.npm.enable = true;

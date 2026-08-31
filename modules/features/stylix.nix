@@ -1,24 +1,29 @@
-{self, inputs, ...}:
 {
-  flake.homeModules.stylix = {...}:
-  {
-        stylix.autoEnable = true;
-        stylix.targets = {
-          firefox.colorTheme.enable = true;
-          firefox.profileNames = [ "viv" ];
-          librewolf.colorTheme.enable = true;
-          librewolf.profileNames = [ "viv" ];
-        };
+  self,
+  inputs,
+  ...
+}: {
+  flake.homeModules.stylix = {...}: {
+    stylix.autoEnable = true;
+    stylix.targets = {
+      firefox.colorTheme.enable = true;
+      firefox.profileNames = ["viv"];
+      librewolf.colorTheme.enable = true;
+      librewolf.profileNames = ["viv"];
+    };
   };
 
-  flake.nixosModules.stylix = {pkgs, config, ...}:
-  let background = pkgs.fetchurl {
-    url = "https://w.wallhaven.cc/full/md/wallhaven-md6dqk.jpg";
-    hash = "sha256-9CK50o765thC6f8w3HzNLEUGYgZmu+1U+j8mgTR9qLw=";
-  };
-  in
-  {
-    imports = [ inputs.stylix.nixosModules.stylix ];
+  flake.nixosModules.stylix = {
+    pkgs,
+    config,
+    ...
+  }: let
+    background = pkgs.fetchurl {
+      url = "https://w.wallhaven.cc/full/md/wallhaven-md6dqk.jpg";
+      hash = "sha256-9CK50o765thC6f8w3HzNLEUGYgZmu+1U+j8mgTR9qLw=";
+    };
+  in {
+    imports = [inputs.stylix.nixosModules.stylix];
 
     fonts.fontconfig.enable = true;
 
@@ -26,9 +31,9 @@
       enable = true;
       autoEnable = true;
 
-# override = {
-#   base01 = config.stylix.generated.palette.base00;
-# };
+      # override = {
+      #   base01 = config.stylix.generated.palette.base00;
+      # };
       image = background;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
 
@@ -55,7 +60,6 @@
     };
   };
 }
-
 #################### potential themes ####################
 # "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
 # "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";

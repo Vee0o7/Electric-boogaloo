@@ -11,6 +11,6 @@
         homeManagerSmol
         powerSave
       ]
-      ++ [inputs.home-manager.nixosModules.home-manager ./variables.nix];
+      ++ [inputs.home-manager.nixosModules.home-manager];
   };
 }

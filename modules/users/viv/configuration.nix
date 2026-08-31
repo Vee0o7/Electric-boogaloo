@@ -79,6 +79,7 @@
       xclip
       kicad
       stremio-linux-shell
+      eddie
     ];
 
     home.sessionPath = [
@@ -86,6 +87,9 @@
     ];
     home.sessionVariables = {
       EDITOR = "vim";
+    };
+    xdg.autostart = {
+      enable = true;
     };
 
     programs.firefox = {
@@ -99,6 +103,7 @@
 
     programs.yazi = {
       enable = true;
+      shellWrapperName = "y";
     };
 
     programs.keepassxc = {
