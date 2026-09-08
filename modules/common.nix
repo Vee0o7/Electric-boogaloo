@@ -4,6 +4,12 @@
   ...
 }: {
   flake.nixosModules.common = {pkgs, ...}: {
+    imports = with self.nixosModules; [
+      pipewire
+      umbriel
+      noctalia
+      stylix
+    ];
     environment.systemPackages = with pkgs; [
       vim
       wget

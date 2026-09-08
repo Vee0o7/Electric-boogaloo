@@ -1,6 +1,8 @@
 {
   self,
   inputs,
+  lib,
+  config,
   ...
 }: {
   flake.nixosModules.homeManagerSmol = {
@@ -10,9 +12,19 @@
   }: {
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
-    home-manager.backupFileExtension = ".bak";
+    home-manager.backupFileExtension = "hm-bak";
     home-manager.users.viv = {
-      imports = [self.homeModules.viv ./variables.nix];
+      imports = [self.homeModules.viv self.homeModules.smolVariables];
+      config.var = {
+        keyboardLayout = "gb";
+      };
+
+      options = {
+        var = lib.mkOption {
+          type = lib.types.attrs;
+          default = {};
+        };
+      };
     };
   };
 }

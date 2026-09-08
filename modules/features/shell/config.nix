@@ -15,9 +15,9 @@
       };
     };
 
-    xdg.configFile = {
-      "umbriel/config.toml".source = ./umbriel/config.toml;
-    };
+    # xdg.configFile = {
+    #   # "umbriel/config.toml".source = ./umbriel/config.toml;
+    # };
   };
 
   flake.nixosModules.noctalia = {
@@ -25,7 +25,6 @@
     lib,
     ...
   }: {
-    # imports = [./greeter/config.nix];
     imports = [
       inputs.noctalia-greeter.nixosModules.default
     ];
@@ -33,6 +32,5 @@
     programs.noctalia-greeter = {
       enable = true;
     };
-    programs.umbriel.enable = true;
   };
 }

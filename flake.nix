@@ -30,11 +30,14 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-    };
+    # hyprland = {
+    #   url = "github:hyprwm/Hyprland";
+    # };
     noctalia = {
       url = "github:noctalia-dev/noctalia/cachix";
+    };
+    umbriel = {
+      url = "github:noctalia-dev/umbriel";
     };
     noctalia-greeter = {
       url = "github:noctalia-dev/noctalia-greeter";
@@ -52,10 +55,6 @@
       url = "git+ssh://git@github.com/Vee0o7/sops-secrets.git";
       flake = false;
     };
-    # sops-secrets = {
-    #   url = "git+file:modules/sops/sops-secrets"; # the submodule is in the ./subproject dir
-    #   flake = false;
-    # };
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);

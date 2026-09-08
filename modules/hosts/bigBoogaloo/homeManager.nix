@@ -1,5 +1,7 @@
 {
   self,
+  config,
+  lib,
   inputs,
   ...
 }: {
@@ -12,7 +14,7 @@
     home-manager.useUserPackages = true;
     home-manager.backupFileExtension = "hm-bak";
     home-manager.users.viv = {
-      imports = [self.homeModules.viv ./variables.nix];
+      imports = [self.homeModules.viv self.homeModules.bigVariables];
     };
   };
 }

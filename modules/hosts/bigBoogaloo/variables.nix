@@ -1,13 +1,22 @@
-{config, lib, ...}:
 {
-  config.var = {
-    keyboardLayout = "us";
-  };
+  self,
+  inputs,
+  ...
+}: {
+  flake.homeModules.bigVariables = {
+    config,
+    lib,
+    ...
+  }: {
+    config.var = {
+      keyboardLayout = "us";
+    };
 
-  options = {
-    var = lib.mkOption {
-      type = lib.types.attrs;
-      default = {};
+    options = {
+      var = lib.mkOption {
+        type = lib.types.attrs;
+        default = {};
+      };
     };
   };
 }

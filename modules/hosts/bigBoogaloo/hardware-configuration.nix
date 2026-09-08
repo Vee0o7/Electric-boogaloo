@@ -1,33 +1,46 @@
-{self, inputs, ...}:
 {
-  flake.nixosModules.bigBoogalooHardware = { config, lib, pkgs, modulesPath, ... }:
-  {
-    imports =
-      [ (modulesPath + "/installer/scan/not-detected.nix")
-      ];
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.bigBoogalooHardware = {
+    config,
+    lib,
+    pkgs,
+    modulesPath,
+    ...
+  }: {
+    imports = [
+      (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-  networking.hostName = "bigBoogaloo";
+    networking.hostName = "bigBoogaloo";
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
-  boot.extraModulePackages = [ ];
+    boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
+    boot.initrd.kernelModules = [];
+    boot.kernelModules = [];
+    boot.extraModulePackages = [];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/d5dd42e9-ffc1-4be8-abe7-52166101c568";
+    fileSystems."/" = {
+      device = "/dev/disk/by-uuid/d5dd42e9-ffc1-4be8-abe7-52166101c568";
       fsType = "ext4";
     };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/ECC2-491D";
+    fileSystems."/boot" = {
+      device = "/dev/disk/by-uuid/ECC2-491D";
       fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
+      options = ["fmask=0077" "dmask=0077"];
     };
 
-  swapDevices = [ ];
+    fileSystems."/home/viv/SteamDrive" = {
+      device = "/dev/disk/by-uuid/8b05993b-b61f-4273-8cc1-5571d2e9e8ad";
+      fsType = "ext4";
+    };
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    swapDevices = [];
+
+    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+    hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     services.xserver.xkb = {
       layout = "us";
       variant = "";

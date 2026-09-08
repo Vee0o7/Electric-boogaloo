@@ -11,6 +11,7 @@
   }: {
     imports = with self.homeModules; [
       stylix
+      umbriel
       noctalia
       zsh
       nvf
