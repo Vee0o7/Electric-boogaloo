@@ -76,6 +76,7 @@
       vesktop
       libreoffice
       nsxiv
+      haruna
       xclip
       kicad
       stremio-linux-shell

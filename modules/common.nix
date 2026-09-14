@@ -31,6 +31,7 @@
       waydroid-helper
       usbimager
     ];
+    hardware.bluetooth.enable = true;
     programs.gnome-disks.enable = true;
     # programs.npm.enable = true;
     virtualisation.virtualbox.host.enable = true;
